@@ -1,0 +1,578 @@
+{
+	"name": "OxyGen",
+	"version": "1.8.1",
+	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
+	"demo": "http://varoystrand.se/",
+	"terms": "Released under MIT & GPL3 license",
+	"documentation": "http://varoystrand.se/sidor/oxygen/",
+ 	"author": {
+	    "name": "Bjarne Varoystrand",
+		"mail": "baldursphotography@gmail.com",
+		"link": "http://varoystrand.se/"
+	},
+
+	"koken_version_required": "0.20.0",
+
+	"default_front_page": "index",
+	
+	"navigation_groups": {
+		"footer": {
+			"label": "Footer",
+			"description": "Links in the footer",
+			"defaults": [
+				"front", "albums", "contents", "essays", "favorites"
+			]
+		}
+	},
+	
+	"templates": {
+		"index": {
+			"name": "Splash (featured albums)",
+			"description": "Displays a full screen slideshow of your featured albums",
+			"source": "featured_albums"
+		},
+		"home_fc": {
+			"name": "Splash (featured content)",
+			"description": "Displays a full screen slideshow of your featured content",
+			"source": "featured_content"
+		}
+	},
+
+	"settings": {
+		"Site title": {
+			"icon":"type",
+			"settings": {
+				"site_title_type": {
+					"label": "Type",
+					"type": "select",
+					"options": [
+						{ "label": "Text", "value": "text" },
+						{ "label": "Image", "value": "image" }
+					],
+					"value": "text"
+				},
+				"site_title_img_url": {
+					"label": "Image URL",
+					"type": "string",
+					"value": "",
+					"dependencies": {
+	                    "evaluate": "all",
+	                    "conditions": [
+	                         { "option": "site_title_type", "equals": "image" }
+	                    ]
+	               }
+				},
+				"site_title_img_scale": {
+					"label": "Regular height",
+					"type": "slider",
+					"min": 10,
+					"max": 100,
+					"step": 1,
+					"value": 100,
+					"suffix": "px",
+					"dependencies": {
+						"evaluate": "all",
+						"conditions": [
+							{ "options": "site_title_type", "equals": "image" }
+						]
+					}
+				},
+				"site_title_img_scale_mobile": {
+					"label": "Mobile height",
+					"type": "slider",
+					"min": 10,
+					"max": 100,
+					"step": 1,
+					"value": 50,
+					"suffix": "px",
+					"dependencies": {
+						"evaluate": "all",
+						"conditions": [
+							{ "option": "site_title_type", "equals": "image" }
+						]
+					}
+				}
+			}
+		},
+		"Layout": {
+			"icon":"layout",
+			"settings": {
+				"cover_styles": {
+					"label": "Cover Styles",
+					"type": "select",
+					"options": [
+						{ "label": "Plain text", "value": "text_cover" },
+						{ "label": "Cover image", "value": "image_cover" },
+						{ "label": "No cover", "value": "no_cover" }
+					],
+					"value": "image_cover",
+					"note": "Cover style for albums pages, favorites and contents.",
+					"note_align": "left"
+				},
+				"albums_index_limit": {
+					"label": "Items per page",
+					"type": "slider",
+					"min": 6,
+					"max": 48,
+					"step": 6,
+					"value": 12,
+					"scope": [ "albums", "archive.albums", "sets", "set" ]
+				},
+				"albums_detail_limit": {
+					"label": "Items per page",
+					"type": "slider",
+					"min": 12,
+					"max": 100,
+					"step": 6,
+					"value": 24,
+					"scope": [ "album" ]
+				},
+				"content_index_limit": {
+					"label": "Items per page",
+					"type": "slider",
+					"min": 12,
+					"max": 100,
+					"step": 6,
+					"value": 24,
+					"scope": [ "contents", "favorites", "archive.contents", "timeline", "tags" ]
+				},
+				"essays_index_limit": {
+					"label": "Items per page",
+					"type": "slider",
+					"min": 6,
+					"max": 48,
+					"value": 12,
+					"scope": [ "essays" ]
+				},
+				"show_feat_img_pages": {
+					"label": "Show featured image",
+					"type": "boolean",
+					"value": false,
+					"note": "This shows the featured image on the top of the page",
+					"note_align": "left",
+					"scope": [ "pages", "page" ]
+				},
+				"show_feat_img_essay": {
+					"label": "Show featured image",
+					"type": "boolean",
+					"value": true,
+					"note": "This shows the featured image on the top of the page",
+					"note_align": "left",
+					"scope": [ "essay" ]
+				},
+				"show_feat_img_essays": {
+					"label": "Show featured image",
+					"type": "boolean",
+					"value": false,
+					"note": "This shows the featured image below the essay headline",
+					"note_align": "left",
+					"scope": [ "essays" ]
+				},
+				"text_max_width": {
+					"label": "Width for text content",
+					"type": "slider",
+					"min": 500,
+					"max": 1500,
+					"step": 50,
+					"value": 750,
+					"suffix": "px",
+					"note": "Max width for the text colum in Pages and Essays",
+					"note_align": "left"
+				}
+			}
+		},
+		"Grid": {
+			"icon":"grid",
+			"settings": {
+				"grid_asp_ratio": {
+					"label": "Aspect ratio",
+					"type": "select",
+					"options": [
+						{ "label": "1:1", "value": "1:1" },
+						{ "label": "2:1", "value": "2:1" },
+						{ "label": "3:2", "value": "3:2" },
+						{ "label": "4:3", "value": "4:3" },
+						{ "label": "16:9", "value": "16:9" }
+					],
+					"value": "1:1",
+					"scope": [ "albums", "album", "archive.albums", "sets", "set", "contents", "favorites", "archive.contents", "timeline", "tags", "tag" ],
+					"scoped_values": true,
+					"note": "This controls the aspect ratio on the image thumbs and albums cover thumbs",
+					"note_align": "left"
+				}
+			}
+		},
+		"Social": {
+			"icon":"social",
+			"settings": {
+				"show_sharing_essay": {
+					"label": "Show sharing icons",
+					"type": "boolean",
+					"value": true,
+					"note": "This hides the sharing icons",
+					"note_align": "left",
+					"scope": [ "essay", "essays" ]
+				},
+				"show_sharing_img": {
+					"label": "Show sharing icons",
+					"type": "boolean",
+					"value": true,
+					"note": "This hides the sharing icons",
+					"note_align": "left",
+					"scope": [ "album", "albums", "content", "contents" ]
+				},
+				"show_sharing_page": {
+					"label": "Show sharing icons",
+					"type": "boolean",
+					"value": false,
+					"note": "This shows the sharing icons",
+					"note_align": "left",
+					"scope": [ "pages", "page" ]
+				}
+			}
+		},
+		"Discussions": {
+			"icon":"discuss",
+			"settings": {
+				"show_disc_essay": {
+					"label": "Show essay discussions",
+					"note": "Requires the Disqus plugin",
+					"note_align": "left",
+					"type": "boolean",
+					"value": true,
+					"control_first": true,
+					"scope": [ "essay" ]
+				},
+				"show_disc_image": {
+					"label": "Show image discussions",
+					"note": "Requires the Disqus plugin",
+					"note_align": "left",
+					"type": "boolean",
+					"value": false,
+					"control_first": true,
+					"scope": [ "albums", "album" ],
+					"scoped_values": false
+				},
+				"show_disc_content": {
+					"label": "Show content discussions",
+					"note": "Requires the Disqus plugin",
+					"note_align": "left",
+					"type": "boolean",
+					"value": false,
+					"control_first": true,
+					"scope": [ "content", "contents" ]
+				},
+				"show_disc_page": {
+					"label": "Show page discussions",
+					"type": "boolean",
+					"value": false,
+					"control_first": true,
+					"note": "Requires the Disqus plugin",
+					"note_align": "left",
+					"scope": [ "pages", "page" ]
+				}
+			}
+		},
+		"Footer": {
+			"icon": "layout",
+			"settings": {
+				"footer_setting": {
+					"label": "Footer design",
+					"type": "select",
+					"value": "tiny_footer",
+					"options": [
+						{ "label": "No footer", "value": "no_footer" },
+						{ "label": "Small footer", "value": "tiny_footer" },
+						{ "label": "Big footer", "value": "show_footer" }
+					]
+				},
+				"Personal info": {
+					"collapse": true,
+					"address_name_prefix": {
+						"label": "Name prefix",
+						"type": "string",
+						"value": "",
+						"note": "Prefix before your name, i.e: Photographer",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					},
+					"address_name": {
+						"label": "Your name",
+						"type": "string",
+						"value": "",
+						"note": "Your full name",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					},
+					"address_avatar_img": {
+						"label": "Image URL",
+						"type": "string",
+						"value": "",
+						"note": "The image to use as avatar (max 400x400px)",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{
+									"option": "footer_setting",
+									"equals": "show_footer"
+								}
+							]
+						}
+					}
+				},
+				"Address Info": {
+					"collapse": true,
+					"address_street_info": {
+						"label": "Street",
+						"type": "string",
+						"value": "",
+						"note": "Your street adress",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					},
+					"address_postal_code": {
+						"label": "Postal code",
+						"type": "string",
+						"value": "",
+						"note": "Your postal code",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					},
+					"address_city_info": {
+						"label": "City name",
+						"type": "string",
+						"value": "",
+						"note": "City name",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					},
+					"address_country_info": {
+						"label": "Your country",
+						"type": "string",
+						"value": "",
+						"note": "Your country",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					}
+				},
+				"Footer links": {
+					"collapse": true,
+					"address_contact_page_id": {
+						"label": "Page id",
+						"type": "string",
+						"value": "",
+						"note": "Page id for your contactform",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					},
+					"address_copyright_page_id": {
+						"label": "Page id",
+						"type": "string",
+						"value": "",
+						"note": "Page id for your copyright info",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
+							]
+						}
+					}
+				},
+				"Social Footer links": {
+					"collapse": true,
+					"social_facebook_link": {
+						"label": "Facebook",
+						"type": "boolean",
+						"value": true,
+						"control_first": true,
+						"note": "Edit links in Settings > Admin",
+						"note_align": "left",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					},
+					"social_googleplus_link": {
+						"label": "Google+",
+						"type": "boolean",
+						"value": true,
+						"control_first": true,
+						"note": "Edit links in Settings > Admin",
+						"note_align": "left",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					},
+					"social_twitter_link": {
+						"label": "Twitter",
+						"type": "boolean",
+						"value": true,
+						"control_first": true,
+						"note": "Edit links in Settings > Admin",
+						"note_align": "left",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					},
+					"social_instagram_link": {
+						"label": "Instagram",
+						"type": "string",
+						"value": "",
+						"note": "Your Instagram handle",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					},
+					"social_fivepx_link": {
+						"label": "500px",
+						"type": "string",
+						"value": "",
+						"note": "Your 500px handle",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					},
+					"social_pinterest_link": {
+						"label": "Pinterest",
+						"type": "string",
+						"value": "",
+						"note": "Your Pinterest handle",
+						"note_align": "right",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					},
+					"social_rss_essays_link": {
+						"label": "RSS Essays",
+						"type": "boolean",
+						"value": true,
+						"note": "Show link to your Essays feed",
+						"note_align": "left",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					},
+					"social_rss_contents_link": {
+						"label": "RSS Contents",
+						"type": "boolean",
+						"value": true,
+						"note": "Shows link to your Contents feed",
+						"note_align": "left",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "footer_setting", "equals": "show_footer" }
+							]
+						}
+					}
+				}
+			}
+		},
+		"Misc": {
+			"icon":"misc",
+			"settings": {
+				"show_credits": {
+					"label": "Show credits",
+					"type": "boolean",
+					"value": true,
+					"note": "This hides the credit on the index page",
+					"note_align": "left"
+				},
+				"slideshow_nav_hide": {
+					"label": "Hide the slideshow nav arrows",
+					"type": "boolean",
+					"value": false,
+					"note": "This hides the slideshow nav arrows on the splashpage"
+					"note_align": "left"
+				},
+				"editorial_img_hide": {
+					"label": "Hide Editorial images",
+					"type": "boolean",
+					"value": false,
+					"note": "Sort out Editorial images from public listing.",
+					"note_align": "left"
+				},
+				"editorial_img_cats": {
+					"label": "Editorial categories",
+					"type": "string",
+					"value": "",
+					"note": "What image categories should be hidden from the contents listing. If multiple categories separate each with a comma",
+					"note_align": "left",
+					"dependencies": {
+						"evaluate": "all",
+						"conditions": [
+							{ "option": "editorial_img_hide", "equals": true }
+						]
+					}
+				}
+			}
+		}
+	}
+}
