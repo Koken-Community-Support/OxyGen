@@ -1,12 +1,14 @@
 <koken:include file="inc/components/header.html" />
     <koken:load source="favorites">
-      <div id="slideshow">
-        <koken:pulse autostart="true" width="100%" height="100%" crop="fill" jsvar="pulse" loop="true" source="favorites" next=".sldshw-arrow-right" previous=".sldshw-arrow-left" link_to="album" />
-          <ul id="slideshow_nav">
-            <li><a href="#" class="sldshw-arrow-left" data-bind-to-key="left">&#8592;</a></li>
-            <li><a href="#" class="sldshw-arrow-right" data-bind-to-key="right">&#8594;</a></li>
-            <koken:load source="favorites"><li class="amount-check">{{ count }}</li></koken:load>
-          </ul>
+		<div id="slideshow">
+			<koken:pulse autostart="true" width="100%" height="100%" crop="fill" jsvar="pulse" loop="true" source="favorites" next=".sldshw-arrow-right" previous=".sldshw-arrow-left" link_to="album" />
+				<koken:if true="settings.slideshow_nav_hide">
+					<ul id="slideshow_nav">
+						<li><a href="#" class="sldshw-arrow-left" data-bind-to-key="left">&#8592;</a></li>
+						<li><a href="#" class="sldshw-arrow-right" data-bind-to-key="right">&#8594;</a></li>
+						<koken:load source="favorites"><li class="amount-check">{{ count }}</li></koken:load>
+					</ul>
+				</koken:if>
     </koken:load>
     <script>
       pulse.on( 'transitionstart', function(e) {
