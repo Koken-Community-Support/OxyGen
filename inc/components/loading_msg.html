@@ -1,0 +1,14 @@
+﻿<div class="loading">
+	<div id="infinite_load_msg">
+		<koken:asset file="inc/components/img/loader.gif" alt="Loading" width="32" height="32" />
+		<div>Loading...</div>
+	</div>
+</div>
+<script>
+	$(window).on('k-infinite-loading', function() {
+		$('#infinite_load_msg').show();
+	});
+	$(window).on('k-infinite-loaded', function() {
+		$('#infinite_load_msg').hide();
+	});
+</script>

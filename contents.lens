@@ -1,0 +1,41 @@
+﻿<koken:include file="inc/components/header.html" />
+	<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
+<koken:if data="settings.cover_styles" equals="image_cover">
+	<koken:pop><!-- Pick up the last picture from koken:load -->
+		<koken:include file="inc/components/content_cover.html" />
+		<koken:include file="inc/cover.html" />
+	</koken:pop>
+</koken:if>
+	<section id="content">
+		<ol class="grid">
+			<koken:loop>
+			<koken:has_category title="{{ settings.editorial_img_cats }}" && data="settings.editorial_img_hide" equals="true">
+					<!-- Hide any images that has the Category Editorials assigned -->
+				<koken:else>
+					<li>
+						<koken:link title="View {{ content.title | content.filename }} in fullscreen" lightbox="true">
+							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true"/>
+							<div><h3>{{ content.title | content.filename }}</h3></div>
+						</koken:link>
+					</li>
+				</koken:has_category>
+			</koken:loop>
+		</ol>
+	</section>
+	<koken:else>
+		<koken:note>
+			No images or videos found
+		</koken:note>
+	</koken:load>
+	<koken:if data="settings.show_disc_content" equals="true">
+		<div class="disquis"><koken:discussion>{{ discussion }}</koken:discussion></div>
+	</koken:if>
+	<koken:include file="inc/components/loading_msg.html" />
+	<koken:if data="settings.footer_setting" equals="tiny_footer">
+		<koken:include file="inc/components/footer_tiny.html" />
+	</koken:if>
+	<koken:if data="settings.footer_setting" equals="show_footer">
+		<koken:include file="inc/components/footer.html" />
+	</koken:if>
+	</body>
+</html>

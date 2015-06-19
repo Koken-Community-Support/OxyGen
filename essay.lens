@@ -1,0 +1,35 @@
+<koken:include file="inc/components/header.html" />
+<div class="page-content">
+	<koken:load>
+		<koken:if data="settings.show_feat_img_essay" equals="true">
+			<koken:featured_image>
+				<koken:link><koken:img size="3:1" lazy="true"/></koken:link>
+			</koken:featured_image>
+		</koken:if>
+		<article class="entry">
+			<p class="essay-time"><koken:time /></p>
+			<h1 class="page-name">{{ essay.title }}</h1> 
+			{{ essay.content }} 
+		</article>
+		<koken:if data="settings.show_sharing_essay" equals="true">
+			<koken:include file="inc/components/share.html" />
+		</koken:if>
+		<koken:if data="settings.show_disc_essay" equals="true">
+			<div class="disquis">
+				<koken:discussion>{{ discussion }}</koken:discussion>
+			</div>
+		</koken:if>
+		<koken:else>
+		<koken:note>
+			No published essay found 
+		</koken:note>
+	</koken:load>
+</div>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+</body>
+</html>

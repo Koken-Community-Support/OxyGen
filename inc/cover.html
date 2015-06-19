@@ -1,0 +1,23 @@
+<script>
+function sizeCover() {
+	var wh = $(window).height(),
+		fh = 0,
+		ph = parseInt($('#container').css('paddingTop')),
+		hh = $('header.main').is(':visible') ? $('header.main').outerHeight() : 0;
+
+	if ($('footer.main').is(':visible')) {
+		fh = $('footer.main').css('position') === "fixed" ? $('footer.main').outerHeight() : 0;
+	}
+
+	$('header.cover').css({'height': wh - hh - fh - ph});
+}
+
+$(document).ready(function(){
+	sizeCover();
+	$(".cover_inside h1").fitText(1.2, { minFontSize: '{{ settings.cover_title_min}}px', maxFontSize: '{{ settings.cover_title_max}}px' });
+});
+
+$(window).on('resize', function(e) {
+	sizeCover();
+});
+</script>

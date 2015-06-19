@@ -1,0 +1,34 @@
+﻿<oxygen-footer class="oxygen-footer-tiny">
+	<oxygen-footer-inside>
+		<div class="oxygen-tagline oxygen-left">
+		<koken:if data="settings.address_contact_page_id" equals="">
+<!-- We dont have a page id for the contact page -->
+			{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
+			{{ settings.address_street_info }}<br />
+			{{ settings.address_postal_code }} 
+			{{ settings.address_city_info }}, 
+			{{ settings.address_country_info }}
+		<koken:else>
+<!-- We got the page id -->
+			<koken:link to="page" filter:id="{{ settings.address_contact_page_id }}" class="oxygen-tag-copy-link"  title="{{ settings.address_name_prefix }} {{ settings.address_name }}">
+			{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
+			{{ settings.address_street_info }}<br />
+			{{ settings.address_postal_code }} 
+			{{ settings.address_city_info }}, 
+			{{ settings.address_country_info }}
+			</koken:link>
+		</koken:if>
+		</div>
+		<div class="oxygen-copyright oxygen-right">
+			<koken:if data="settings.address_copyright_page_id" equals="">
+<!-- We dont have a page id for copyright info -->
+				{{ site.copyright }}
+			<koken:else>
+<!-- We got the page id -->
+				<koken:link to="page" filter:id="{{ settings.address_copyright_page_id }}" title="{{ site.copyright }}" class="oxygen-tag-copy-link">
+					{{ site.copyright }}
+				</koken:link>
+			</koken:if>
+		</div>
+	</oxygen-footer-inside>
+</oxygen-footer>

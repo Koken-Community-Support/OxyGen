@@ -1,0 +1,26 @@
+<koken:include file="inc/components/header.html" />
+	<div class="page-content">
+		<article class="entry">
+			<div class="k-content" style="padding-top:50px;">
+				<div id="klogin_form">
+					<koken:form>
+						<div class="oxygen-form">
+							<koken:not empty="messages.koken_password_error">
+								<p class="password-error">{{ messages.koken_password_error }}</p>
+							</koken:not>
+							<input class="klogin_input" type="password" name="password" autofocus placeholder="Enter password" /><button class="klogin_button" type="submit">Go</button>
+
+						</div>
+					</koken:form>
+				</div>
+			</div>
+		</article>
+	</div>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+	</body>
+</html>

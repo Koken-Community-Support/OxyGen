@@ -1,0 +1,161 @@
+﻿/*Pictureinfo container
+*/
+div.picinfocontainer{
+	max-width:750px;
+	margin:0 auto;
+}
+.top-picinfocontainer {
+    max-width: 750px;
+    margin: 0px auto;
+    padding: 50px 20px;
+    color: #222;
+    background: none repeat scroll 0% 0% #FFF;
+}
+/* Next/Previous links
+*/
+ div.previouslink, div.nextlink{
+   background-color: #FFF;
+    color: #000;
+/*    padding: 10px 0px 10px;*/
+	clear: right;
+    overflow: auto;
+    width: auto;
+/*	height: 30px;
+	line-height: 30px;*/
+}
+div.previouslink {
+	float: left;
+}
+#previous_link.previouslink {
+	background-image: url(../inc/components/img/exif/image_previous_result.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 30px;
+}
+div.nextlink{
+	float: right;
+}
+#next_link.nextlink {
+	background-image: url(../inc/components/img/exif/image_next_result.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-right: 30px;
+}
+/*Common stuff*/
+div.exif, 
+div.bildinfo, 
+div.taggs,
+div.bild-caption {
+/*    background-color: #FFF;*/
+    color: #000;
+    padding: 20px 0px 15px;
+	/*margin-left: 380px;*/
+	clear: right;
+    border-top: 1px solid #C5C5C5;
+    border-bottom: 1px solid #C5C5C5;
+    overflow: auto;
+    width: 320px;
+}
+div.exif, 
+div.bildinfo{
+	float: right;
+}
+div.taggs,
+div.bild-caption {
+    float: left;
+	margin:0 auto;
+	clear: left;
+}
+h1.picinfo {
+	color: #000;
+	font-size: 14px !important;
+	display: block;
+	text-transform:uppercase;
+	font-weight:700;
+	letter-spacing:2px;
+}
+span.picinfosub {
+	font-weight:700;
+	text-transform:uppercase;
+}
+a.picinfosub {
+	color: #000;
+	font-family:'Merriweather' serif;
+	border-bottom:2px solid #ccc;
+}
+a.picinfosub:hover {
+	border-color:#888;
+}
+ul.exifdata, 
+ul.taggsdata, 
+ul.bildinfodata{
+    padding: 0px;
+    margin: 0px;
+/*    background-color: #FFF;*/
+}
+li.exifdetail, 
+li.tagdetail, 
+li.picinfodetail,
+p.bild-caption-text {
+    display: block;
+    margin-right: 5px;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+li.exifdetail {
+    float: left;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+}
+li.tagdetail {
+    float: left;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 25px;
+	height: 19px;
+	text-transform: capitalize;
+	color: #000;
+}
+li.picinfodetail {
+    margin-top: 5px;
+    background-repeat: no-repeat;
+/*    background-position: left center;*/
+    padding-left: 25px;
+	height: 19px;
+}
+#exif-model.exifdetail {
+    background-image: url("../inc/components/img/exif/exif_camera_grey.png");
+}
+#exif-lens.exifdetail {
+    background-image: url("../inc/components/img/exif/exif_lens_grey.png");
+}
+#exif-aperture.exifdetail {
+    background-image: url("../inc/components/img/exif/exif_aperture_grey.png");
+}
+#exif-exposure.exifdetail {
+    background-image: url("../inc/components/img/exif/exif_shutter_speed_grey.png");
+}
+#exif-iso.exifdetail {
+    background-image: url("../inc/components/img/exif/exif_iso_grey.png");
+}
+#exif-focallength.exifdetail {
+    background-image: url("../inc/components/img/exif/exif_focal_length_grey.png");
+}
+#exif-flash.exifdetail {
+    background-image: url("../inc/components/img/exif/exif_flash_grey.png");
+}
+/* EXIF styling EOF
+*/
+#tag.tagdetail {
+	background-image: url("../inc/components/img/exif/tag.png");
+}
+#tag.tagdetail:hover {
+	color: #000;
+	font-weight: 700;
+}
+/*TAGGS Styling EOF
+*/

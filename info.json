@@ -13,20 +13,18 @@
 
 	"koken_version_required": "0.20.0",
 
-	"default_front_page": "index",
+	"default_front_page": "home",
 	
 	"navigation_groups": {
 		"footer": {
 			"label": "Footer",
 			"description": "Links in the footer",
-			"defaults": [
-				"front", "albums", "contents", "essays", "favorites"
-			]
+			"defaults": [ "front", "albums", "contents", "essays", "favorites" ]
 		}
 	},
 	
 	"templates": {
-		"index": {
+		"home": {
 			"name": "Splash (featured albums)",
 			"description": "Displays a full screen slideshow of your featured albums",
 			"source": "featured_albums"
@@ -35,6 +33,11 @@
 			"name": "Splash (featured content)",
 			"description": "Displays a full screen slideshow of your featured content",
 			"source": "featured_content"
+		},
+		"home_fav": {
+			"name": "Splash (favorites)",
+			"description": "Displays a full screen slideshow of your favorites",
+			"source": "favorites"
 		}
 	},
 
@@ -107,7 +110,68 @@
 					],
 					"value": "image_cover",
 					"note": "Cover style for albums pages, favorites and contents.",
-					"note_align": "left"
+					"note_align": "left",
+					"scope": [ "album", "contents", "favorites" ]
+				},
+				"album_cover_title": {
+					"label": "Album title",
+					"type": "boolean",
+					"value": true,
+					"note": "This hides the album title",
+					"note_align": "left",
+					"dependencies": {
+						"evaluate": "any",
+						"conditions": [
+						{ "option": "cover_styles", "equals": "image_cover" },
+						{ "option": "cover_styles", "equals": "text_cover" }
+						]
+					},
+					"scope": [ "album" ]
+				},
+				"album_cover_description": {
+					"label": "Album description",
+					"type": "boolean",
+					"value": true,
+					"note": "This hides the album description",
+					"note_align": "left",
+					"dependencies": {
+						"evaluate": "any",
+						"conditions": [
+						{ "option": "cover_styles", "equals": "image_cover" },
+						{ "option": "cover_styles", "equals": "text_cover" }
+						]
+					},
+					"scope": [ "album" ]
+				},
+				"album_cover_cats": {
+					"label": "Album categories",
+					"type": "boolean",
+					"value": false,
+					"note": "This shows the categories assagined to the album",
+					"note_align": "left",
+					"dependencies": {
+						"evaluate": "any",
+						"conditions": [
+						{ "option": "cover_styles", "equals": "image_cover" },
+						{ "option": "cover_styles", "equals": "text_cover" }
+						]
+					},
+					"scope": [ "album" ]
+				},
+				"album_cover_tags": {
+					"label": "Album tags",
+					"type": "boolean",
+					"value": false,
+					"note": "This shows tags assainged to albums",
+					"note_align": "left",
+					"dependencies": {
+						"evaluate": "any",
+						"conditions": [
+						{ "option": "cover_styles", "equals": "image_cover" },
+						{ "option": "cover_styles", "equals": "text_cover" }
+						]
+					},
+					"scope": [ "album" ]
 				},
 				"albums_index_limit": {
 					"label": "Items per page",
@@ -549,7 +613,7 @@
 					"label": "Hide the slideshow nav arrows",
 					"type": "boolean",
 					"value": false,
-					"note": "This hides the slideshow nav arrows on the splashpage"
+					"note": "This hides the slideshow nav arrows on the splashpage",
 					"note_align": "left"
 				},
 				"editorial_img_hide": {

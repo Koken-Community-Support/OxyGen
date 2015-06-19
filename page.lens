@@ -1,0 +1,32 @@
+<koken:include file="inc/components/header.html" />
+<div class="page-content">
+	<koken:load>
+		<koken:if data="settings.show_feat_img_pages" equals="true">
+			<koken:featured_image><koken:img lazy="true" /></koken:featured_image>
+		</koken:if>
+		<article class="entry">
+			<h1 id="page-name">{{ page.title }}</h1>
+			{{ page.content }}
+		</article>
+	<koken:else>
+		<koken:note>
+			No page found
+		</koken:note>
+	</koken:load>
+</div>
+	<koken:if data="settings.show_sharing_page" equals="true">
+		<koken:include file="inc/components/share.html" />
+	</koken:if>
+	<koken:if data="settings.show_disc_page" equals="true">
+		<div class="disquis">
+			<koken:discussion>{{ discussion }}</koken:discussion>
+		</div>
+	</koken:if>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+</body>
+</html>

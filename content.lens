@@ -1,0 +1,51 @@
+﻿<koken:include file="inc/components/header.html" />
+<koken:load>
+	<article class="top-picinfocontainer">
+		<h1 class="album-name">{{ content.title | content.filename }}</h1>
+	</article>
+	<koken:if true="settings.editorial_img_hide">
+		<koken:has_category title="{{ settings.editorial_img_cats }}" && data="settings.editorial_img_hide" equals="true">
+			<!-- Hide any images that has the Category Editorials assigned -->
+			<koken:note>
+				No image or video found 
+			</koken:note>
+		<koken:else>
+	</koken:if>
+		<koken:content_image>
+				<div class="k-content">
+					<koken:link bind_to_key="f" title="View {{ content.title | content.filename }} in fullscreen [F]" lightbox="true">
+						<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
+					</koken:link>
+					<koken:include file="inc/components/next-prev.html" />
+					<div class="entry">
+						<koken:not empty="content.caption">{{ content.caption }}</koken:not>
+					</div>
+				</div>
+		</koken:content_image>
+
+		<koken:content_video>
+			<koken:video />
+		</koken:content_video>
+		<koken:include file="inc/components/picinfo.html" />
+		<koken:if data="settings.show_sharing_img" equals="true">
+			<koken:include file="inc/components/share.html" />
+		</koken:if>
+		<koken:if data="settings.show_disc_content" equals="true">
+			<div class="disquis">
+				<koken:discussion>{{ discussion }}</koken:discussion>
+			</div>
+		</koken:if>
+	</koken:has_category>
+<koken:else>
+	<koken:note>
+		No image or video found 
+	</koken:note>
+</koken:load>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+</body>
+</html>

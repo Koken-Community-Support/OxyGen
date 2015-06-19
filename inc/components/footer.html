@@ -1,0 +1,117 @@
+﻿<div class="oxygen-footer-menu-wrapper">
+	<div style="margin: 0 auto; display: table;" class="oxygen-footer-menu">
+		<koken:navigation group="footer" />
+	</div>
+</div>
+<oxygen-footer>
+	<oxygen-footer-inside>
+		<koken:not empty="settings.address_avatar_img">
+			<koken:if data="settings.address_contact_page_id" equals="">
+<!-- We dont have a page id for the contact page -->
+				<a href="#" class="oxygen-circle oxygen-left"  title="{{ settings.address_name_prefix }}  {{ settings.address_name }}">
+					<img height="32" width="32" src="{{ settings.address_avatar_img }}" alt="{{ settings.address_name }}">
+				</a>
+			<koken:else>
+<!-- We got the page id -->
+				<koken:link to="page" filter:id="{{ settings.address_contact_page_id }}" class="oxygen-circle oxygen-left"  title="{{ settings.address_name_prefix }} {{ settings.address_name }}">
+					<img height="32" width="32" src="{{ settings.address_avatar_img }}" alt="{{ settings.address_name }}">
+				</koken:link>
+			</koken:if>
+		</koken:not>
+		<div class="oxygen-tagline oxygen-left">
+		<koken:if data="settings.address_contact_page_id" equals="">
+<!-- We dont have a page id for the contact page -->
+			{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
+			{{ settings.address_street_info }}<br />
+			{{ settings.address_postal_code }} 
+			{{ settings.address_city_info }}, 
+			{{ settings.address_country_info }}
+		<koken:else>
+<!-- We got the page id -->
+		<koken:link to="page" filter:id="{{ settings.address_contact_page_id }}" class="oxygen-tag-copy-link"  title="{{ settings.address_name_prefix }} {{ settings.address_name }}">
+			{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
+			{{ settings.address_street_info }}<br />
+			{{ settings.address_postal_code }} 
+			{{ settings.address_city_info }}, 
+			{{ settings.address_country_info }}
+			</koken:link>
+		</koken:if>
+
+		</div>
+		<div class="oxygen-social oxygen-left">
+			<div class="oxygen-col-1 oxygen-left">
+				<koken:profile_facebook>
+					<koken:if true="settings.social_facebook_link">
+					<a href="{{ profile.facebook }}" title="{{ settings.address_name }} On Facebook">
+						<koken:asset file="inc/components/img/icons/facebook-7-64.png" alt="Facebook" width="32" height="32" align="absmiddle" label="Facebook" />
+						<span class="oxygen-social-label">Facebook</span>
+					</a>
+					<br />
+					</koken:if>
+				</koken:profile_facebook>
+				<koken:not empty="settings.social_instagram_link">
+				<a href="https://instagram.com/{{ settings.social_instagram_link }}/" title="{{ settings.address_name }} on Instagram">
+					<koken:asset file="inc/components/img/icons/instagram-4-64.png" alt="Instagram" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">Instagram</span>
+				</a>
+				</koken:not>
+			</div>
+			<div class="oxygen-col-2 oxygen-left">
+				<koken:not empty="profile.google_plus">
+					<koken:if true="settings.social_googleplus_link">
+					<a href="{{ profile.google_plus }}" title="{{ settings.address_name }} on Google+">
+						<koken:asset file="inc/components/img/icons/google-plus-4-64.png" alt="gPlus" width="32" height="32" align="absmiddle" />
+						<span class="oxygen-social-label">google+</span>
+					</a>
+					<br />
+					</koken:if>
+				</koken:not>
+				<koken:not empty="settings.social_fivepx_link">
+				<a href="http://www.500px.com/{{ settings.social_fivepx_link }}" title="{{ settings.address_name }} on 500px">
+					<koken:asset file="inc/components/img/icons/500px-4-64.png" alt="500px" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">500px</span>
+				</a>
+				</koken:not>
+			</div>
+			<div class="oxygen-col-3 oxygen-left">
+				<koken:profile_twitter>
+					<koken:if true="settings.social_twitter_link">
+					<a href="https://twitter.com/{{ profile.twitter }}" title="{{ settings.address_name }} on Twitter">
+						<koken:asset file="inc/components/img/icons/twitter-4-64.png" alt="Twitter" width="32" height="32" align="absmiddle" />
+						<span class="oxygen-social-label">Twitter</span>
+					</a>
+					<br />
+					</koken:if>
+				</koken:profile_twitter>
+			<koken:not empty="settings.social_pinterest_link">
+				<a href="https://www.pinterest.com/{{settings.social_pinterest_link }}/" title="{{ settings.address_name }} on Pinterest">
+					<koken:asset file="inc/components/img/icons/pinterest-4-64.png" alt="Pinterest" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">Pinterest</span>
+				</a>
+			</koken:not>
+			</div>
+			<div class="oxygen-col-4 oxygen-left">
+			<koken:if true="settings.social_rss_essays_link">
+				<a href="{{ rss.essays }}" title="{{ settings.address_name }} Essay feed">
+					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="RSS Artiklar" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">RSS Artiklar</span>
+				</a>
+			<br  />
+			</koken:if>
+			<koken:if true="settings.social_rss_contents_link">
+				<a href="{{ rss.contents }}" title="{{ settings.address_name }} image feed">
+					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="RSS Bilder" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">RSS bilder</span>
+				</a>
+				</koken:if>
+			</div>
+		</div>
+		<div class="oxygen-copyright oxygen-right">
+			<koken:if data="settings.address_copyright_page_id" equals="">
+				{{ site.copyright }}
+			<koken:else>
+				<koken:link to="page" filter:id="{{ settings.address_copyright_page_id }}" title="{{ site.copyright }}" class="oxygen-tag-copy-link">{{ site.copyright }}</koken:link>
+			</koken:if>
+		</div>
+	</oxygen-footer-inside>
+</oxygen-footer>

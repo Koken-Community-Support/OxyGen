@@ -1,0 +1,29 @@
+<koken:include file="inc/components/header.html" />
+<article class="top-section">
+	<h1 class="page-name">{{ labels.tag.plural }}</h1>
+</article>
+<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
+	<ul class="grid">
+    	<koken:loop>
+    		<koken:link to="tag" title="View everyting in  {{ tag.title }}">
+		      	<li class="tag-bg">
+		      		<koken:load source="tag" filter:tags="{{ tag.title }}">
+		   				<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true"/>
+		   			</koken:load>
+					<span class="tag">{{ tag.counts.total }} x {{ tag.title }}</span>
+		      	</li>
+	      	</koken:link>
+    	</koken:loop>
+  	</ul>
+<koken:else>
+	No tags found.
+</koken:load>
+<koken:include file="inc/components/loading_msg.html" />
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+</body>
+</html>

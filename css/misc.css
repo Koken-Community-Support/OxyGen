@@ -1,0 +1,18 @@
+﻿.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0;
+}
+div#credit {
+    font-size: 11px;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    text-shadow: none;
+	background: #fff;
+	padding:4px;
+	opacity: 0.3;
+	filter: alpha(opacity=40); /* For IE8 and earlier */
+	z-index: 999;
+}

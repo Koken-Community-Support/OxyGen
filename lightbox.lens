@@ -1,0 +1,153 @@
+﻿<koken:if true="pjax">
+	<koken:title />
+<koken:else>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<koken:title />
+	<koken:asset file="lightbox.css" common="true" />
+	<koken:asset file="css/picinfo.css" />
+	<koken:asset file="css/modal.css" />
+	<koken:settings />
+</head>
+<body id="k-lightbox" class="loading">
+	<div id="lbox">
+</koken:if>
+	<koken:load>
+		<koken:head>
+			<meta property="og:site_name" content="{{ site.title }}" />
+			<meta property="og:type" content="website" />
+			<meta property="og:url" content="{{ content.url }}" />
+			<meta property="og:title" content="{{ content.title | content.filename strip_html="true" }}" />
+			<meta property="og:description" content="{{ content.caption strip_html="true" }}" />
+			<meta property="og:image" content="{{ content.presets.medium_large.url }}" />
+			<meta property="og:image:width" content="{{ content.presets.medium_large.width }}" />
+			<meta property="og:image:height" content="{{ content.presets.medium_large.height }}" />
+			<koken:content_image>
+				<koken:not empty="profile.twitter">
+					<meta name="twitter:card" content="photo" />
+					<meta name="twitter:site" content="@{{ profile.twitter }}" />
+					<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+				</koken:not>
+			</koken:content_image>
+		</koken:head>
+<div id="info-modals">
+	<a class="button-exif" href="#openModal-exif" bind_to_key="b">Bildinfo</a>
+	<div id="openModal-exif" class="modalbg">
+		<div class="dialog">
+			<a href="#close" title="Återgå" class="close">X</a>
+			<koken:include file="inc/components/picinfo.html" />
+		</div>
+	</div>
+</div>
+
+		<a href="#" title="Back [ESC]" id="lbox-bttn-close" class="ibutton"><i class="icon-remove-sign"></i></a>
+		<a href="#" title="View in fullscreen [F]" id="lbox-bttn-fs" class="ibutton"><i class="icon-fullscreen"></i></a>
+		<a href="#" title="Back [ESC]" id="lbox-bttn-ns" class="ibutton"><i class="icon-resize-small"></i></a>
+		<koken:next>
+			<a href="#" id="lbox-bttn-play" class="ibutton" title="Start slideshow">
+				<i class="icon-play icon-large"></i>
+			</a>
+		</koken:next>
+		<a href="#" id="lbox-bttn-pause" class="ibutton" title="Pause">
+			<i class="icon-pause icon-large"></i>
+		</a>
+		<div id="lnav" class="tnav">
+			<koken:previous>
+				<koken:link lightbox="true" bind_to_key="left" title="[<-] Previous">
+					<span class="ibutton"><i class="icon-angle-left"></i></span>
+				</koken:link>
+			</koken:previous>
+		</div>
+		<div id="lbox_share">
+			<div class="lbox_toggle">
+				<a href="#" id="lbox-bttn-share" class="ibutton" title="Share {{ content.title | content.filename strip_html="true" }}">
+					<i class="icon-export-alt icon-large"></i>
+				</a>
+				<div id="lbox_share_menu">
+					<ul class="social-links kshare">
+					  <li><koken:link share="twitter" class="ibutton share-twitter"><i class="icon-twitter"></i></koken:link></li>
+					  <li><koken:link share="facebook" class="ibutton share-facebook"><i class="icon-facebook"></i></koken:link></li>
+					  <li><koken:link share="pinterest" class="ibutton share-pinterest"><i class="icon-pinterest"></i></koken:link></li>
+					  <li><koken:link share="tumblr" class="ibutton share-tumblr"><i class="icon-tumblr"></i></koken:link></li>
+					  <li><koken:link share="google-plus" class="ibutton share-google"><i class="icon-gplus"></i></koken:link></li>
+					  <koken:max_download>
+					  <li><koken:link class="ibutton share-dl no-share" title="Download {{ max_download.width }} x {{ max_download.height }}"><i class="icon-download-alt"></i></koken:link></li></koken:max_download>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="main">
+			<div class="spinner_pos active"><div class="spinner"></div></div>
+			<div id="content">
+				<koken:parent>
+				<script>
+					window.albumId = {{ album.id }};
+				</script>
+				</koken:parent>
+				<script>
+					window.theContent = {{ content.to_json fields="aspect_ratio,id,presets,file_type,original,html,visibility" }};
+				</script>
+			</div>
+		</div>
+		<div id="rnav" class="tnav">
+			<koken:next>
+				<koken:link lightbox="true" bind_to_key="right" title="Next [->]">
+					<span class="ibutton"><i class="icon-angle-right"></i></span>
+				</koken:link>
+			</koken:next>
+		</div>
+		<footer>
+			<koken:link to="front" title="{{ site.title }}">{{ site.title }}</koken:link>
+			<koken:parent>
+				&nbsp;&nbsp;/&nbsp;&nbsp;
+				<koken:link>{{ album.title }}</koken:link>
+				&nbsp;&nbsp;/&nbsp;&nbsp;
+				{{ _parent.content.context.position }} av {{ album.counts.total }}
+				<koken:else>
+				&nbsp;&nbsp;/&nbsp;&nbsp;
+				<koken:context>
+					<koken:if data="context.type" equals="favorite">
+						<koken:link to="favorites">{{ labels.favorite.plural }}</koken:link>
+					<koken:else>
+						<koken:if data="context.type" equals="tag">
+							<koken:link>#{{ context.title }}</koken:link>
+								<koken:else>
+							<koken:link>{{ context.title }}</koken:link>
+						</koken:if> 
+					</koken:if> 
+					&nbsp;&nbsp;/&nbsp;&nbsp;{{ context.position }} av {{ context.total }} 
+					<koken:else>
+					<koken:link to="contents">{{ labels.content.plural }}</koken:link> 
+				</koken:context>
+			</koken:parent>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</footer>
+	</koken:load>
+	</div> <!-- close lbox -->
+	<koken:if true="pjax">
+		<script>update();</script>
+	<koken:else>
+	<koken:asset file="jquery.pjax.js" common="true" />
+	<koken:asset file="lightbox.js" common="true" />
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//varoystrand.se/status/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//varoystrand.se/status/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>
+</koken:if>

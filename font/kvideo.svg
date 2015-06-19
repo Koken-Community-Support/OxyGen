@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="kvideo" horiz-adv-x="1000" >
+<font-face font-family="kvideo" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="vid-play-yt" unicode="&#xe801;" d="m714 350q0 21-16 30l-286 179q-17 11-36 1q-19-10-19-31v-358q0-21 19-31q9-4 17-4q11 0 19 5l286 179q16 9 16 30z m286 0q0-54-1-84t-4-76t-13-82q-9-41-38-69t-70-32q-123-14-374-14t-374 14q-40 4-70 32t-39 69q-7 36-12 82t-4 76t-1 84t1 84t4 76t13 82q9 41 38 69t70 32q123 14 374 14t374-14q40-4 70-32t39-69q8-36 12-82t4-76t1-84z" horiz-adv-x="1000" />
+<glyph glyph-name="vid-play-cell" unicode="&#xe80f;" d="m980 600l-100 0l0-100l100 0l0-100l-100 0l0-100l100 0l0-100l-100 0l0-100l100 0l0-60q0-16-12-28t-28-12l-900 0q-16 0-28 12t-12 28l0 60l100 0l0 100l-100 0l0 100l100 0l0 100l-100 0l0 100l100 0l0 100l-100 0l0 60q0 18 12 29t28 11l900 0q16 0 28-11t12-29l0-60z m-600-400l250 150l-250 150l0-300z" horiz-adv-x="980" />
+<glyph glyph-name="vid-cam" unicode="&#xe800;" d="m741 414l255 159l0-445l-255 158l0 128z m-741-314l0 500l683 0l0-500l-683 0z" horiz-adv-x="996" />
+<glyph glyph-name="vid-play-sq" unicode="&#xe80e;" d="m0-29l0 758l1000 0l0-758l-1000 0z m123 123l754 0l0 512l-754 0l0-512z m266 82l0 340l293-170z" horiz-adv-x="1000" />
+<glyph glyph-name="vid-chat" unicode="&#xe810;" d="m0 96l0 713l1000 0l0-713l-473 0l-320-205l0 205l-207 0z m219 201l402 0l0 125l160-125l0 332l-160-123l0 123l-402 0l0-332z" horiz-adv-x="1000" />
+<glyph glyph-name="vid-play" unicode="&#xe802;" d="m0-25l0 750l625-375z" horiz-adv-x="625" />
+</font>
+</defs>
+</svg>

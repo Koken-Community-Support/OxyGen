@@ -1,0 +1,32 @@
+<koken:include file="inc/components/header.html" />
+<koken:head>
+	<title>Shows {{ tag.title }} / {{ site.title }}</title>
+</koken:head>
+<main role="main">
+<koken:load>
+  <article class="top-section">
+    <h1 class="page-name">Shows {{ tag.title }}</h1>
+  </article>
+    <ul class="grid">
+      <koken:loop>
+        <li>
+          <koken:link>
+            <koken:img size="{{ settings.grid_asp_ratio }}" lazy="true"/>
+          </koken:link>
+        </li>
+      </koken:loop>
+    </ul>
+  <koken:else>
+    <koken:note>
+      No album data found 
+    </koken:note>
+</koken:load>
+</main>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+</body>
+</html>

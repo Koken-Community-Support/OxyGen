@@ -1,0 +1,30 @@
+<koken:include file="inc/components/header.html" />
+<main role="main">
+<koken:load>
+  <article class="top-section">
+    <h1 class="page-name">Showing {{ category.title }}</h1>
+  </article>
+    <ul class="grid">
+      <koken:loop>
+        <li>
+          <koken:link>
+            <koken:img crop="adaptive"/>
+          </koken:link>
+        </li>
+      </koken:loop>
+    </ul>
+  <koken:else>
+    <koken:note>
+      No album data found 
+    </koken:note>
+</koken:load>
+<koken:include file="inc/components/loading_msg.html" />
+</main>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+</body>
+</html>
