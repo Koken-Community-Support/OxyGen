@@ -477,9 +477,10 @@
 						"note": "Edit links in Settings > Admin",
 						"note_align": "left",
 						"dependencies": {
-							"evaluate": "all",
+							"evaluate": "any",
 							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
 							]
 						}
 					},
@@ -491,9 +492,10 @@
 						"note": "Edit links in Settings > Admin",
 						"note_align": "left",
 						"dependencies": {
-							"evaluate": "all",
+							"evaluate": "any",
 							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
 							]
 						}
 					},
@@ -505,9 +507,10 @@
 						"note": "Edit links in Settings > Admin",
 						"note_align": "left",
 						"dependencies": {
-							"evaluate": "all",
+							"evaluate": "any",
 							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
 							]
 						}
 					},
@@ -557,9 +560,10 @@
 						"note": "Show link to your Essays feed",
 						"note_align": "left",
 						"dependencies": {
-							"evaluate": "all",
+							"evaluate": "any",
 							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
+								{ "option": "footer_setting", "equals": "show_footer" },
+								{ "option": "footer_setting", "equals": "tiny_footer" }
 							]
 						}
 					},
