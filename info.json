@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "1.8.1",
+	"version": "1.9.0RC2",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -12,32 +12,12 @@
 	},
 
 	"koken_version_required": "0.20.0",
-
-	"default_front_page": "home",
 	
 	"navigation_groups": {
 		"footer": {
 			"label": "Footer",
 			"description": "Links in the footer",
 			"defaults": [ "front", "albums", "contents", "essays", "favorites" ]
-		}
-	},
-	
-	"templates": {
-		"home": {
-			"name": "Splash (featured albums)",
-			"description": "Displays a full screen slideshow of your featured albums",
-			"source": "featured_albums"
-		},
-		"home_fc": {
-			"name": "Splash (featured content)",
-			"description": "Displays a full screen slideshow of your featured content",
-			"source": "featured_content"
-		},
-		"home_fav": {
-			"name": "Splash (favorites)",
-			"description": "Displays a full screen slideshow of your favorites",
-			"source": "favorites"
 		}
 	},
 
@@ -614,6 +594,18 @@
 					"type": "boolean",
 					"value": false,
 					"note": "This hides the slideshow nav arrows on the splashpage",
+					"note_align": "left"
+				},
+				"slideshow_source": {
+					"label": "Slideshow source",
+					"type": "select",
+					"options": [
+						{"label": "Featured Albums", "value": "featured_albums" },
+						{"label": "Favorites", "value": "favorites" },
+						{"label": "Featured Content", "value": "featured_content" }
+					],
+					"value": "featured_albums",
+					"note": "Choose where to load the slideshow from",
 					"note_align": "left"
 				},
 				"editorial_img_hide": {
