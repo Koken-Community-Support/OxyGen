@@ -13,7 +13,7 @@
 	</koken:if>
 		<koken:content_image>
 				<div class="k-content">
-					<koken:link bind_to_key="f" title="View {{ content.title | content.filename }} in fullscreen [F]" lightbox="true">
+					<koken:link bind_to_key="f" title="View {{ content.title | content.filename }} in fullscreen [F]" lightbox="{{ settings.use_lightbox }}">
 						<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
 					</koken:link>
 					<koken:include file="inc/components/next-prev.html" />
