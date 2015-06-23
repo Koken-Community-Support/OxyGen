@@ -45,9 +45,9 @@
 				</koken:if>
 			</koken:not>
 			<koken:if true="settings.social_rss_essays_link">
-				<a href="{{ rss.essays }}" title="{{ settings.address_name }} Essay feed">
-					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="RSS Artiklar" width="32" height="32" align="absmiddle" />
-					<span class="oxygen-social-label">RSS Artiklar</span>
+				<a href="{{ rss.essays }}" title="{{ settings.address_name }} {{ labels.essay.plural }}">
+					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="{{ labels.essay.plural }}" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">{{ labels.essay.plural }}</span>
 				</a>
 			</koken:if>
 		</div>

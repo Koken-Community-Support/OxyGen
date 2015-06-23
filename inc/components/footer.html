@@ -92,16 +92,16 @@
 			</div>
 			<div class="oxygen-col-4 oxygen-left">
 			<koken:if true="settings.social_rss_essays_link">
-				<a href="{{ rss.essays }}" title="{{ settings.address_name }} Essay feed">
-					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="RSS Artiklar" width="32" height="32" align="absmiddle" />
-					<span class="oxygen-social-label">RSS Artiklar</span>
+				<a href="{{ rss.essays }}" title="{{ settings.address_name }} {{ labels.essay.plural }}">
+					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="{{ labels.essay.plural }}" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">{{ labels.essay.plural }}</span>
 				</a>
 			<br  />
 			</koken:if>
 			<koken:if true="settings.social_rss_contents_link">
 				<a href="{{ rss.contents }}" title="{{ settings.address_name }} image feed">
-					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="RSS Bilder" width="32" height="32" align="absmiddle" />
-					<span class="oxygen-social-label">RSS bilder</span>
+					<koken:asset file="inc/components/img/icons/rss-4-64.png" alt="{{ labels.content.plural }}" width="32" height="32" align="absmiddle" />
+					<span class="oxygen-social-label">{{ labels.content.plural }}</span>
 				</a>
 				</koken:if>
 			</div>
