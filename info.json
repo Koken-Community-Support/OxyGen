@@ -74,6 +74,19 @@
 							{ "option": "site_title_type", "equals": "image" }
 						]
 					}
+				},
+				"show_tagline": {
+					"label": "Show tagline",
+					"type": "boolean",
+					"value": false,
+					"note": "This shows your tagline.",
+					"note_align": "left",
+					"dependencies": {
+						"evaluate": "all",
+						"conditions": [
+							{ "option": "site_title_type", "equals": "text" }
+						]
+					}
 				}
 			}
 		},

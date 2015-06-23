@@ -174,7 +174,7 @@ h1#sitename{
 	float:left;
 	padding:14px;
 	background:#000;/*#000*/
-	background-image: url('../inc/apple-touch-icon-57x57.png');
+	background-image: url('/apple-touch-icon-57x57.png');
 	background-position: left center;
 	background-repeat: no-repeat;
 	padding: 0 0.5em 0 3em; /* 40px/16=1.4em*/
@@ -187,12 +187,28 @@ h1#sitename{
 	letter-spacing:3px;
 	font-weight:700;
 	position:fixed;
-	z-index:999;
+	z-index:998;
 	margin:20px;
 	text-align:center;
 	vertical-align: middle;
 /*	opacity: 0.3;*/
 	position: fixed;
+}
+span.tagline {
+	font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 20px;
+    height: 20px;
+    background: #000 none repeat scroll 0% 0%;
+    color: #FFF;
+    z-index: 999;
+    display: inline-block;
+    position: fixed;
+    padding: 10px 0.5em 0px 3.6em;
+    float: left;
+    /*padding: 5px;*/
+    margin: 10px 20px 0 30px;
 }
 @media screen and (max-width: 600px) {
 	#sitename {
