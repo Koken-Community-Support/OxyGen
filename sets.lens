@@ -5,7 +5,7 @@
 			<koken:loop>
 				<li>
 					<koken:link>
-						<koken:img class="preview" lazy="true" size="{{ settings.grid_asp_ratio }}" />
+						<koken:img lazy="true" size="{{ settings.grid_asp_ratio }}" />
 						<div><h3>{{ album.title }}</h3></div>
 					</koken:link>
 				</li>
