@@ -1,12 +1,12 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
 <article class="top-section">
-	<h1 class="page-name">View by {{ labels.category.plural }}...</h1>
+	<h1 class="page-name">Browse by {{ labels.category.plural }}...</h1>
 </article>
 <koken:load>
 	<ul class="grid">
     	<koken:loop>
-    		<koken:link title="View everything in {{ category.title }}">
+    		<koken:link title="Browse everything in {{ category.title }}">
 		      	<li class="tag-bg">
 		      		<koken:load source="category" filter:tags="{{ tag.title }}">
 		   				<koken:img crop="adaptive"/>
