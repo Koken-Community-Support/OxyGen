@@ -591,16 +591,14 @@
 					"type": "boolean",
 					"value": true,
 					"note": "This hides the credit on the index page",
-					"note_align": "left",
-					"scope": [ "front" ]
+					"note_align": "left"
 				},
 				"slideshow_nav_hide": {
 					"label": "Hide the slideshow nav arrows",
 					"type": "boolean",
 					"value": false,
 					"note": "This hides the slideshow nav arrows on the splashpage",
-					"note_align": "left",
-					"scope": [ "front" ]
+					"note_align": "left"
 				},
 				"slideshow_source": {
 					"label": "Slideshow source",
@@ -612,16 +610,14 @@
 					],
 					"value": "featured_albums",
 					"note": "Choose where to load the slideshow from",
-					"note_align": "left",
-					"scope": [ "front" ]
+					"note_align": "left"
 				},
 				"editorial_img_hide": {
 					"label": "Hide Editorial images",
 					"type": "boolean",
 					"value": false,
 					"note": "Sort out Editorial images from public listing.",
-					"note_align": "left",
-					"scope": [ "front" ]
+					"note_align": "left"
 				},
 				"editorial_img_cats": {
 					"label": "Editorial categories",
@@ -629,7 +625,6 @@
 					"value": "",
 					"note": "What image categories should be hidden from the contents listing. If multiple categories separate each with a comma",
 					"note_align": "left",
-					"scope": [ "front" ],
 					"dependencies": {
 						"evaluate": "all",
 						"conditions": [
