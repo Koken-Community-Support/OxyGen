@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "1.9.0RC3",
+	"version": "1.9.0RC4",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -78,31 +78,34 @@
 			}
 		},
 		"Images": {
-			"use_lightbox": {
-				"label": "Open in lightbox",
-				"type": "boolean",
-				"value": true,
-				"control_first": true,
-				"reload_preview": true,
-				"note": "Disables lightbox for images.",
-				"note_align": "left",
-				"scope": [ "album", "contents", "content", "index", "favorites" ]
-			},
-			"grid_asp_ratio": {
-				"label": "Aspect ratio",
-				"type": "select",
-				"options": [
-					{ "label": "1:1", "value": "1:1" },
-					{ "label": "2:1", "value": "2:1" },
-					{ "label": "3:2", "value": "3:2" },
-					{ "label": "4:3", "value": "4:3" },
-					{ "label": "16:9", "value": "16:9" }
-				],
-				"value": "1:1",
-				"scope": [ "albums", "album", "archive.albums", "sets", "set", "contents", "favorites", "archive.contents", "timeline", "tags", "tag" ],
-				"scoped_values": true,
-				"note": "This controls the aspect ratio on the image thumbs and albums cover thumbs",
-				"note_align": "left"
+			"icon": "slideshow",
+			"settings": {
+				"use_lightbox": {
+					"label": "Open in lightbox",
+					"type": "boolean",
+					"value": true,
+					"control_first": true,
+					"reload_preview": true,
+					"note": "Disables lightbox for images.",
+					"note_align": "left",
+					"scope": [ "album", "contents", "content", "index", "favorites" ]
+				},
+				"grid_asp_ratio": {
+					"label": "Aspect ratio",
+					"type": "select",
+					"options": [
+						{ "label": "1:1", "value": "1:1" },
+						{ "label": "2:1", "value": "2:1" },
+						{ "label": "3:2", "value": "3:2" },
+						{ "label": "4:3", "value": "4:3" },
+						{ "label": "16:9", "value": "16:9" }
+					],
+					"value": "1:1",
+					"scope": [ "albums", "album", "archive.albums", "sets", "set", "contents", "favorites", "archive.contents", "timeline", "tags", "tag" ],
+					"scoped_values": true,
+					"note": "This controls the aspect ratio on the image thumbs and albums cover thumbs",
+					"note_align": "left"
+				}
 			}
 		},
 		"Layout": {
