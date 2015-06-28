@@ -15,8 +15,8 @@
 	
 	"navigation_groups": {
 		"legal": {
-			"label": "Legal": "Legal links",
-			"description": "Links shown on fron page footer",
+			"label": "Legal links",
+			"description": "Links shown in front page footer",
 			"defaults": [ "contents", "favorites" ]
 		},
 		"footer": {
@@ -619,6 +619,13 @@
 					"type": "boolean",
 					"value": true,
 					"note": "This hides the credit on the index page",
+					"note_align": "left"
+				},
+				"show_legal_links": {
+					"label": "Show Legal links",
+					"type": "boolean",
+					"value": false,
+					"note": "This shows a extra set of links on the front page lower right side",
 					"note_align": "left"
 				},
 				"slideshow_nav_hide": {

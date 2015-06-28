@@ -5,9 +5,14 @@
 	margin: 0;
 }
 div#credit {
+    left: 10px;
+}
+div#legal {
+	right: 10px;
+}
+div#credit, div#legal {
     font-size: 11px;
     position: fixed;
-    left: 10px;
     bottom: 10px;
     text-shadow: none;
 	background: #fff;
@@ -15,4 +20,11 @@ div#credit {
 	opacity: 0.3;
 	filter: alpha(opacity=40); /* For IE8 and earlier */
 	z-index: 999;
+}
+div#legal li {
+	white-space: nowrap;
+	text-decoration: none;
+	list-style-type: none;
+	display: inline;
+	padding: 0px 2px 0px 2px;
 }

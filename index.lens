@@ -22,5 +22,10 @@
 		<a title="Design by varoystrand.se" onclick="return !window.open(this.href);" href="http://varoystrand.se">Design by varoystrand.se</a> || <a title="Powered by: Koken CMS" onclick="return !window.open(this.href);" href="http://koken.me/">Powered by: Koken CMS</a>
 	</div>
 </koken:if>
+<koken:if true="settings.show_legal_links">
+	<div id="legal">
+		<koken:navigation group="legal" />
+	</div>
+</koken:if>
 	</body>
 </html>
