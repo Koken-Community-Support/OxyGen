@@ -168,17 +168,21 @@ p a:hover {
 h1#sitename{
 	font-size: 1.4em;
 }
-#sitename {
-	color:#fff;/*#fff*/
+#sitename_combi {
+	background-image: url('[$site_title_combi_img_url]') !important;
+	background-position: left center !important;
+	background-repeat: no-repeat !important;
+	padding: 0 0.5em 0 3em !important; /* 40px/16=1.4em*/
+	content: " " !important;
+	vertical-align: middle !important;
+}
+#sitename,
+#sitename_combi {
+	color:#fff;
 	text-transform:uppercase;
 	float:left;
 	padding:14px;
-	background:#000;/*#000*/
-	background-image: url('/apple-touch-icon-57x57.png');
-	background-position: left center;
-	background-repeat: no-repeat;
-	padding: 0 0.5em 0 3em; /* 40px/16=1.4em*/
-	content: " ";
+	background:#000;
 	display:block;
 	box-sizing:border-box;
 	height:60px;
@@ -190,9 +194,6 @@ h1#sitename{
 	z-index:998;
 	margin:20px;
 	text-align:center;
-	vertical-align: middle;
-/*	opacity: 0.3;*/
-	position: fixed;
 }
 span.tagline {
 	font-size: 1em;

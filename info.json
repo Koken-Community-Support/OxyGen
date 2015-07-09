@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "1.9.1",
+	"version": "1.9.2",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -35,7 +35,8 @@
 					"type": "select",
 					"options": [
 						{ "label": "Text", "value": "text" },
-						{ "label": "Image", "value": "image" }
+						{ "label": "Image", "value": "image" },
+						{ "label": "Combi", "value": "combi"}
 					],
 					"value": "text"
 				},
@@ -44,9 +45,10 @@
 					"type": "string",
 					"value": "",
 					"dependencies": {
-	                    "evaluate": "all",
+	                    "evaluate": "any",
 	                    "conditions": [
-	                         { "option": "site_title_type", "equals": "image" }
+	                         { "option": "site_title_type", "equals": "image" },
+							 { "option": "site_title_type", "equals": "combi" }
 	                    ]
 	               }
 				},
@@ -59,9 +61,10 @@
 					"value": 100,
 					"suffix": "px",
 					"dependencies": {
-						"evaluate": "all",
+						"evaluate": "any",
 						"conditions": [
-							{ "options": "site_title_type", "equals": "image" }
+							{ "options": "site_title_type", "equals": "image" },
+							{ "option": "site_title_type", "equals": "combi" }
 						]
 					}
 				},
@@ -74,9 +77,23 @@
 					"value": 50,
 					"suffix": "px",
 					"dependencies": {
+						"evaluate": "any",
+						"conditions": [
+							{ "option": "site_title_type", "equals": "image" },
+							{ "option": "site_title_type", "equals": "combi" }
+						]
+					}
+				},
+				"site_title_combi_img_url": {
+					"label": "Image URL",
+					"type": "string",
+					"value": "",
+					"note": "This image is used inline of the sitetitle, so it should not be bigger then 57x57px. Please NOTE, the URL must beging with http://!",
+					"note_align": "left",
+					"dependencies": {
 						"evaluate": "all",
 						"conditions": [
-							{ "option": "site_title_type", "equals": "image" }
+							{ "option": "site_title_type", "equals": "combi" }
 						]
 					}
 				},
