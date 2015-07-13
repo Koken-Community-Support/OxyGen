@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Kalam:700);
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 @import url("css/picinfo.css");
 @import url("css/footer.css");
@@ -165,11 +166,14 @@ p a:hover {
 	position:relative;
 	z-index:1;
 }
-h1#sitename{
+h1#sitename,
+h1#sitename_combi{
 	font-size: 1.4em;
+	font-family: 'Kalam', cursive;
 }
 #sitename_combi {
 	background-image: url('[$site_title_combi_img_url]') !important;
+	background-size: contain !important;
 	background-position: left center !important;
 	background-repeat: no-repeat !important;
 	padding: 0 0.5em 0 3em !important; /* 40px/16=1.4em*/
@@ -192,7 +196,9 @@ h1#sitename{
 	font-weight:700;
 	position:[$logo_state];
 	z-index:998;
-	margin:20px;
+	/*margin:20px;*/
+	margin: 20px 0px 20px 0px;
+	border-radius: 0px 1vw 1vw 0px;
 	text-align:center;
 }
 span.tagline {
@@ -212,15 +218,21 @@ span.tagline {
     margin: 10px 20px 0 30px;
 }
 @media screen and (max-width: 600px) {
-	#sitename {
+	/*#sitename {
 		background-image: url('../inc/logo-30x30.png') !important;
 		height:33px !important;
 		min-width:33px !important;
 		line-height: 33px !important;
 		letter-spacing:2px !important;
+	}*/
+	#sitename_combi {
+	padding: 0 0.5em 0 3rem !important;
+	height: 45px;
+	line-height: 45px;
 	}
-	h1#sitename {
-		font-family: 'Kalam';
+	h1#sitename,
+	h1#sitename_combi{
+		font-family: 'Kalam', cursive;
 		font-size: 0.7em !important;
 	}
 	img#logo {
@@ -351,6 +363,7 @@ nav.mobile .k-nav-current {
 	background:#000;
 	color:#fff;
 	float:right;
+	border-radius: 0px 1vw;
 }
 
 .show-toggled {
