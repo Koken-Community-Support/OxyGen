@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "1.9.3",
+	"version": "1.9.4",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -9,15 +9,14 @@
 	    "name": "Bjarne Varoystrand",
 		"mail": "baldursphotography@gmail.com",
 		"link": "http://varoystrand.se/"
-	},
+		},
 
 	"koken_version_required": "0.20.0",
 	
 	"navigation_groups": {
 		"legal": {
 			"label": "Legal links",
-			"description": "Links shown in front page footer",
-			"defaults": [ "contents", "favorites" ]
+			"description": "Links shown in front page footer"
 		},
 		"footer": {
 			"label": "Footer",
@@ -25,7 +24,6 @@
 			"defaults": [ "front", "albums", "contents", "essays", "favorites" ]
 		}
 	},
-
 	"settings": {
 		"Site title": {
 			"icon":"type",
@@ -45,12 +43,12 @@
 					"type": "string",
 					"value": "",
 					"dependencies": {
-	                    "evaluate": "any",
-	                    "conditions": [
-	                         { "option": "site_title_type", "equals": "image" },
-							 { "option": "site_title_type", "equals": "combi" }
-	                    ]
-	               }
+						"evaluate": "any",
+						"conditions": [
+							{ "option": "site_title_type", "equals": "image" },
+							{ "option": "site_title_type", "equals": "combi" }
+						]
+					}
 				},
 				"site_title_img_scale": {
 					"label": "Regular height",
@@ -88,7 +86,7 @@
 					"label": "Image URL",
 					"type": "string",
 					"value": "",
-					"note": "This image is used inline of the sitetitle, so it should not be bigger then 57x57px. Please NOTE, the URL must beging with http://!",
+					"note": "This image is used inline of the sitetitle. Please NOTE, the URL must beging with http://!",
 					"note_align": "left",
 					"dependencies": {
 						"evaluate": "all",
@@ -168,7 +166,7 @@
 					"value": "image_cover",
 					"note": "Cover style for albums pages, favorites and contents.",
 					"note_align": "left",
-					"scope": [ "album", "contents", "favorites" ]
+					"scope": [ "album", "contents", "favorites", "set" ]
 				},
 				"album_cover_title": {
 					"label": "Album title",
@@ -179,11 +177,11 @@
 					"dependencies": {
 						"evaluate": "any",
 						"conditions": [
-						{ "option": "cover_styles", "equals": "image_cover" },
-						{ "option": "cover_styles", "equals": "text_cover" }
+							{ "option": "cover_styles", "equals": "image_cover" },
+							{ "option": "cover_styles", "equals": "text_cover" }
 						]
 					},
-					"scope": [ "album" ]
+					"scope": [ "album", "set" ]
 				},
 				"album_cover_description": {
 					"label": "Album description",
@@ -194,11 +192,11 @@
 					"dependencies": {
 						"evaluate": "any",
 						"conditions": [
-						{ "option": "cover_styles", "equals": "image_cover" },
-						{ "option": "cover_styles", "equals": "text_cover" }
+							{ "option": "cover_styles", "equals": "image_cover" },
+							{ "option": "cover_styles", "equals": "text_cover" }
 						]
 					},
-					"scope": [ "album" ]
+					"scope": [ "album", "set" ]
 				},
 				"album_cover_cats": {
 					"label": "Album categories",
@@ -209,11 +207,11 @@
 					"dependencies": {
 						"evaluate": "any",
 						"conditions": [
-						{ "option": "cover_styles", "equals": "image_cover" },
-						{ "option": "cover_styles", "equals": "text_cover" }
+							{ "option": "cover_styles", "equals": "image_cover" },
+							{ "option": "cover_styles", "equals": "text_cover" }
 						]
 					},
-					"scope": [ "album" ]
+					"scope": [ "album", "set" ]
 				},
 				"album_cover_tags": {
 					"label": "Album tags",
@@ -228,7 +226,7 @@
 						{ "option": "cover_styles", "equals": "text_cover" }
 						]
 					},
-					"scope": [ "album" ]
+					"scope": [ "album", "set" ]
 				},
 				"albums_index_limit": {
 					"label": "Items per page",
@@ -425,10 +423,7 @@
 						"dependencies": {
 							"evaluate": "all",
 							"conditions": [
-								{
-									"option": "footer_setting",
-									"equals": "show_footer"
-								}
+								{ "option": "footer_setting", "equals": "show_footer" }
 							]
 						}
 					}

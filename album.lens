@@ -18,19 +18,6 @@
       </li>
     </koken:loop>
   </ul>
-<koken:asset file="inc/js/jquery.preload.js" />
-  <script type="text/javascript" charset="utf-8">
-
-  str = str.replace("<span class="k-infinite-load">", "");
-  $.preload(
-	<koken:loop limit="9" separator=",">
-		'{{ content.presets.huge.url }}',
-		'{{ content.presets.large.url }}',
-		'{{ content.presets.medium_large.url }}'
-	</koken:loop>
-  );
-</script>
-
 </section>
 	<koken:if data="settings.show_disc_image" equals="true">
 		<div class="disquis">

@@ -1,25 +1,12 @@
 <koken:include file="inc/components/header.html" />
 	<koken:load limit="{{ settings.albums_index_limit }}" infinite="true">
-		<article class="top-section">
-		<p class="time"><koken:time />
-		<koken:categories>
-			<span class="categories"> /  In      
-			<koken:loop separator=", ">
-				<koken:link>{{ category.title }}</koken:link>
-			</koken:loop>
-			</span>
-		</koken:categories>
-		<koken:tags>
-			<span class="tags"> /  {{ labels.tag.plural }}
-				<koken:loop separator=", ">
-					<koken:link>{{ tag.title }}</koken:link>
-				</koken:loop>
-			</span>
-		</koken:tags>
-		</p>
-		<p class="album-name">{{ album.title }} </p>
-		<p class="album-desc">{{ album.description }} </p>
-		</article>
+<koken:if data="settings.cover_styles" equals="image_cover">
+	<koken:include file="inc/components/album_cover.html" />
+</koken:if>
+<koken:if data="settings.cover_styles" equals="text_cover">
+	<koken:include file="inc/components/album_cover_text.html" />
+</koken:if>
+<section id="content">
 		<ul class="grid">
 			<koken:loop>
 				<li><koken:link>
@@ -31,7 +18,7 @@
 				</koken:link></li>
 			</koken:loop>
 		</ul>
-		<koken:include file="inc/components/share.html" />
+</section>
 	<koken:else>
 		<koken:note>No public albums found</koken:note>
 	</div>
