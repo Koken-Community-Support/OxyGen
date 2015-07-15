@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "1.9.4",
+	"version": "1.9.6",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -133,6 +133,14 @@
 					"note": "Disables lightbox for images.",
 					"note_align": "left",
 					"scope": [ "album", "contents", "content", "index", "favorites" ]
+				},
+				"show_exif": {
+					"label": "Show img info",
+					"type": "boolean",
+					"value": false,
+					"note": "Enabels showing EXIF, tags and varios image info in content and lightbox",
+					"note_align": "left",
+					"scope": [ "albums", "album", "set", "sets", "contents", "content", "favorites", "timeline" ]
 				},
 				"grid_asp_ratio": {
 					"label": "Aspect ratio",

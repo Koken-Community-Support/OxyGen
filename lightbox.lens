@@ -8,8 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<koken:title />
 	<koken:asset file="lightbox.css" common="true" />
-	<koken:asset file="css/picinfo.css" />
-	<koken:asset file="css/modal.css" />
+	<koken:if data="settings.show_exif" equals="true">
+		<koken:asset file="css/picinfo.css" />
+		<koken:asset file="css/modal.css" />
+	</koken:if>
 	<koken:settings />
 </head>
 <body id="k-lightbox" class="loading">
@@ -33,15 +35,17 @@
 				</koken:not>
 			</koken:content_image>
 		</koken:head>
-<div id="info-modals">
-	<a class="button-exif" href="#openModal-exif" bind_to_key="b">Bildinfo</a>
-	<div id="openModal-exif" class="modalbg">
-		<div class="dialog">
-			<a href="#close" title="Återgå" class="close">X</a>
-			<koken:include file="inc/components/picinfo.html" />
-		</div>
-	</div>
-</div>
+		<koken:if data="settings.show_exif" equals="true">
+			<div id="info-modals">
+				<a class="button-exif" href="#openModal-exif" bind_to_key="b">Bildinfo</a>
+					<div id="openModal-exif" class="modalbg">
+						<div class="dialog">
+							<a href="#close" title="Återgå" class="close">X</a>
+							<koken:include file="inc/components/picinfo.html" />
+						</div>
+					</div>
+			</div>
+		</koken:if>
 
 		<a href="#" title="Back [ESC]" id="lbox-bttn-close" class="ibutton"><i class="icon-remove-sign"></i></a>
 		<a href="#" title="View in fullscreen [F]" id="lbox-bttn-fs" class="ibutton"><i class="icon-fullscreen"></i></a>

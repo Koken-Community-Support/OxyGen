@@ -26,7 +26,9 @@
 		<koken:content_video>
 			<koken:video />
 		</koken:content_video>
-		<koken:include file="inc/components/picinfo.html" />
+		<koken:if data="settings.show_exif" equals="true">
+			<koken:include file="inc/components/picinfo.html" />
+		</koken:if>
 		<koken:if data="settings.show_sharing_img" equals="true">
 			<koken:include file="inc/components/share.html" />
 		</koken:if>
