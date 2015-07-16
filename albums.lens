@@ -25,5 +25,6 @@
 <koken:if data="settings.footer_setting" equals="show_footer">
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
+</main>
 </body>
 </html>

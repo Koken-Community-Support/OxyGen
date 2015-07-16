@@ -1,4 +1,5 @@
 ﻿<koken:include file="inc/components/header.html" />
+<main role="main">
 <koken:load>
 	<article class="top-picinfocontainer">
 		<h1 class="album-name">{{ content.title | content.filename }}</h1>
@@ -49,5 +50,6 @@
 <koken:if data="settings.footer_setting" equals="show_footer">
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
+</main>
 </body>
 </html>

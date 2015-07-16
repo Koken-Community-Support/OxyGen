@@ -1,4 +1,5 @@
 <koken:include file="inc/components/header.html" />
+<main role="main">
 <koken:load limit="{{ settings.albums_detail_limit }}" infinite="true">
 <koken:if data="settings.cover_styles" equals="image_cover">
 	<koken:include file="inc/components/album_cover.html" />
@@ -36,5 +37,6 @@
 <koken:if data="settings.footer_setting" equals="show_footer">
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
+</main>
 </body>
 </html>

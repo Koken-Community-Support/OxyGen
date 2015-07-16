@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "1.9.6",
+	"version": "1.9.9",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -118,6 +118,21 @@
 					"value": "fixed",
 					"note": "Should the logo/site title be fixed when scrolling, or stay when scrolling down the page?",
 					"note_align": "left"
+				}
+			}
+		},
+		"Navigation": {
+			"icon": "layout",
+			"setting": {
+				"menu_type": {
+					"label": "Type",
+					"type": "select",
+					"options": [
+						{ "label": "Reular", "value": "regular" },
+						{ "label": "Regular Expanded", "value": "expanded" },
+						{ "label": "Sidebar", "value": "sidebar" }
+					],
+					"value": "regular"
 				}
 			}
 		},

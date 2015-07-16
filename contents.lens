@@ -1,4 +1,5 @@
 ﻿<koken:include file="inc/components/header.html" />
+<main role="main">
 	<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 <koken:if data="settings.cover_styles" equals="image_cover">
 	<koken:pop><!-- Pick up the last picture from koken:load -->
@@ -37,5 +38,6 @@
 	<koken:if data="settings.footer_setting" equals="show_footer">
 		<koken:include file="inc/components/footer.html" />
 	</koken:if>
+</main>
 	</body>
 </html>

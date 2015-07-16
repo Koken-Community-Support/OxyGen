@@ -1,4 +1,5 @@
 ﻿<koken:include file="inc/components/header.html" />
+<main role="main">
 <div class="page-content">
 	<koken:load limit="{{ settings.essays_index_limit }}" infinite="true">
 		<koken:loop>
@@ -25,5 +26,6 @@
 <koken:if data="settings.footer_setting" equals="show_footer">
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
+</main>
 </body>
 </html>

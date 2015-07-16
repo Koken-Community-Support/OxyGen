@@ -1,4 +1,5 @@
 <koken:include file="inc/components/header.html" />
+<main role="main">
     <koken:load source="{{ settings.slideshow_source }}">
       <div id="slideshow">
         <koken:pulse autostart="true" width="100%" height="100%" crop="fill" jsvar="pulse" loop="true" source="{{ settings.slideshow_source }}" next=".sldshw-arrow-right" previous=".sldshw-arrow-left" link_to="album" fallbacktext="No {{ settings.slideshow_source }} content found. Please assign them in the Library." />
@@ -10,6 +11,17 @@
 				</ul>
 			</koken:if>
 	</koken:load>
+	<koken:if true="settings.show_credits">
+		<div id="credit">
+			<a title="Design by Bjarne Varoystrand || {{ site.theme }}" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/oxygen/">Design by varoystrand.se</a> || <a title="Powered by: Koken CMS" onclick="return !window.open(this.href);" href="http://koken.me/">Powered by: Koken CMS</a>
+		</div>
+	</koken:if>
+	<koken:if true="settings.show_legal_links">
+		<div id="legal">
+			<koken:navigation group="legal" />
+		</div>
+	</koken:if>
+</main>
     <script>
       pulse.on( 'transitionstart', function(e) {
         var data = e.data.parent;
@@ -17,15 +29,5 @@
         $('.pulse-album-desc').html(data.summary);
       });
     </script>
-<koken:if true="settings.show_credits">
-	<div id="credit">
-		<a title="Design by Bjarne Varoystrand || {{ site.theme }}" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/oxygen/">Design by varoystrand.se</a> || <a title="Powered by: Koken CMS" onclick="return !window.open(this.href);" href="http://koken.me/">Powered by: Koken CMS</a>
-	</div>
-</koken:if>
-<koken:if true="settings.show_legal_links">
-	<div id="legal">
-		<koken:navigation group="legal" />
-	</div>
-</koken:if>
 	</body>
 </html>

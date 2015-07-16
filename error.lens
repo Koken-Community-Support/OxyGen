@@ -1,4 +1,5 @@
 <koken:include file="inc/components/header.html" />
+<main role="main">
 		<div class="page-content">
 			<article class="entry">
 				<h1 class="page-name" style="border:1px solid #990000; color: #990000;">Error: {{ routed_variables.code }}</h1>
@@ -99,5 +100,6 @@
 <koken:if data="settings.footer_setting" equals="show_footer">
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
+</main>
 	</body>
 </html>

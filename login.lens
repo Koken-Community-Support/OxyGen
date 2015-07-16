@@ -1,4 +1,5 @@
 <koken:include file="inc/components/header.html" />
+<main role="main">
 	<div class="page-content">
 		<article class="entry">
 			<div class="k-content" style="padding-top:50px;">
@@ -22,5 +23,6 @@
 <koken:if data="settings.footer_setting" equals="show_footer">
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
+</main>
 	</body>
 </html>

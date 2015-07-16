@@ -24,7 +24,17 @@
 		<koken:settings />
 		<koken:asset file="inc/js/main.js" />
 	</head>
-	<body>
+	<koken:if data="settings.menu_type" equals="expanded">
+		<body id="regular" class="expanded">
+	</koken:if>
+
+	<koken:if data="settings.menu_type" equals="sidebar">
+		<body id="sidebar">
+	</koken:if>
+
+	<koken:if data="settings.menu_type" equals="regular">
+		<body id="regular">
+	</koken:if>
 		<koken:link to="front" title="{{ labels.home.singular }}">
 			<koken:if data="settings.site_title_type" equals="combi">
 				<koken:if data="location.here" equals="/">
@@ -49,5 +59,7 @@
 				<koken:navigation />
 			</nav>
 		</div>
-		</div>
+         <koken:if data="settings.menu_type" equals="sidebar">
+            <div id="hover"></div>
+        </koken:if>
 </koken:if>
