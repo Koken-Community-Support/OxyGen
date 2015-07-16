@@ -123,12 +123,12 @@
 		},
 		"Navigation": {
 			"icon": "layout",
-			"setting": {
+			"settings": {
 				"menu_type": {
 					"label": "Type",
 					"type": "select",
 					"options": [
-						{ "label": "Reular", "value": "regular" },
+						{ "label": "Regular", "value": "regular" },
 						{ "label": "Regular Expanded", "value": "expanded" },
 						{ "label": "Sidebar", "value": "sidebar" }
 					],

@@ -31,7 +31,7 @@ $(document).ready(function() {
     $("#hover").mouseenter(function() {
         var main = $('main');
         var area = $('#hover');
-        var name = $('#sitename')
+        var name = $('#sitename, #sitename_combi, #logo')
         if (!main.hasClass('offset')) {
             main.addClass('offset');
             area.addClass('offset');
@@ -43,6 +43,8 @@ $(document).ready(function() {
 		$('main').removeClass('offset');
 		$('#hover').removeClass('offset');
 		$('#sitename').removeClass('nameoffset');
+		$('#sitename_combi').removeClass('nameoffset');
+		$('#logo').removeClass('nameoffset');
 	});
 });
 $(document).on('click', '.cover_scroll_link', function() {

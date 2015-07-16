@@ -179,7 +179,9 @@ h1#sitename_combi{
 	padding: 0 0.5em 0 3em !important; /* 40px/16=1.4em*/
 	content: " " !important;
 	vertical-align: middle !important;
+	line-height: 60px;
 }
+
 #sitename,
 #sitename_combi {
 	color:#fff;
@@ -191,11 +193,10 @@ h1#sitename_combi{
 	box-sizing:border-box;
 	height:60px;
 	min-width:60px;
-	line-height: 60px;
 	letter-spacing:3px;
 	font-weight:700;
 	position:[$logo_state];
-	z-index:900;
+	z-index:99;
 	/*margin:20px;*/
 	margin: 20px 0px 20px 0px;
 	border-radius: 0px 1vw 1vw 0px;
@@ -209,7 +210,7 @@ span.tagline {
     height: 20px;
     background: #000 none repeat scroll 0% 0%;
     color: #FFF;
-    z-index: 901;
+    z-index: 100;
     display: inline-block;
     position: [$logo_state];
     padding: 10px 0.5em 0px 3.6em;
@@ -420,7 +421,7 @@ main {
 }
 
 #sidebar #menu.offset {
-	z-index:999;
+	z-index:900;
 }
 
 #sidebar nav ul {
@@ -1199,7 +1200,9 @@ form button:hover {
 	}
 }
 
-#sidebar #sitename.nameoffset {
+#sidebar #sitename.nameoffset, 
+#sidebar #sitename_combi.nameoffset, 
+#sidebar #logo.nameoffset {
 	-webkit-animation-name: nameoffset;
 	-webkit-animation-duration: 200ms;
 	-webkit-animation-timing-function: ease-out;
@@ -1234,7 +1237,7 @@ form button:hover {
 	}
 }
 
-#sidebar #sitename {
+#sidebar #sitename #sitename_combi #logo {
 	-webkit-animation-name: namenooffset;
 	-webkit-animation-duration: 200ms;
 	-webkit-animation-timing-function: ease-out;
