@@ -19,4 +19,5 @@ Full documentation can be found here: http://varoystrand.se/sidor/oxygen/
 Support & downloads for OxyGen can be found here: http://kokensupport.varoystrand.se/viewtopic.php?f=16&t=32
 
 #### Credits
-Full credit goes to John (@jhne) Elgenstierna for ideas and intial design of norma that i forked.
+Full credit goes to John (@jhne) Elgenstierna for ideas and intial design of norma that i forked, and the new menu options that v2.0 got.
+Thanks to Daniel (@DanielMuller) Muller for helping out with the PhotoSwipe integration.
