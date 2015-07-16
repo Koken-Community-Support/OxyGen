@@ -168,7 +168,7 @@
 						{ "label": "16:9", "value": "16:9" }
 					],
 					"value": "1:1",
-					"scope": [ "albums", "album", "archive.albums", "sets", "set", "contents", "favorites", "archive.contents", "timeline", "tags", "tag" ],
+					"scope": [ "albums", "album", "archive.albums", "sets", "set", "contents", "favorites", "archive.contents", "timeline", "tags", "tag", "category", "categories" ],
 					"scoped_values": true,
 					"note": "This controls the aspect ratio on the image thumbs and albums cover thumbs",
 					"note_align": "left"

@@ -10,7 +10,7 @@
 			<li>
 				<koken:event_album>
 					<koken:link>
-						<koken:img crop="adaptive"/>
+						<koken:img size="{{ settings.grid_asp_ratio }}"/>
 					</koken:link>
 				</koken:event_album>
 				<koken:event_content>
