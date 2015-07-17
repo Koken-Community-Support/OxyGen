@@ -188,8 +188,8 @@
 				"hide_title_overlay": {
 					"label": "Hide img title",
 					"type": "boolean",
-					"value": false,
-					"note": "This hides the title overlay in albums, sets, favorites and contents",
+					"value": true,
+					"note": "This shows the title overlay in albums, sets, favorites and contents",
 					"note_align": "left",
 					"scope": [ "album", "set", "favorites", "contents", "tags", "tag" ]
 				}
