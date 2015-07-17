@@ -118,6 +118,17 @@
 					"value": "fixed",
 					"note": "Should the logo/site title be fixed when scrolling, or stay when scrolling down the page?",
 					"note_align": "left"
+				},
+				"nav_logo_opacity": {
+					"label": "Opacity",
+					"type": "slider",
+					"min": 10,
+					"max": 99,
+					"step": 1,
+					"value": 49,
+					"suffix": "op",
+					"note": "Sets the intial opacity of the logo/sitetitle and menu layer.",
+					"note_align": "left"
 				}
 			}
 		},
@@ -147,7 +158,7 @@
 					"reload_preview": true,
 					"note": "Disables lightbox for images.",
 					"note_align": "left",
-					"scope": [ "album", "contents", "content", "index", "favorites" ]
+					"scope": [ "album", "contents", "content", "index", "favorites", "tags", "tag" ]
 				},
 				"show_exif": {
 					"label": "Show img info",
@@ -180,7 +191,7 @@
 					"value": false,
 					"note": "This hides the title overlay in albums, sets, favorites and contents",
 					"note_align": "left",
-					"scope": [ "album", "set", "favorites", "contents" ]
+					"scope": [ "album", "set", "favorites", "contents", "tags", "tag" ]
 				}
 			}
 		},

@@ -255,6 +255,13 @@ img#logo {
 	max-height:[$site_title_img_scale]px;
 	width: auto;
 }
+#sitename,
+#sitename_combi,
+#logo {
+	opacity: 0.[$nav_logo_opacity];
+}
+#sitename:hover,
+#sitename_combi:hover,
 #logo:hover {
 	opacity:1;
 }
