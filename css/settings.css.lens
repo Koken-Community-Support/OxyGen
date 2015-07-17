@@ -257,12 +257,14 @@ img#logo {
 }
 #sitename,
 #sitename_combi,
-#logo {
+#logo,
+.menu {
 	opacity: 0.[$nav_logo_opacity];
 }
 #sitename:hover,
 #sitename_combi:hover,
-#logo:hover {
+#logo:hover,
+.menu:hover {
 	opacity:1;
 }
 
