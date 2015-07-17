@@ -177,7 +177,7 @@
 						{ "label": "3:2", "value": "3:2" },
 						{ "label": "4:3", "value": "4:3" },
 						{ "label": "16:9", "value": "16:9" },
-						{ "label": "16:9", "value": "16:10" }
+						{ "label": "16:10", "value": "16:10" }
 					],
 					"value": "1:1",
 					"scope": [ "albums", "album", "archive.albums", "sets", "set", "contents", "favorites", "archive.contents", "timeline", "tags", "tag", "category", "categories" ],
@@ -186,7 +186,7 @@
 					"note_align": "left"
 				},
 				"hide_title_overlay": {
-					"label": "Hide img title",
+					"label": "Img title",
 					"type": "boolean",
 					"value": true,
 					"note": "This shows the title overlay in albums, sets, favorites and contents",
