@@ -4,29 +4,27 @@
 	<article class="top-picinfocontainer">
 		<h1 class="album-name">{{ content.title | content.filename }}</h1>
 	</article>
-	<koken:if true="settings.editorial_img_hide">
-		<koken:has_category title="{{ settings.editorial_img_cats }}" && data="settings.editorial_img_hide" equals="true">
+	<koken:if data="settings.editorial_img_hide" equals="true">
+		<koken:has_category title="{{ settings.editorial_img_cats }}">
 			<!-- Hide any images that has the Category Editorials assigned -->
-			<koken:note>
-				No image or video found 
-			</koken:note>
-		<koken:else>
-	</koken:if>
+		</koken:has_category>
+	<koken:else>
 		<koken:content_image>
-				<div class="k-content">
-					<koken:link bind_to_key="f" title="View {{ content.title | content.filename }} in fullscreen [F]" lightbox="{{ settings.use_lightbox }}">
-						<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
-					</koken:link>
-					<koken:include file="inc/components/next-prev.html" />
-					<div class="entry">
-						<koken:not empty="content.caption">{{ content.caption }}</koken:not>
-					</div>
+			<div class="k-content">
+				<koken:link bind_to_key="f" title="View {{ content.title | content.filename }} in fullscreen [F]" lightbox="{{ settings.use_lightbox }}">
+					<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
+				</koken:link>
+				<koken:include file="inc/components/next-prev.html" />
+				<div class="entry">
+					<koken:not empty="content.caption">{{ content.caption }}</koken:not>
 				</div>
+			</div>
 		</koken:content_image>
-
 		<koken:content_video>
 			<koken:video />
 		</koken:content_video>
+		
+	</koken:if>
 		<koken:if data="settings.show_exif" equals="true">
 			<koken:include file="inc/components/picinfo.html" />
 		</koken:if>
@@ -38,7 +36,7 @@
 				<koken:discussion>{{ discussion }}</koken:discussion>
 			</div>
 		</koken:if>
-	</koken:has_category>
+	
 <koken:else>
 	<koken:note>
 		No image or video found 
