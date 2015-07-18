@@ -1234,7 +1234,7 @@ form button:hover {
 		margin-left:20px;
 	}
 	100% {
-		margin-left:220px;
+		margin-left:200px; /* (220px) padding mot sitetitle/logo */
 	}
 }
 @keyframes nameoffset {
@@ -1242,7 +1242,7 @@ form button:hover {
 		margin-left:20px;
 	}
 	100% {
-		margin-left:220px;
+		margin-left:200px; /* (220px) padding mot sitetitle/logo */
 	}
 }
 
