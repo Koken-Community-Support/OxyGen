@@ -21,19 +21,39 @@
 		<div class="oxygen-tagline oxygen-left">
 		<koken:if data="settings.address_contact_page_id" equals="">
 <!-- We dont have a page id for the contact page -->
-			{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
-			{{ settings.address_street_info }}<br />
-			{{ settings.address_postal_code }} 
-			{{ settings.address_city_info }}, 
-			{{ settings.address_country_info }}
+			<koken:not empty="settings.address_name">
+				{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
+			</koken:not>
+			<koken:not empty="settings.address_street_info">
+				{{ settings.address_street_info }}<br />
+			</koken:not>
+			<koken:not empty="settings.address_postal_code">
+				{{ settings.address_postal_code }} 
+			</koken:not>
+			<koken:not empty="settings.address_city_info">
+				{{ settings.address_city_info }}, 
+			</koken:not>
+			<koken:not empty="settings.address_country_info">
+				{{ settings.address_country_info }}
+			</koken:not>
 		<koken:else>
 <!-- We got the page id -->
 		<koken:link to="page" filter:id="{{ settings.address_contact_page_id }}" class="oxygen-tag-copy-link"  title="{{ settings.address_name_prefix }} {{ settings.address_name }}">
-			{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
-			{{ settings.address_street_info }}<br />
-			{{ settings.address_postal_code }} 
-			{{ settings.address_city_info }}, 
-			{{ settings.address_country_info }}
+				<koken:not empty="settings.address_name">
+					{{ settings.address_name_prefix }} {{ settings.address_name }}<br />
+				</koken:not>
+				<koken:not empty="settings.address_street_info">
+					{{ settings.address_street_info }}<br />
+				</koken:not>
+				<koken:not empty="settings.address_postal_code">
+					{{ settings.address_postal_code }} 
+				</koken:not>
+				<koken:not empty="settings.address_city_info">
+					{{ settings.address_city_info }}, 
+				</koken:not>
+				<koken:not empty="settings.address_country_info">
+					{{ settings.address_country_info }}
+				</koken:not>
 			</koken:link>
 		</koken:if>
 
