@@ -5,21 +5,22 @@
 	margin: 0;
 }
 div#credit {
-    left: 10px;
+    left: 0px;
+    border-radius: 0vw 1vw 0vw 0vw;
 }
 div#legal {
-	right: 10px;
+    right: 0px;
+    border-radius: 1vw 0vw 0vw 0vw;
 }
 div#credit, div#legal {
     font-size: 11px;
     position: fixed;
-    bottom: 10px;
+    bottom: 0px;
     text-shadow: none;
-	background: #fff;
-	padding:4px;
-	opacity: 0.3;
-	filter: alpha(opacity=40); /* For IE8 and earlier */
-	z-index: 999;
+    background: #FFF none repeat scroll 0% 0%;
+    padding: 4px;
+    opacity: 0.3;
+    z-index: 900;
 }
 div#legal li {
 	white-space: nowrap;
