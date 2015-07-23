@@ -3,7 +3,7 @@
 	<title>Shows {{ tag.title }} / {{ site.title }}</title>
 </koken:head>
 <main role="main">
-	<koken:load>
+	<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 		<article class="top-section">
 			<h1 class="page-name">Shows {{ tag.title }}</h1>
 		</article>
@@ -30,12 +30,13 @@
 				No album data found 
 			</koken:note>
 	</koken:load>
-</main>
+<koken:include file="inc/components/loading_msg.html" />
 <koken:if data="settings.footer_setting" equals="tiny_footer">
 	<koken:include file="inc/components/footer_tiny.html" />
 </koken:if>
 <koken:if data="settings.footer_setting" equals="show_footer">
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
+</main>
 	</body>
 </html>
