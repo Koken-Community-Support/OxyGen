@@ -2,21 +2,11 @@
 <main role="main">
     <koken:load source="{{ settings.slideshow_source }}">
 	<koken:note>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("#donationware").show();
-				$(".show_hide").show();
-				$('.show_hide').click(function(){
-					$("#donationware").slideToggle();
-				});
-			});
-		</script>
 		<div id="donationware">
 			<div class="closediv">
 				<div class="round-button"><a href="#" class="show_hide" title="Close this box">X</a></div>
 			</div>
-			<h3>{{ site.themename }}</h3>
+			<h3 style="font-style:bold; text-align:center;">{{ site.theme.name }} v{{ site.theme.version }}</h3>
 			<a href="http://kokensupport.varoystrand.se/app.php/donation">
 				<img src="http://varoystrand.se/make_a_website_donation.gif" alt="Make a Donation">
 			</a>
@@ -67,7 +57,7 @@
 	</koken:load>
 	<koken:if true="settings.show_credits">
 		<div id="credit">
-			<a title="Design by Bjarne Varoystrand || {{ site.theme }}" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/oxygen/">Design by varoystrand.se</a> || <a title="Powered by: Koken CMS" onclick="return !window.open(this.href);" href="http://koken.me/">Powered by: Koken CMS</a>
+			<a title="Design by {{ site.author.name }} || {{ site.theme.name }} v{{ site.theme.version }} / {{ site.theme.description }}" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/oxygen/">Design by varoystrand.se</a> || <a title="Powered by: Koken CMS" onclick="return !window.open(this.href);" href="http://koken.me/">Powered by: Koken CMS</a>
 		</div>
 	</koken:if>
 	<koken:if true="settings.show_legal_links">

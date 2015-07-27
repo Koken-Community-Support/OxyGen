@@ -6,6 +6,12 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$("#donationware").show();
+	$(".show_hide").show();
+	$('.show_hide').click(function(){
+		$("#donationware").slideToggle();
+	});
+
 	$('.show').click(function() {
 		$('nav li a').not('.k-nav-current').toggle();
 		$('.show').toggleClass('show-toggled');
