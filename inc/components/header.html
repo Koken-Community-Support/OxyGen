@@ -1,11 +1,11 @@
-<koken:if true="pjax">
+﻿<koken:if true="pjax">
 	<koken:title />
 <koken:else>
 	<!DOCTYPE html>
 	<head>
 		<!--
 			\\ 
-			\\  {{ site.theme.name }} v{{ site.theme.version }}
+			\\ {{ site.theme.name }} v{{ site.theme.version }}
 			\\ Design and development
 			\\ {{ site.author.name }} - baldursphotography@gmail.com
 			\\ Github: https://github.com/BlackSkorpio
@@ -40,7 +40,11 @@
 				<koken:if data="location.here" equals="/">
 					<img src="{{ settings.site_title_img_url }}" alt="{{ site.title }} - {{ site.tagline }}" id="logo">
 				<koken:else>
-					<h1 id="sitename_combi">{{ site.title }}</h1>
+					<koken:not empty="settings.site_title_combi_img_url">
+						<h1 id="sitename_combi">{{ site.title }}</h1>
+					<koken:else>
+						<h1 id="sitename">{{ site.title }}</h1>
+					</koken:not>
 				</koken:if>
 			</koken:if>
 			<koken:if data="settings.site_title_type" equals="text">
