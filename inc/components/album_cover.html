@@ -1,7 +1,10 @@
 ﻿<koken:background lazy="true" id="cover_bg">
 	<div class="cover_inside cover_style_1">
 		<div class="cover_content">
-				<p class="time"><koken:time />
+				<p class="time">
+				<koken:if data="settings.album_cover_time" equals="true">
+					<koken:time />
+				</koken:if>
 				<koken:if data="settings.album_cover_cats" equals="true">
 					<koken:categories>
 						<span class="categories"> /  In
