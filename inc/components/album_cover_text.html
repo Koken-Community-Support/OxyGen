@@ -1,22 +1,25 @@
 <article class="top-section">
-	<p class="time"><koken:time />
+	<p class="time">
+	<koken:if data="settings.album_cover_time" equals="true">
+		<koken:time />
+	</koken:if>
 	<koken:if data="settings.album_cover_cats" equals="true">
 		<koken:categories>
-			<!-- <span class="categories"> /  In
+			<span class="categories"> /  In
 				<koken:loop separator=", ">
 					<koken:link>{{ category.title }}</koken:link>
 				</koken:loop>
-				</span>-->
+				</span>
 		</koken:categories>
 	</koken:if>
 
 	<koken:if data="settings.album_cover_tags" equals="true">
 		<koken:tags>
-			<!--<span class="tags">{{ labels.tag.plural }} 
+			<span class="tags">{{ labels.tag.plural }} 
 				<koken:loop separator=", ">
 					<koken:link>{{ tag.title }}</koken:link>
 				</koken:loop>
-				</span>-->
+				</span>
 		</koken:tags>
 	</koken:if>
 	</p>
