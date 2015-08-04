@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "2.0.5",
+	"version": "2.0.6",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -210,6 +210,53 @@
 					"note": "Cover style for albums pages, favorites and contents.",
 					"note_align": "left",
 					"scope": [ "album", "contents", "favorites", "set" ]
+				},
+				"Album Cover settings": {
+					"collapse": true,
+					"album_cover_text_color": {
+						"label": "Text color",
+						"type": "color",
+						"value": "#aaa",
+						"control_first": true,
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "cover_styles", "equals": "image_cover" },
+								{ "option": "cover_styles", "equals": "text_cover" }
+							]
+						},
+						"scope": [  "album", "contents", "favorites", "set"  ]
+					},
+					"album_cover_owerlay_color": {
+						"label": "Overlay color",
+						"type": "color",
+						"value": "#444342",
+						"control_first": true,
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "cover_styles", "equals": "image_cover" },
+								{ "option": "cover_styles", "equals": "text_cover" }
+							]
+						},
+						"scope": [  "album", "contents", "favorites", "set"  ]
+					},
+					"album_cover_owerlay_opacity": {
+						"label": "Background opacity",
+						"type": "slider",
+						"min": 1,
+						"max": 99,
+						"step": 1,
+						"value": 75,
+						"dependencies": {
+							"evaluate": "any",
+							"conditions": [
+								{ "option": "cover_styles", "equals": "image_cover" },
+								{ "option": "cover_styles", "equals": "text_cover" }
+							]
+						},
+						"scope": [  "album", "contents", "favorites", "set"  ]
+					}
 				},
 				"album_cover_title": {
 					"label": "Album title",
