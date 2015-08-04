@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "2.0.3",
+	"version": "2.0.5",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under MIT & GPL3 license",
@@ -231,6 +231,21 @@
 					"type": "boolean",
 					"value": true,
 					"note": "This hides the album description",
+					"note_align": "left",
+					"dependencies": {
+						"evaluate": "any",
+						"conditions": [
+							{ "option": "cover_styles", "equals": "image_cover" },
+							{ "option": "cover_styles", "equals": "text_cover" }
+						]
+					},
+					"scope": [ "album", "set" ]
+				},
+				"album_cover_time": {
+					"label": "Album date",
+					"type": "boolean",
+					"value": true,
+					"note": "This shows last time when the album was updated",
 					"note_align": "left",
 					"dependencies": {
 						"evaluate": "any",
@@ -680,6 +695,13 @@
 		"Misc": {
 			"icon":"misc",
 			"settings": {
+				"i_have_donated": {
+					"label": "I have donated",
+					"type": "boolean",
+					"value": false,
+					"note": "Check this if you donated and want hide the donate box.",
+					"note_align": "left"
+				},
 				"show_credits": {
 					"label": "Show credits",
 					"type": "boolean",
