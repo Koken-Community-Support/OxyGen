@@ -273,6 +273,54 @@
 						},
 						"scope": [ "album", "set" ]
 					},
+					"cover_title_min": {
+						"label": "Title min size",
+						"type": "slider",
+						"min": 10,
+						"max": 40,
+						"step": 1,
+						"value": 30,
+						"suffix": "px",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "cover_styles", "equals": "image_cover" }
+							]
+						},
+						"scope": [ "album", "set" ]
+					},
+					"cover_title_max": {
+						"label": "Title max size",
+						"type": "slider",
+						"min": 40,
+						"max": 100,
+						"step": 1,
+						"value": 60,
+						"suffix": "px",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "cover_styles", "equals": "image_cover" }
+							]
+						},
+						"scope": [ "album", "set" ]
+					},
+					"cover_title_ls": {
+						"label": "Title spacing",
+						"type": "slider",
+						"min": -10,
+						"max": 10,
+						"step": 1,
+						"value": -2,
+						"suffix": "px",
+						"dependencies": {
+							"evaluate": "all",
+							"conditions": [
+								{ "option": "cover_styles", "equals": "image_cover" }
+							]
+						},
+						"scope": [ "album", "set" ]
+					},
 					"album_cover_description": {
 						"label": "Album description",
 						"type": "boolean",
@@ -337,12 +385,12 @@
 						"label": "Down arrow",
 						"type": "select",
 						"options": [
-							{ "label": "Arrow One", "value": "one" }
-							{ "label": "Arrow Two", "value": "two" }
-							{ "label": "Arrow Three", "value": "three" }
-							{ "label": "Arrow Four", "value": "four" }
-							{ "label": "Arrow Five", "value": "five" }
-							{ "label": "Arrow Six", "value": "six" }
+							{ "label": "Arrow One", "value": "one" },
+							{ "label": "Arrow Two", "value": "two" },
+							{ "label": "Arrow Three", "value": "three" },
+							{ "label": "Arrow Four", "value": "four" },
+							{ "label": "Arrow Five", "value": "five" },
+							{ "label": "Arrow Six", "value": "six" },
 							{ "label": "Arrow Seven", "value": "seven" }
 						],
 						"value": "six",

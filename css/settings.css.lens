@@ -1604,6 +1604,10 @@ div#container {
 }
 
 .cover_style_1 h1 {}
+.cover_content h1 {
+	letter-spacing: [$cover_title_ls]px;
+	/* font-size is controlled through JS */
+}
 
 .cover_style_1 #cover_scroll {
 	font-size:140%;
