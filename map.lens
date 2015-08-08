@@ -1,0 +1,127 @@
+<koken:include file="inc/components/header.html" />
+
+<koken:load limit="4">
+	<koken:head>
+		<meta property="og:site_name" content="{{ site.title }}" />
+		<meta property="og:title" content="{{ labels.content.plural }}" />
+		<meta property="og:description" content="{{ site.description strip_html='true' }}" />
+		<meta property="og:type" content="website" />
+		<koken:first>
+		<meta property="og:image" content="{{ content.presets.medium_large.url }}" />
+		<meta property="og:image:width" content="{{ content.presets.medium_large.width }}" />
+		<meta property="og:image:height" content="{{ content.presets.medium_large.height }}" />
+		</koken:first>
+		<meta property="og:url" content="{{ location.site_url }}{{ location.here }}" />
+		<koken:not empty="profile.twitter">
+		<meta name="twitter:card" content="gallery" />
+		<meta name="twitter:site" content="@{{ profile.twitter }}" />
+		<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+		<koken:loop>
+		<meta name="twitter:image{{ index }}" content="{{ content.presets.medium_large.cropped.url }}">
+		</koken:loop>
+		</koken:not>
+		<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+<style type="text/css">
+#map_full { 
+	top:0; 
+	bottom:0; 
+	width:100%; 
+	height: 90vh; 
+	margin-top: -5px;
+}
+</style>
+	</koken:head>
+</koken:load>
+<main role="main">
+	<div class="page-content">
+
+<div id='map_full'></div>
+
+<script>
+// Set you public access key here
+L.mapbox.accessToken = '{{ settings.mapbox_public_key}}';
+// Array containing markers datas
+var points = new Array();
+var useablemarkers = new Array();
+var LngA = new Array();
+var LatA = new Array();
+
+//function which calculate the median of an array will be used to center the map where you have taken most of your pictures
+function median(values) {
+    values.sort( function(a,b) {return a - b;} );
+    var half = Math.floor(values.length/2);
+    if(values.length % 2)
+        return values[half];
+    else
+        return (values[half-1] + values[half]) / 2.0;
+}
+
+//koken loop to populate markers datas
+<koken:load limit="100" source="contents">
+    <koken:loop>
+    points.push({
+        cLng:   {{ geolocation.longitude }} +0, // hack to add empty coordinate
+        cLat:   {{ geolocation.latitude }} +0,
+        title:  "{{ content.title }}",
+        url:    "{{ content.url }}",
+		image:  "{{ content.presets.small.url }}"
+	});
+    </koken:loop>
+</koken:load>
+
+// JS Loop thru markers datas to create markers on map
+    for(var idx in points) {
+        // Only for non empty coordinates
+        if((points[idx].cLng != 0) && (points[idx].cLat != 0)) {
+			useablemarkers.push({
+				"type": "Feature",
+					"geometry": {
+						"type": "Point",
+						"coordinates": [
+						  points[idx].cLng,
+						  points[idx].cLat
+						]
+					},
+					"properties": {
+						"title" : points[idx].title+"<br/> <img src=\""+points[idx].image+"\" /> <br/> <a href=\""+points[idx].url+"lightbox/\">See the picture</a>",
+						"marker-size": "large",
+						"marker-color": "#CC0001",
+						"marker-symbol": "camera"
+					}
+				});
+			LngA.push(points[idx].cLng);
+			LatA.push(points[idx].cLat);
+		}
+	}
+
+// Create a map centred on the median coordinate of all the previous markers
+// Set your map here
+// set intial zoom lever here (10 default)
+var map = L.mapbox.map('map_full', '{{ settings.mapbox_yourmap }}', {'{{ minZoom':'settings.mapbox_min_zoom }}', 'maxZoom':'{{ settings.mapbox_max_zoom }}'}).setView([median(LatA), median(LngA)], {{ settings.mapbox_yourzoomlevel }});
+
+var markers = L.mapbox.featureLayer()
+				.setGeoJSON(useablemarkers)
+				.addTo(map);
+	
+// Fits map to markers, uncomment this block if you prefer to see all your markers on the map, it will unzoom in order to fit all the marker in the map
+//map.on('ready', function() {
+//    map.fitBounds(markers.getBounds());
+//});
+
+// Center Maps to marker when click
+markers.on('click', function(e) {
+	map.panTo(e.layer.getLatLng());	
+});
+	
+</script>
+	</div>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
+</main>
+	</body>
+</html>

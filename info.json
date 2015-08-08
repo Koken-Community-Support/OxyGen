@@ -24,6 +24,15 @@
 			"defaults": [ "front", "albums", "contents", "essays", "favorites" ]
 		}
 	},
+
+	"templates": {
+		"map": {
+			"name": "Image map",
+			"description": "Displays the 100 latest images on a map",
+			"source": "contents"
+		}
+	},
+
 	"settings": {
 		"Site title": {
 			"icon":"type",
@@ -845,6 +854,44 @@
 					"value": "featured_albums",
 					"note": "Choose where to load the slideshow from",
 					"note_align": "left"
+				},
+				"Map settings": {
+					"collapse": true,
+					"mapbox_public_key": {
+						"label": "Access Token",
+						"type": "string",
+						"value": "",
+						"note": "You can find your access token in your settings for mapbox.com",
+						"note_align": "left"
+					},
+					"mapbox_yourmap": {
+						"label": "Map"
+						"type": "string",
+						"value": "",
+						"note": "Set the map name from mapbox.com",
+						"note_align": "left"
+					},
+					"mapbox_min_zoom": {
+						"label": "Min Zoom",
+						"type": "string",
+						"value": "3",
+						"note": "The minimum zoom level allowed",
+						"note_align" "left"
+					},
+					"mapbox_max_zoom": {
+						"label": "Max Zoom",
+						"type": "string",
+						"value": "15",
+						"note": "The maximun zoom level allowed",
+						"note_align": "left"
+					},
+					"mapbox_yourzoomlevel": {
+						"label": "Initial Zoom"
+						"type": "string",
+						"value": "10",
+						"note": "The initial zoom level"
+						"note_align": "left"
+					}
 				},
 				"editorial_img_hide": {
 					"label": "Hide Editorial images",
