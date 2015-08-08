@@ -330,7 +330,6 @@ img#logo {
 #regular nav ul li {
 	display: inline;
 	list-style-type: none;
-	margin-left:-1px;
 }
 
 #regular nav {
