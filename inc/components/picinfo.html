@@ -1,4 +1,4 @@
-﻿<div class="picinfocontainer">
+<div class="picinfocontainer">
 	<koken:tags>
 	<div class="taggs"><h1 class="picinfo">Tags</h1>
 		<ul class="taggsdata">
@@ -45,7 +45,7 @@
 					<li class="picinfodetail"><span class="picinfosub">Photographer:</span> {{ iptc.byline }}</li>
 				</koken:not>
 			</koken:iptc>
-			<koken:not empty="content.license.clean"><li class="picinfodetail"><span class="picinfosub">Licens:</span> {{ content.license.clean }}</li></koken:not>
+			<koken:not empty="content.license.clean"><li class="picinfodetail"><span class="picinfosub">License:</span> {{ content.license.clean }}</li></koken:not>
 			<koken:max_download>
 				<li class="picinfodetail"><span class="picinfosub">Download:</span> <koken:link class="picinfosub" title="Download: {{ content.title | content.filename }} in {{ max_download.width }}x{{ max_download.height }}">{{ max_download.title }}</koken:link></li>
 			</koken:max_download>
