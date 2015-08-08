@@ -110,7 +110,7 @@
 				&nbsp;&nbsp;/&nbsp;&nbsp;
 				<koken:link>{{ album.title }}</koken:link>
 				&nbsp;&nbsp;/&nbsp;&nbsp;
-				{{ _parent.content.context.position }} av {{ album.counts.total }}
+				{{ _parent.content.context.position }} of {{ album.counts.total }}
 				<koken:else>
 				&nbsp;&nbsp;/&nbsp;&nbsp;
 				<koken:context>
@@ -123,7 +123,7 @@
 							<koken:link>{{ context.title }}</koken:link>
 						</koken:if> 
 					</koken:if> 
-					&nbsp;&nbsp;/&nbsp;&nbsp;{{ context.position }} av {{ context.total }} 
+					&nbsp;&nbsp;/&nbsp;&nbsp;{{ context.position }} of {{ context.total }} 
 					<koken:else>
 					<koken:link to="contents">{{ labels.content.plural }}</koken:link> 
 				</koken:context>
