@@ -865,7 +865,7 @@
 						"note_align": "left"
 					},
 					"mapbox_yourmap": {
-						"label": "Map"
+						"label": "Map",
 						"type": "string",
 						"value": "",
 						"note": "Set the map name from mapbox.com",
@@ -876,7 +876,7 @@
 						"type": "string",
 						"value": "3",
 						"note": "The minimum zoom level allowed",
-						"note_align" "left"
+						"note_align": "left"
 					},
 					"mapbox_max_zoom": {
 						"label": "Max Zoom",
@@ -886,10 +886,10 @@
 						"note_align": "left"
 					},
 					"mapbox_yourzoomlevel": {
-						"label": "Initial Zoom"
+						"label": "Initial Zoom",
 						"type": "string",
 						"value": "10",
-						"note": "The initial zoom level"
+						"note": "The initial zoom level",
 						"note_align": "left"
 					}
 				},
