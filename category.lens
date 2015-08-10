@@ -15,8 +15,11 @@
 					</koken:event_album>
 					<koken:event_content>
 						<!-- Rendered if a new public image/video is uploaded -->
-						<koken:link  title="View Image">
-							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
+						<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
+							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" class="preview" alt="{{ content.title | content.filename }}" />
+							<koken:if data="settings.hide_title_overlay" equals="true">
+								<div><h3>{{ content.title | content.filename }}</h3></div>
+							</koken:if>
 						</koken:link>
 					</koken:event_content>
 					<koken:event_essay>
