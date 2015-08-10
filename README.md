@@ -20,4 +20,7 @@ Support & downloads for OxyGen can be found here: http://kokensupport.varoystran
 
 #### Credits
 Full credit goes to John (@jhne) Elgenstierna for ideas and intial design of norma that i forked, and the new menu options that v2.0 got.
+
 Thanks to Daniel (@DanielMuller) Muller for helping out with the PhotoSwipe integration.
+
+Thanks to Chris (@Hard-One) for all the bug hunting and suggestions!
