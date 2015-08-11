@@ -4,11 +4,6 @@
 	<article class="top-picinfocontainer">
 		<h1 class="album-name">{{ content.title | content.filename }}</h1>
 	</article>
-	<koken:if data="settings.editorial_img_hide" equals="true">
-		<koken:has_category title="{{ settings.editorial_img_cats }}">
-			<!-- Hide any images that has the Category Editorials assigned -->
-		</koken:has_category>
-	<koken:else>
 		<koken:content_image>
 			<div class="k-content">
 				<koken:include file="inc/components/next-prev.html" />
@@ -29,7 +24,6 @@
 			<koken:video />
 		</koken:content_video>
 		
-	</koken:if>
 		<koken:if data="settings.show_exif" equals="true">
 			<koken:include file="inc/components/picinfo.html" />
 		</koken:if>
