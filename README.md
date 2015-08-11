@@ -23,4 +23,4 @@ Full credit goes to John (@jhne) Elgenstierna for ideas and intial design of nor
 
 Thanks to Daniel (@DanielMuller) Muller for helping out with the PhotoSwipe integration.
 
-Thanks to Chris (@Hard-One) for all the bug hunting and suggestions!
+Thanks to Christopher (@Hard-One) Bayer for all the bug hunting and suggestions!
