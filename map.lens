@@ -98,7 +98,7 @@ function median(values) {
 // Create a map centred on the median coordinate of all the previous markers
 // Set your map here
 // set intial zoom lever here (10 default)
-var map = L.mapbox.map('map_full', '{{ settings.mapbox_yourmap }}', {'{{ minZoom':'settings.mapbox_min_zoom }}', 'maxZoom':'{{ settings.mapbox_max_zoom }}'}).setView([median(LatA), median(LngA)], {{ settings.mapbox_yourzoomlevel }});
+var map = L.mapbox.map('map_full', '{{ settings.mapbox_yourmap }}', {'minZoom':'{{ settings.mapbox_min_zoom }}', 'maxZoom':'{{ settings.mapbox_max_zoom }}'}).setView([median(LatA), median(LngA)], {{ settings.mapbox_yourzoomlevel }});
 
 var markers = L.mapbox.featureLayer()
 				.setGeoJSON(useablemarkers)
