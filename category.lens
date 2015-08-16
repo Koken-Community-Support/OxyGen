@@ -1,43 +1,56 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
-<koken:load>
+<div class="page-content">
+<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 	<article class="top-section">
-		<h1 class="page-name">Showing {{ category.title }}</h1>
+		<h1 class="page-name">Browsing {{ category.title }}</h1>
 	</article>
-	<ul class="grid">
+	<ol class="list">
 		<koken:loop>
 			<koken:event>
+				<li>
+					<koken:event_essay>
+						<!-- Rendered if a new essay is published -->
+						<koken:link title="View the Essay {{ essay.title }}">
+							<koken:featured_image>
+								<koken:img lazy="true" />
+							</koken:featured_image>
+							<h3>{{ essay.title }}</h3>
+							<p>{{ essay.excerpt }}</p>
+						</koken:link>
+					</koken:event_essay>
+				</li>
 				<li>
 					<koken:event_album>
 						<koken:link title="View the {{ labels.album.singular }} {{ album.title }}">
 							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
+							<h2 class="timeline-time"><koken:time /></h2>
+							<h3>{{ album.title }}</h3>
+							<p>{{ album.summary }}</p>
 						</koken:link>
 					</koken:event_album>
+				</li>
+				<li>
 					<koken:event_content>
 						<!-- Rendered if a new public image/video is uploaded -->
 						<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
-							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" class="preview" alt="{{ content.title | content.filename }}" />
-							<koken:if data="settings.hide_title_overlay" equals="true">
-								<div><h3>{{ content.title | content.filename }}</h3></div>
-							</koken:if>
+							<koken:img lazy="true" class="preview" alt="{{ content.title | content.filename }}" />
+							<p>{{ content.title | content.filename }}</p>
+							<p>{{ content.caption }}</p>
 						</koken:link>
 					</koken:event_content>
-					<koken:event_essay>
-						<!-- Rendered if a new essay is published -->
-						<koken:link title="View the Essay">
-							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
-						</koken:link>
-					</koken:event_essay>
 				</li>
 			</koken:event>
+			<div class="timeline-divider"></div>
 		</koken:loop>
-	</ul>
-	<koken:else>
-		<koken:note>
-			No album data found 
-		</koken:note>
+	</ol>
+<koken:else>
+	<koken:note>
+		No album data found 
+	</koken:note>
 </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
+</div>
 <koken:if data="settings.footer_setting" equals="tiny_footer">
 	<koken:include file="inc/components/footer_tiny.html" />
 </koken:if>
@@ -45,5 +58,5 @@
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
 </main>
-</body>
+	</body>
 </html>
