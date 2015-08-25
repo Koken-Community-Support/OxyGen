@@ -8,22 +8,7 @@
 			<h1 class="page-name">Shows {{ tag.title }}</h1>
 		</article>
 		<koken:loop>
-			<koken:event>
-				<koken:event_content>
-					<koken:content_image>
-						<ul class="grid">
-							<li>
-								<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
-									<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" class="preview" alt="{{ content.title | content.filename }}"/>
-									<koken:if data="settings.hide_title_overlay" equals="true">
-										<div><h3>{{ content.title | content.filename }}</h3></div>
-									</koken:if>
-								</koken:link>
-							</li>
-						</ul>
-					</koken:content_image>
-				</koken:event_content>
-			</koken:event>
+			<koken:include file="inc/components/cat-tag-event-layout.html" />
 		</koken:loop>
 		<koken:else>
 			<koken:note>
