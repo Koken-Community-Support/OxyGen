@@ -4,22 +4,24 @@
 	<article class="top-picinfocontainer">
 		<h1 class="album-name">{{ content.title | content.filename }}</h1>
 	</article>
-		<koken:content_image>
-			<div class="k-content">
-				<koken:include file="inc/components/next-prev.html" />
-				<koken:if data="settings.use_lightbox" equals="true">
-					<koken:link bind_to_key="f" title="View {{ content.title | content.filename }} in fullscreen [F]" lightbox="{{ settings.use_lightbox }}">
-						<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
-					</koken:link>
-				<koken:else>
+	<div class="k-content">
+		<koken:include file="inc/components/next-prev.html" />
+		<koken:if data="settings.use_lightbox" equals="true">
+			<koken:content_image>
+				<koken:link bind_to_key="f" title="View {{ content.title | content.filename }} in fullscreen [F]" lightbox="{{ settings.use_lightbox }}">
 					<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
-				</koken:if>
-				<koken:include file="inc/components/next-prev.html" />
-				<div class="entry">
-					<koken:not empty="content.caption">{{ content.caption }}</koken:not>
-				</div>
-			</div>
-		</koken:content_image>
+				</koken:link>
+			</koken:content_image>
+		<koken:else>
+			<koken:content_image>
+				<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
+			</koken:content_image>
+		</koken:if>
+		<koken:include file="inc/components/next-prev.html" />
+		<div class="entry">
+			<koken:not empty="content.caption">{{ content.caption }}</koken:not>
+		</div>
+	</div>
 		<koken:content_video>
 			<koken:video />
 		</koken:content_video>
