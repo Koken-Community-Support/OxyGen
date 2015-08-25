@@ -1,0 +1,35 @@
+			<koken:event>
+				<li>
+					<koken:event_essay>
+						<!-- Rendered if a new essay is published -->
+						<koken:link title="View the Essay {{ essay.title }}">
+							<koken:featured_image>
+								<koken:img lazy="true" />
+							</koken:featured_image>
+							<h3>{{ essay.title }}</h3>
+							<p>{{ essay.excerpt }}</p>
+						</koken:link>
+					</koken:event_essay>
+				</li>
+				<li>
+					<koken:event_album>
+						<koken:link title="View the {{ labels.album.singular }} {{ album.title }}">
+							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
+							<h2 class="timeline-time"><koken:time /></h2>
+							<h3>{{ album.title }}</h3>
+							<p>{{ album.summary }}</p>
+						</koken:link>
+					</koken:event_album>
+				</li>
+				<li>
+					<koken:event_content>
+						<!-- Rendered if a new public image/video is uploaded -->
+						<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
+							<koken:img lazy="true" class="preview" alt="{{ content.title | content.filename }}" />
+							<p>{{ content.title | content.filename }}</p>
+							<p>{{ content.caption }}</p>
+						</koken:link>
+					</koken:event_content>
+				</li>
+			</koken:event>
+			<div class="timeline-divider"></div>
