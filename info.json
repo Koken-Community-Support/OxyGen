@@ -431,7 +431,7 @@
 					"max": 100,
 					"step": 6,
 					"value": 24,
-					"scope": [ "contents", "favorites", "archive.contents", "timeline", "tags", "category", "categories" ]
+					"scope": [ "contents", "favorites", "archive.contents", "timeline", "tags", "tag", "category", "categories" ]
 				},
 				"essays_index_limit": {
 					"label": "Items per page",
