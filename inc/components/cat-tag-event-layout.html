@@ -9,23 +9,7 @@
 							<h3>{{ essay.title }}</h3>
 							<p>{{ essay.excerpt }}</p>
 						</koken:link>
-						<p><koken:tags>
-						<h1 class="picinfo">{{ labels.tag.plural }}</h1>
-							<ul class="taggsdata">
-								<koken:loop separator=" ">
-									<koken:link title="View images with: {{ tag.title }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
-								</koken:loop>
-							</ul>
-						</koken:tags>
-						<koken:categories>
-						<h1 class="picinfo" style="clear:left;">{{ labels.category.plural }}</h1>
-						<ul class="taggsdata">
-							<koken:loop separator=" ">
-								<koken:link to="category" title="View everything in {{ category.title }}"><li class="tagdetail">{{ category.title }}</li></koken:link>
-							</koken:loop>
-						</ul>
-						</koken:categories>
-						</p>
+						<koken:include file="inc/components/tags-cats-loop.html" />
 					</koken:event_essay>
 				</li>
 				<li>
@@ -49,23 +33,7 @@
 								<h3>{{ labels.set.singular }}: {{ album.title }}</h3>
 							</koken:link>
 						</koken:if>
-						<p><koken:tags>
-						<h1 class="picinfo">{{ labels.tag.plural }}</h1>
-							<ul class="taggsdata">
-								<koken:loop separator=" ">
-									<koken:link title="View images with: {{ tag.title }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
-								</koken:loop>
-							</ul>
-						</koken:tags>
-						<koken:categories>
-						<h1 class="picinfo" style="clear:left;">{{ labels.category.plural }}</h1>
-						<ul class="taggsdata">
-							<koken:loop separator=" ">
-								<koken:link to="category" title="View everything in {{ category.title }}"><li class="tagdetail">{{ category.title }}</li></koken:link>
-							</koken:loop>
-						</ul>
-						</koken:categories>
-						</p>
+						<koken:include file="inc/components/tags-cats-loop.html" />
 					</koken:event_album>
 				</li>
 				<li>
@@ -76,23 +44,7 @@
 							<p>{{ content.title | content.filename }}</p>
 							<p>{{ content.caption }}</p>
 						</koken:link>
-						<p><koken:tags>
-						<h1 class="picinfo">{{ labels.tag.plural }}</h1>
-							<ul class="taggsdata">
-								<koken:loop separator=" ">
-									<koken:link title="View images with: {{ tag.title }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
-								</koken:loop>
-							</ul>
-						</koken:tags>
-						<koken:categories>
-						<h1 class="picinfo" style="clear:left;">{{ labels.category.plural }}</h1>
-						<ul class="taggsdata">
-							<koken:loop separator=" ">
-								<koken:link to="category" title="View everything in {{ category.title }}"><li class="tagdetail">{{ category.title }}</li></koken:link>
-							</koken:loop>
-						</ul>
-						</koken:categories>
-						</p>
+						<koken:include file="inc/components/tags-cats-loop.html" />
 					</koken:event_content>
 				</li>
 			</koken:event>
