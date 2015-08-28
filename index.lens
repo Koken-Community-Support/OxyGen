@@ -1,6 +1,9 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
 	<koken:note>
+	    <div id="updater" style="z-index:900;">
+	        <koken:include file="inc/update.php" />
+	    </div>
 		<koken:not true="settings.i_have_donated">
 		<div id="donationware">
 			<div class="closediv">
