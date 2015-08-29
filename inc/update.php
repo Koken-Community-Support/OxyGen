@@ -12,11 +12,11 @@ $resp = json_decode(curl_exec($ch));
 curl_close($ch);
 $latest = $resp->tag_name;
 $client = "2.1"; //in the future we should fetch the version automatically instead of hard-coding
-$clientlink = "http://kokensupport.varoystrand.se/viewtopic.php?f=16&t=32"; //Link to the OxyGen forum for manual downloads
-if (strcmp($latest, $client, $clientlink)) { 
+$downloadLink = "http://kokensupport.varoystrand.se/viewtopic.php?f=16&t=32"; //Link to the OxyGen forum for manual downloads
+if (strcmp($latest, $client)) { 
 	print "<div class='update-notifier'>
 		<div class='update-logo'>
-			<img src='http://varoystrand.se/update-oxygen-logo.png' width='50'>
+			<img src='/storage/themes/OxyGen/inc/update-oxygen-logo.png' width='50'>
 		</div>
 		<div class='update-text'>
 			<h1>OxyGen Update available!</h1>
@@ -24,15 +24,12 @@ if (strcmp($latest, $client, $clientlink)) {
 		</div>
 		<div class='update-button'>
 			<div class='update-download'>
-			<a href='$clientlink' title='Download $latest'>Download</a>
+			<a href='$downloadLink' title='Download $latest'>Download</a>
 			</div>
-			<div class='update-install'>
+			<!--<div class='update-install'>
 				<a href='#' title=''>Install</a>
-			</div>
+			</div>-->
 		</div>
 </div>";
-// No message if no update available (K.I.S.S)
-//} else {
-//	print "<p>No Update available.</p>";
 }
 ?>
