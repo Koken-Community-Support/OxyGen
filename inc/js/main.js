@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	
+	$('div.update-notifier').animate({top: '100px'}, 'slow');
+	
 	$(".up").click(function() {
 		$("html, body").animate({ 
 			scrollTop: 0 
