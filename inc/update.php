@@ -13,10 +13,11 @@ curl_close($ch);
 $latest = $resp->tag_name;
 $client = "2.1"; //in the future we should fetch the version automatically instead of hard-coding
 $downloadLink = "http://kokensupport.varoystrand.se/viewtopic.php?f=16&t=32"; //Link to the OxyGen forum for manual downloads
+$themePath = Koken::$location['theme_path']; // get path to themes root directory
 if (strcmp($latest, $client)) { 
 	print "<div class='update-notifier'>
 		<div class='update-logo'>
-			<img src='/storage/themes/OxyGen/inc/update-oxygen-logo.png' width='50'>
+			<img src='$themePath/inc/update-oxygen-logo.png' width='50'>
 		</div>
 		<div class='update-text'>
 			<h1>OxyGen Update available!</h1>
