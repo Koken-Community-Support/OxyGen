@@ -10,8 +10,8 @@ curl_setopt_array($ch, array(
 ));
 $resp = json_decode(curl_exec($ch));
 curl_close($ch);
-$latest = $resp->tag_name;
-$client = "2.1"; //in the future we should fetch the version automatically instead of hard-coding
+$latest = $resp->tag_name; 
+$client = Koken::$site['theme']['version']; // fetching current version
 $downloadLink = "http://kokensupport.varoystrand.se/viewtopic.php?f=16&t=32"; //Link to the OxyGen forum for manual downloads
 $themePath = Koken::$location['theme_path']; // get path to themes root directory
 if (strcmp($latest, $client)) { 
