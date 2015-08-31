@@ -7,7 +7,6 @@
 <koken:if data="settings.cover_styles" equals="text_cover">
 	<koken:include file="inc/components/album_cover_text.html" />
 </koken:if>
-<div class="pjax-transition-container">
 <section id="content">
   <ul class="grid">
     <koken:loop>
