@@ -65,6 +65,7 @@ oxygen-footer-inside {
 	margin-top: 20px;
 	display: block;
 	padding: 0 10px 0 5px;
+	width: 125px; /* https://github.com/Koken-Community-Support/OxyGen/issues/18 */
 }
 .oxygen-tag-copy-link {
 	text-decoration: none;
@@ -76,6 +77,7 @@ oxygen-footer-inside {
 	margin-top: 10px;
 	margin-left: 15px;
 	line-height: 40px;
+	width: 400px; /* https://github.com/Koken-Community-Support/OxyGen/issues/18 */
 }
 .oxygen-social-label {
 	display: inline-table;
