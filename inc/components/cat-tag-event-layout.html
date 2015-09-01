@@ -11,8 +11,6 @@
 						</koken:link>
 						<koken:include file="inc/components/tags-cats-loop.html" />
 					</koken:event_essay>
-				</li>
-				<li>
 					<koken:event_album>
 						<koken:if data="album.album_type" equals="standard">
 							<koken:link title="View the {{ labels.album.singular }} {{ album.title }}">
@@ -35,8 +33,6 @@
 						</koken:if>
 						<koken:include file="inc/components/tags-cats-loop.html" />
 					</koken:event_album>
-				</li>
-				<li>
 					<koken:event_content>
 						<!-- Rendered if a new public image/video is uploaded -->
 						<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
@@ -47,4 +43,5 @@
 						<koken:include file="inc/components/tags-cats-loop.html" />
 					</koken:event_content>
 				</li>
+				<div class="timeline-divider"></div>
 			</koken:event>
