@@ -11,6 +11,7 @@
 			<p class="essay-time"><koken:time /></p>
 			<h1 class="page-name">{{ essay.title }}</h1> 
 			{{ essay.content }} 
+			<koken:include file="inc/components/tags-cats-loop.html" />
 		</article>
 		<koken:if data="settings.show_sharing_essay" equals="true">
 			<koken:include file="inc/components/share.html" />

@@ -1,14 +1,14 @@
 {
 	"name": "OxyGen",
-	"version": "2.0.8",
+	"version": "2.1.0",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
-	"terms": "Released under MIT & GPL3 license",
+	"terms": "Released under GNU GPLv3 license",
 	"documentation": "http://varoystrand.se/sidor/oxygen/",
 	 "author": {
-		"name": "Bjarne Varoystrand",
+		"name": "Koken Community Support",
 		"mail": "baldursphotography@gmail.com",
-		"link": "http://varoystrand.se/"
+		"link": "http://kokensupport.varoystrand.se/"
 		},
 
 	"koken_version_required": "0.20.0",
@@ -172,10 +172,20 @@
 				"show_exif": {
 					"label": "Show img info",
 					"type": "boolean",
-					"value": false,
+					"value": {
+						"albums": false,
+						"album": false,
+						"set": false,
+						"sets": false,
+						"contents": false,
+						"content": true,
+						"favorites": false,
+						"timeline": false
+					},
 					"note": "Enables showing EXIF, tags and various image info in content and lightbox",
 					"note_align": "left",
-					"scope": [ "albums", "album", "set", "sets", "contents", "content", "favorites", "timeline" ]
+					"scope": [ "albums", "album", "set", "sets", "contents", "content", "favorites", "timeline" ],
+					"scoped_values": true
 				},
 				"grid_asp_ratio": {
 					"label": "Aspect ratio",
@@ -431,7 +441,7 @@
 					"max": 100,
 					"step": 6,
 					"value": 24,
-					"scope": [ "contents", "favorites", "archive.contents", "timeline", "tags" ]
+					"scope": [ "contents", "favorites", "archive.contents", "timeline", "tags", "tag", "category", "categories" ]
 				},
 				"essays_index_limit": {
 					"label": "Items per page",

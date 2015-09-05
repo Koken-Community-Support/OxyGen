@@ -1,7 +1,4 @@
-﻿<koken:if true="pjax">
-	<koken:title />
-<koken:else>
-	<!DOCTYPE html>
+﻿<!DOCTYPE html>
 	<head>
 		<!--
 			\\ 
@@ -18,8 +15,6 @@
 		<koken:meta />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<koken:title />
-		<koken:asset file="jquery.pjax.js" common="true" />
-		<koken:asset file="jquery.pjax-transition.js" common="true" />
 		<koken:asset file="inc/js/jquery.scrollTo.min.js" />
 		<koken:asset file="inc/js/jquery.fittext.min.js" />
 		<koken:settings />
@@ -67,4 +62,3 @@
          <koken:if data="settings.menu_type" equals="sidebar">
             <div id="hover"></div>
         </koken:if>
-</koken:if>

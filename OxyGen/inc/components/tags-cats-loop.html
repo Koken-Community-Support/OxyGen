@@ -1,0 +1,17 @@
+						<p><koken:tags>
+						<h1 class="picinfo">{{ labels.tag.plural }}</h1>
+							<ul class="taggsdata">
+								<koken:loop separator=" ">
+									<koken:link title="View everything tagged with {{ tag.title }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
+								</koken:loop>
+							</ul>
+						</koken:tags>
+						<koken:categories>
+						<h1 class="picinfo" style="clear:left;">{{ labels.category.plural }}</h1>
+						<ul class="taggsdata">
+							<koken:loop separator=" ">
+								<koken:link to="category" title="View everything in {{ category.title }}"><li id="cats" class="tagdetail">{{ category.title }}</li></koken:link>
+							</koken:loop>
+						</ul>
+						</koken:categories>
+						</p>

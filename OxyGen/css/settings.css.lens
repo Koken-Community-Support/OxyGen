@@ -537,7 +537,7 @@ main {
     width: 33.333333%; /* Fallback */
 	width: -moz-calc(100% * 1/3);
     width: -webkit-calc(100% * 1/3);
-    width: calc(100% * 1/3);
+    max-width: calc( 100% * 1/3 );
 }
  
 .grid li a,
@@ -1614,4 +1614,91 @@ div#container {
 
 .cover_style_1 .social-links {
 	margin-top:1em;
+}
+
+/*
+ * UPDATE FUNCTION
+ */
+
+ /* Update message */
+div.update-notifier {
+	display: block;
+	width: 450px;
+	height: 70px;
+	left: 50%;
+	margin-left: -225px;
+	position: absolute;
+	top: -500px;
+/*	margin: 0 auto;
+	margin-top: 100px;*/
+	/*background-color: #CCCCCC;*/
+	border-radius: 5px 5px 5px 5px;
+	padding-top: 5px;
+	padding-left: 5px;
+	-webkit-box-shadow: 5px 5px 5px #1E1D1D;
+	-moz-shadow: 5px 5px 5px #1E1D1D;
+	box-shadow: 5px 5px 5px #1E1D1D;
+    -webkit-transition: 3s ease-in;
+    -moz-transition: 3s ease-in;
+    -o-transition: 3s ease-in;
+    transition: 3s ease-in;
+}
+/* Making the background image of the update-notifier a bit transparent */
+div.update-notifier::after {
+	content: "";
+	background: url(inc/components/img/update-big-bg.png);
+	border-radius: 5px 5px 5px 5px;
+	opacity: 0.5;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1; 
+}
+/* Leftside OxyGen logo*/
+div.update-logo {
+	width: 50px;
+	float: left;
+	display: inline-block;
+	padding: 5px;
+	background-image: url(inc/components/img/update-bg.png);
+}
+/* Main text container */
+.update-text {
+	width: 300px;
+	float: left;
+	display: inline-block;
+	padding-left: 5px;
+}
+.update-text > h1 {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #CC0000;
+}
+.update-text > p {
+	color: white;
+	/*color: #333333;*/
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+/* The update/install buttons */
+div.action-button {
+	width: 60px;
+	float: left;
+	display: inline-block;
+	padding: 5px;
+	min-height: 60px;
+	border-left: thin solid #666;
+}
+.update-download, update-install, dismiss-update {
+	height: 20px;
+	line-height: 15px;
+}
+.update-download > a, .update-install > a, dismiss-update > a {
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+	color: #333333;
 }

@@ -1,0 +1,47 @@
+			<koken:event>
+				<li>
+					<koken:event_essay>
+						<!-- Rendered if a new essay is published -->
+						<koken:link title="View the {{ labels.essay.singular }} {{ essay.title }}">
+							<koken:featured_image>
+								<koken:img lazy="true" />
+							</koken:featured_image>
+							<h3>{{ essay.title }}</h3>
+							<p>{{ essay.excerpt }}</p>
+						</koken:link>
+						<koken:include file="inc/components/tags-cats-loop.html" />
+					</koken:event_essay>
+					<koken:event_album>
+						<koken:if data="album.album_type" equals="standard">
+							<koken:link title="View the {{ labels.album.singular }} {{ album.title }}">
+								<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
+								<h2 class="timeline-time"><koken:time /></h2>
+								<h3>{{ album.title }}</h3>
+								<p>{{ album.summary }}</p>
+							</koken:link>
+						</koken:if>
+						<koken:if data="album.album_type" equals="set">
+							<koken:link title="View the {{ labels.set.singular }} {{ album.title }}">
+								<koken:covers>
+									<koken:loop>
+										<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
+									</koken:loop>
+								</koken:covers>
+								<h2 class="timeline-time"><koken:time /></h2>
+								<h3>{{ labels.set.singular }}: {{ album.title }}</h3>
+							</koken:link>
+						</koken:if>
+						<koken:include file="inc/components/tags-cats-loop.html" />
+					</koken:event_album>
+					<koken:event_content>
+						<!-- Rendered if a new public image/video is uploaded -->
+						<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
+							<koken:img lazy="true" class="preview" alt="{{ content.title | content.filename }}" />
+							<p>{{ content.title | content.filename }}</p>
+							<p>{{ content.caption }}</p>
+						</koken:link>
+						<koken:include file="inc/components/tags-cats-loop.html" />
+					</koken:event_content>
+				</li>
+				<div class="timeline-divider"></div>
+			</koken:event>
