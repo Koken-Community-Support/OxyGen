@@ -37,10 +37,10 @@
 		</koken:head>
 		<koken:if data="settings.show_exif" equals="true">
 			<div id="info-modals">
-				<a class="button-exif" href="#openModal-exif" bind_to_key="b">Bildinfo</a>
+				<a class="button-exif" href="#openModal-exif" bind_to_key="b">Image info</a>
 					<div id="openModal-exif" class="modalbg">
 						<div class="dialog">
-							<a href="#close" title="Återgå" class="close">X</a>
+							<a href="#close" title="Close" class="close">X</a>
 							<koken:include file="inc/components/picinfo.html" />
 						</div>
 					</div>
