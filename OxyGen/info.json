@@ -12,7 +12,7 @@
 		},
 
 	"koken_version_required": "0.20.0",
-	
+
 	"navigation_groups": {
 		"legal": {
 			"label": "Legal links",
@@ -415,6 +415,21 @@
 						"value": "six",
 						"scope": [  "album", "contents", "favorites", "set", "sets"  ]
 					}
+				},
+				"show_tags_cats": {
+					"label": "Show tags and categories",
+					"type": "boolean",
+					"value": {
+						"essay": true,
+						"essays": false,
+						"category": true,
+						"tag": true,
+						"timeline": true
+					},
+					"note": "Shows related categories and tags.",
+					"note_align": "left",
+					"scope": [ "essay", "essays", "category", "tag", "timeline" ],
+					"scoped_values": true
 				},
 				"albums_index_limit": {
 					"label": "Items per page",
