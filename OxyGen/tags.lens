@@ -2,6 +2,9 @@
 <main role="main">
 <article class="top-section">
 	<h1 class="page-name">{{ labels.tag.plural }}</h1>
+	<div class="OG_breadcrumps">
+		<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
+	</div>
 </article>
 <koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 	<ul class="grid">

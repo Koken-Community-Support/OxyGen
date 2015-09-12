@@ -1714,3 +1714,6 @@ div.essays-tags-cats {
 div.essays-tags-cats>h1.picinfo {
 	display: none
 }
+div.OG_breadcrumps {
+
+}
