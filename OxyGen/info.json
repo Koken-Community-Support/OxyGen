@@ -12,7 +12,7 @@
 		},
 
 	"koken_version_required": "0.20.0",
-	
+
 	"navigation_groups": {
 		"legal": {
 			"label": "Legal links",
@@ -153,6 +153,24 @@
 						{ "label": "Sidebar", "value": "sidebar" }
 					],
 					"value": "regular"
+				},
+				"show_breadcrumps": {
+					"label": "Show breadcrumps",
+					"type": "boolean",
+					"value": {
+						"category": false,
+						"categories": false,
+						"error": false,
+						"login": false,
+						"map": false,
+						"tags": false,
+						"tag": false,
+						"timeline": false
+					},
+					"note": "Enable breadcrumps in some lens files.",
+					"note_align": "left",
+					"scope": [ "category", "categories", "error", "login", "map", "tags", "tag", "timeline" ],
+					"scoped_values": true
 				}
 			}
 		},

@@ -3,9 +3,11 @@
 		<div class="page-content">
 			<article class="entry">
 				<h1 class="page-name" style="border:1px solid #990000; color: #990000;">Error: {{ routed_variables.code }}</h1>
-				<div class="OG_breadcrumps">
-					<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
-				</div>
+				<koken:if data="settings.show_breadcrumps" equals="true">
+					<div class="OG_breadcrumps">
+						<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
+					</div>
+				</koken:if>
 				<div class="k-content" style="padding-top:50px;">
 					<p style="border:1px solid #990000; color: #990000; max-width: 750px;">
 					<koken:if data="routed_variables.code" equals="403">

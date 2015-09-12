@@ -35,9 +35,11 @@
 </koken:load>
 <main role="main">
 	<div class="page-content">
-	<div class="OG_breadcrumps">
-		<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
-	</div>
+	<koken:if data="settings.show_breadcrumps" equals="true">
+		<div class="OG_breadcrumps">
+			<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
+		</div>
+	</koken:if>
 
 <div id='map_full'></div>
 
