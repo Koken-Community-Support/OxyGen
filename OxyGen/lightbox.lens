@@ -35,7 +35,7 @@
 				</koken:not>
 			</koken:content_image>
 		</koken:head>
-		<koken:if data="settings.show_exif" equals="true">
+		<koken:if data="settings.show_exif_modal" equals="true">
 			<div id="info-modals">
 				<a class="button-exif" href="#openModal-exif" bind_to_key="b">Image info</a>
 					<div id="openModal-exif" class="modalbg">
@@ -121,11 +121,11 @@
 							<koken:link>#{{ context.title }}</koken:link>
 								<koken:else>
 							<koken:link>{{ context.title }}</koken:link>
-						</koken:if> 
-					</koken:if> 
-					&nbsp;&nbsp;/&nbsp;&nbsp;{{ context.position }} of {{ context.total }} 
+						</koken:if>
+					</koken:if>
+					&nbsp;&nbsp;/&nbsp;&nbsp;{{ context.position }} of {{ context.total }}
 					<koken:else>
-					<koken:link to="contents">{{ labels.content.plural }}</koken:link> 
+					<koken:link to="contents">{{ labels.content.plural }}</koken:link>
 				</koken:context>
 			</koken:parent>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
