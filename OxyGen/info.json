@@ -175,7 +175,7 @@
 					"reload_preview": true,
 					"note": "Disables lightbox.",
 					"note_align": "left",
-					"scope": [ "album", "contents", "content", "favorites", "tags", "category", "timeline" ],
+					"scope": [ "album", "contents", "content", "favorites", "tag", "category", "timeline" ],
 					"scoped_values": true
 				},
 				"show_exif": {
