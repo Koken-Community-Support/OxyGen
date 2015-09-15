@@ -173,19 +173,20 @@
 					"label": "Show img info",
 					"type": "boolean",
 					"value": {
-						"albums": false,
-						"album": false,
-						"set": false,
-						"sets": false,
 						"contents": false,
-						"content": true,
-						"favorites": false,
-						"timeline": false
+						"content": true
 					},
-					"note": "Enables showing EXIF, tags and various image info in content and lightbox",
+					"note": "Enables showing EXIF, tags and various image info in content",
 					"note_align": "left",
-					"scope": [ "albums", "album", "set", "sets", "contents", "content", "favorites", "timeline" ],
+					"scope": [ "contents", "content"],
 					"scoped_values": true
+				},
+				"show_exif_modal": {
+					"label": "Show img info",
+					"type": "boolean",
+					"value": false,
+					"note": "Enables showing EXIF, tags and various image info in lightbox",
+					"note_align": "left"
 				},
 				"grid_asp_ratio": {
 					"label": "Aspect ratio",
