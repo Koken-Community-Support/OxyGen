@@ -1,13 +1,13 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
-<article class="top-section">
-	<h1 class="page-name">{{ labels.timeline.plural }}</h1>
-	<div>
-		<p><koken:breadcrumbs separator="/" show_if_single="true" /></p>
-	</div>
-</article>
-<div class="page-content">
-<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
+	<div class="page-content">
+		<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
+		<article class="top-section">
+			<h1 class="page-name">{{ labels.timeline.plural }}</h1>
+			<div>
+				<p><koken:breadcrumbs separator="/" show_if_single="true" /></p>
+			</div>
+		</article>
 	<ol class="list">
 		<koken:loop>
 			<koken:event>
@@ -18,7 +18,7 @@
 							<koken:link title="View the {{ labels.album.singular }} {{ album.title }}">
 								<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
 								<h2 class="timeline-time"><koken:time /></h2>
-								<h3>{{ album.title }}</h3> 
+								<h3>{{ album.title }}</h3>
 								<p>{{ album.summary }}</p>
 							</koken:link>
 						</koken:if>
@@ -44,7 +44,7 @@
 									<koken:img lazy="true" />
 								</koken:link>
 							</koken:loop>
-							<h3>{{ album.title }} ({{ content.length }} new items)</h3> 
+							<h3>{{ album.title }} ({{ content.length }} new items)</h3>
 							<p>{{ album.summary }}</p>
 						</koken:if>
 						<koken:if data="album.album_type" equals="set">
@@ -54,7 +54,7 @@
 									<koken:img lazy="true" />
 								</koken:link>
 							</koken:loop>
-							<h3>{{ labels.set.singular }}: {{ album.title }} ({{ content.length }} new items)</h3> 
+							<h3>{{ labels.set.singular }}: {{ album.title }} ({{ content.length }} new items)</h3>
 							<p>{{ album.summary }}</p>
 						</koken:if>
 						<koken:include file="inc/components/tags-cats-loop.html" />
@@ -69,7 +69,7 @@
 							<koken:content_video>
 								<koken:video />
 							</koken:content_video>
-							<p>{{ content.title | content.filename }}</p> 
+							<p>{{ content.title | content.filename }}</p>
 							<p>{{ content.caption }}</p>
 						</koken:link>
 						<koken:include file="inc/components/tags-cats-loop.html" />
@@ -81,7 +81,7 @@
 							<koken:featured_image>
 								<koken:img lazy="true" />
 							</koken:featured_image>
-							<h3><koken:link>{{ essay.title }}</koken:link></h3> 
+							<h3><koken:link>{{ essay.title }}</koken:link></h3>
 							<p>{{ essay.excerpt }}</p>
 						</koken:link>
 						<koken:include file="inc/components/tags-cats-loop.html" />
@@ -93,7 +93,7 @@
 	</ol>
 <koken:else>
 	<koken:note>
-		No timeline data found. 
+		No timeline data found.
 	</koken:note>
 </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
