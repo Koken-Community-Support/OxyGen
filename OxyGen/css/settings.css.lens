@@ -1714,6 +1714,14 @@ div.essays-tags-cats {
 div.essays-tags-cats>h1.picinfo {
 	display: none
 }
+/*
+ * Breadcrumbs
+ */
 div.OG_breadcrumps {
-
+	line-height: 0.6em;
+	font-size: 0.8em;
+	color: rgb(140, 140, 140);
+	letter-spacing: 2px;
+	text-transform: capitalize;
+	opacity: 0.8;
 }
