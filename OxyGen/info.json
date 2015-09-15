@@ -162,12 +162,21 @@
 				"use_lightbox": {
 					"label": "Open in lightbox",
 					"type": "boolean",
-					"value": true,
+					"value": {
+						"album": true,
+						"contents": false,
+						"content": true,
+						"favorites": true,
+						"tag": true,
+						"category": true,
+						"timeline": true
+					},
 					"control_first": true,
 					"reload_preview": true,
-					"note": "Disables lightbox for images.",
+					"note": "Disables lightbox.",
 					"note_align": "left",
-					"scope": [ "album", "contents", "content", "index", "favorites", "tags", "tag" ]
+					"scope": [ "album", "contents", "content", "favorites", "tag", "category", "timeline" ],
+					"scoped_values": true
 				},
 				"show_exif": {
 					"label": "Show img info",
