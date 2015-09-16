@@ -4,9 +4,11 @@
 		<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 		<article class="top-section">
 			<h1 class="page-name">{{ labels.timeline.plural }}</h1>
-			<div>
-				<p><koken:breadcrumbs separator="/" show_if_single="true" /></p>
-			</div>
+			<koken:if data="settings.show_breadcrumps" equals="true">
+				<div class="OG_breadcrumps">
+					<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
+				</div>
+			</koken:if>
 		</article>
 	<ol class="list">
 		<koken:loop>

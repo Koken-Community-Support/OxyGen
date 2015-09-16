@@ -7,9 +7,11 @@
 		<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 			<article class="top-section">
 				<h1 class="page-name">Browsing {{ tag.title }}</h1>
-				<div class="OG_breadcrumps">
-					<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
-				</div>
+				<koken:if data="settings.show_breadcrumps" equals="true">
+					<div class="OG_breadcrumps">
+						<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
+					</div>
+				</koken:if>
 			</article>
 			<ol class="list">
 				<koken:loop>
