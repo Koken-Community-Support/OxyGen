@@ -1725,3 +1725,12 @@ div.OG_breadcrumps {
 	text-transform: capitalize;
 	opacity: 0.8;
 }
+/*
+ * map.lens */
+#map_full {
+	top:0;
+	bottom:0;
+	width:100%;
+	height: 90vh;
+	margin-top: -5px;
+}
