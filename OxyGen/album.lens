@@ -8,18 +8,21 @@
 	<koken:include file="inc/components/album_cover_text.html" />
 </koken:if>
 <section id="content">
-  <ul class="grid">
-    <koken:loop>
-      <li>
-        <koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
-          <koken:img size="{{ settings.grid_asp_ratio }}" class="preview" lazy="true" alt="{{ content.title | content.filename }}"/>
-		  <koken:if data="settings.hide_title_overlay" equals="true">
-			<div><h3>{{ content.title | content.filename }}</h3></div>
-		  </koken:if>
-        </koken:link>
-      </li>
-    </koken:loop>
-  </ul>
+	<ul class="grid">
+		<koken:loop>
+			<li>
+				<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
+					<koken:img size="{{ settings.grid_asp_ratio }}" class="preview" lazy="true" alt="{{ content.title | content.filename }}"/>
+					<koken:if data="settings.show_title" equals="name_overlay">
+						<div><h3>{{ content.title | content.filename }}</h3></div>
+					</koken:if>
+					<kokén:if data="settings.show_title" equals="name_bottom">
+						<div><p>{{ content.title | content.filename }}</p></div>
+					</koken:if>
+				</koken:link>
+			</li>
+		</koken:loop>
+	</ul>
 </section>
 	<koken:if data="settings.show_disc_image" equals="true">
 		<div class="disquis">
@@ -27,9 +30,9 @@
 		</div>
 	</koken:if>
 <koken:else>
-  <koken:note>
-    No album data found 
-  </koken:note>
+	<koken:note>
+		No album data found
+	</koken:note>
 </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
 <koken:if data="settings.footer_setting" equals="tiny_footer">
