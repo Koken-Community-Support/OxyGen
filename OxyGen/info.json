@@ -155,7 +155,7 @@
 					"value": "regular"
 				},
 				"show_breadcrumps": {
-					"label": "Show breadcrumps",
+					"label": "Show breadcrumbs",
 					"type": "boolean",
 					"value": {
 						"category": false,
@@ -167,7 +167,7 @@
 						"tag": false,
 						"timeline": false
 					},
-					"note": "Enable breadcrumps in some lens files.",
+					"note": "Enable breadcrumbs in some lens files.",
 					"note_align": "left",
 					"scope": [ "category", "categories", "error", "login", "map", "tags", "tag", "timeline" ],
 					"scoped_values": true
