@@ -1734,3 +1734,20 @@ div.OG_breadcrumps {
 	height: 90vh;
 	margin-top: -5px;
 }
+/*
+ * Styling for album.lens showing name at bottom om image
+ */
+.grid li a>div.img_name_bottom {
+	position: absolute;
+	opacity: 1;
+	height: 1.5em;
+	background: #0a0a0e none repeat scroll 0% 0%;
+	z-index:10;
+	margin: 0 1px 1px 0;
+	bottom: 1px;
+	top: auto;
+}
+.grid li a> div.img_name_bottom >p {
+	padding-bottom: 2px;
+	line-height: 1.5em;
+}

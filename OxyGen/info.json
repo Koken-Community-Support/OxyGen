@@ -232,13 +232,18 @@
 					"note": "This controls the aspect ratio on the image thumbs and albums cover thumbs",
 					"note_align": "left"
 				},
-				"hide_title_overlay": {
+				"show_title": {
 					"label": "Img title",
-					"type": "boolean",
-					"value": true,
+					"type": "select",
+					"options":[
+						{ "label": "Overlay", "value": "name_overlay" },
+						{ "label": "Bottom", "value": "name_bottom" },
+						{ "label": "Hide", "value": "name_hidden" }
+					],
+					"value": "name_overlay",
+					"scope": [ "album", "set", "favorites", "contents", "tags", "tag" ],
 					"note": "This shows the title overlay in albums, sets, favorites and contents",
-					"note_align": "left",
-					"scope": [ "album", "set", "favorites", "contents", "tags", "tag" ]
+					"note_align": "left"
 				}
 			}
 		},
