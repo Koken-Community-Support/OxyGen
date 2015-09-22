@@ -16,7 +16,7 @@
 					<koken:if data="settings.show_title" equals="name_overlay">
 						<div><h3>{{ content.title | content.filename }}</h3></div>
 					</koken:if>
-					<kokén:if data="settings.show_title" equals="name_bottom">
+					<koken:if data="settings.show_title" equals="name_bottom">
 						<div><p>{{ content.title | content.filename }}</p></div>
 					</koken:if>
 				</koken:link>
