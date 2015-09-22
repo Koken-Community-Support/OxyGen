@@ -241,7 +241,7 @@
 						{ "label": "Hide", "value": "name_hidden" }
 					],
 					"value": "name_overlay",
-					"scope": [ "album", "set", "favorites", "contents", "tags", "tag" ],
+					"scope": [ "album", "set", "favorites", "contents" ],
 					"note": "This shows the title overlay in albums, sets, favorites and contents",
 					"note_align": "left"
 				}
