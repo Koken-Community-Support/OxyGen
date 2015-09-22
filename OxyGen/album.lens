@@ -17,7 +17,7 @@
 						<div><h3>{{ content.title | content.filename }}</h3></div>
 					</koken:if>
 					<koken:if data="settings.show_title" equals="name_bottom">
-						<div><p>{{ content.title | content.filename }}</p></div>
+						<div class="img_name_bottom"><p>{{ content.title | content.filename }}</p></div>
 					</koken:if>
 				</koken:link>
 			</li>
