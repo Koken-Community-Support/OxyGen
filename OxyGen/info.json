@@ -1,7 +1,7 @@
 {
 	"name": "OxyGen",
-	"version": "2.1.0",
-	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
+	"version": "2.1.4",
+	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content.\n\nOxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
 	"terms": "Released under GNU GPLv3 license",
 	"documentation": "http://varoystrand.se/sidor/oxygen/",
@@ -12,7 +12,7 @@
 		},
 
 	"koken_version_required": "0.20.0",
-	
+
 	"navigation_groups": {
 		"legal": {
 			"label": "Legal links",
@@ -153,6 +153,24 @@
 						{ "label": "Sidebar", "value": "sidebar" }
 					],
 					"value": "regular"
+				},
+				"show_breadcrumps": {
+					"label": "Show breadcrumbs",
+					"type": "boolean",
+					"value": {
+						"category": false,
+						"categories": false,
+						"error": false,
+						"login": false,
+						"map": false,
+						"tags": false,
+						"tag": false,
+						"timeline": false
+					},
+					"note": "Enable breadcrumbs in some lens files.",
+					"note_align": "left",
+					"scope": [ "category", "categories", "error", "login", "map", "tags", "tag", "timeline" ],
+					"scoped_values": true
 				}
 			}
 		},
@@ -162,30 +180,40 @@
 				"use_lightbox": {
 					"label": "Open in lightbox",
 					"type": "boolean",
-					"value": true,
+					"value": {
+						"album": true,
+						"contents": false,
+						"content": true,
+						"favorites": true,
+						"tag": true,
+						"category": true,
+						"timeline": true
+					},
 					"control_first": true,
 					"reload_preview": true,
-					"note": "Disables lightbox for images.",
+					"note": "Disables lightbox.",
 					"note_align": "left",
-					"scope": [ "album", "contents", "content", "index", "favorites", "tags", "tag" ]
+					"scope": [ "album", "contents", "content", "favorites", "tag", "category", "timeline" ],
+					"scoped_values": true
 				},
 				"show_exif": {
 					"label": "Show img info",
 					"type": "boolean",
 					"value": {
-						"albums": false,
-						"album": false,
-						"set": false,
-						"sets": false,
 						"contents": false,
-						"content": true,
-						"favorites": false,
-						"timeline": false
+						"content": true
 					},
-					"note": "Enables showing EXIF, tags and various image info in content and lightbox",
+					"note": "Enables showing EXIF, tags and various image info in content",
 					"note_align": "left",
-					"scope": [ "albums", "album", "set", "sets", "contents", "content", "favorites", "timeline" ],
+					"scope": [ "contents", "content"],
 					"scoped_values": true
+				},
+				"show_exif_modal": {
+					"label": "Show img info",
+					"type": "boolean",
+					"value": false,
+					"note": "Enables showing EXIF, tags and various image info in lightbox",
+					"note_align": "left"
 				},
 				"grid_asp_ratio": {
 					"label": "Aspect ratio",
@@ -204,13 +232,18 @@
 					"note": "This controls the aspect ratio on the image thumbs and albums cover thumbs",
 					"note_align": "left"
 				},
-				"hide_title_overlay": {
+				"show_title": {
 					"label": "Img title",
-					"type": "boolean",
-					"value": true,
+					"type": "select",
+					"options":[
+						{ "label": "Overlay", "value": "name_overlay" },
+						{ "label": "Bottom", "value": "name_bottom" },
+						{ "label": "Hide", "value": "name_hidden" }
+					],
+					"value": "name_overlay",
+					"scope": [ "album", "set", "favorites", "contents" ],
 					"note": "This shows the title overlay in albums, sets, favorites and contents",
-					"note_align": "left",
-					"scope": [ "album", "set", "favorites", "contents", "tags", "tag" ]
+					"note_align": "left"
 				}
 			}
 		},
@@ -415,6 +448,21 @@
 						"value": "six",
 						"scope": [  "album", "contents", "favorites", "set", "sets"  ]
 					}
+				},
+				"show_tags_cats": {
+					"label": "Show tags and categories",
+					"type": "boolean",
+					"value": {
+						"essay": true,
+						"essays": false,
+						"category": true,
+						"tag": true,
+						"timeline": true
+					},
+					"note": "Shows related categories and tags.",
+					"note_align": "left",
+					"scope": [ "essay", "essays", "category", "tag", "timeline" ],
+					"scoped_values": true
 				},
 				"albums_index_limit": {
 					"label": "Items per page",

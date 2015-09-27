@@ -6,6 +6,7 @@
 			<article class="entry">
 				<p class="essay-time"><koken:time /></p>
 				<koken:link title="View: {{ essay.title }}"><h2>{{ essay.title }}</h2></koken:link>
+				<div class="essays-tags-cats"><koken:include file="inc/components/tags-cats-loop.html" /></div>
 			</article>
 			<koken:if data="settings.show_feat_img_essays" equals="true">
 				<koken:featured_image>
@@ -15,7 +16,7 @@
 		</koken:loop>
 	<koken:else>
 		<koken:note>
-			No published essays found 
+			No published essays found
 		</koken:note>
 	</koken:load>
 <koken:include file="inc/components/loading_msg.html" />

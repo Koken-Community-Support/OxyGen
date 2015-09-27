@@ -1,8 +1,13 @@
 <koken:background lazy="true" id="cover_bg" style="margin-top: 0;">
 	<div class="cover_inside cover_style_1">
 		<div class="cover_content">
-			<p class="album-name">{{ labels.content.plural }}</p>
+            <koken:if data="location.template" equals="contents">
+                <p class="album-name">{{ labels.content.plural }}</p>
+            </koken:if>
+            <koken:if data="location.template" equals="favorites">
+                <p class="album-name">{{ labels.favorite.plural }}</p>
+            </koken:if>
 		</div>
-		<a id="cover_scroll" href="#content" data-bind-to-key="right" class="cover_scroll_link no_b"><i class="icon-six-down"></i></a>
+		<a id="cover_scroll" href="#content" data-bind-to-key="right" class="cover_scroll_link no_b"><i class="icon-{{ settings.album_cover_downarrow }}-down"></i></a>
 	</div>
 </koken:background>

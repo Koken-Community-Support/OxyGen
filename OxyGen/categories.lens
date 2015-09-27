@@ -2,6 +2,11 @@
 <main role="main">
 <article class="top-section">
 	<h1 class="page-name">Browse by {{ labels.category.plural }}...</h1>
+	<koken:if data="settings.show_breadcrumps" equals="true">
+		<div class="OG_breadcrumps">
+			<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
+		</div>
+	</koken:if>
 </article>
 <koken:load>
 	<ul class="grid">
