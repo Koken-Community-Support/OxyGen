@@ -1642,6 +1642,7 @@ div.update-notifier {
     -moz-transition: 3s ease-in;
     -o-transition: 3s ease-in;
     transition: 3s ease-in;
+	z-index: 900;
 }
 /* Making the background image of the update-notifier a bit transparent */
 div.update-notifier::after {
