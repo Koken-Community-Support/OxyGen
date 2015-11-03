@@ -873,13 +873,6 @@
 		"Misc": {
 			"icon":"misc",
 			"settings": {
-				"i_have_donated": {
-					"label": "I have donated",
-					"type": "boolean",
-					"value": false,
-					"note": "Check this if you donated and want hide the donate box.",
-					"note_align": "left"
-				},
 				"show_credits": {
 					"label": "Show credits",
 					"type": "boolean",
