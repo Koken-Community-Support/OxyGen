@@ -4,50 +4,6 @@
 	    <div id="updater" style="z-index:900;">
 	        <koken:include file="inc/update.php" />
 	    </div>
-		<koken:not true="settings.i_have_donated">
-		<div id="donationware">
-			<div class="closediv">
-				<div class="round-button"><a href="#" class="show_hide" title="Close this box">X</a></div>
-			</div>
-			<h3 style="font-style:bold; text-align:center;">{{ site.theme.name }} v{{ site.theme.version }}</h3>
-			<a href="http://kokensupport.varoystrand.se/app.php/donation">
-				<img src="http://varoystrand.se/make_a_website_donation.gif" alt="Make a Donation">
-			</a>
-			<div style="text-align:center; padding-top:6px;">
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-					<div>
-						<input type="hidden" name="cmd" value="_xclick" />
-						<input type="hidden" name="business" value="black.skorpio+kcs-donations@gmail.com" />
-						<input type="hidden" name="item_name" value="Make a Donation OxyGen" />
-						<input type="hidden" name="no_shipping" value="1" />
-						<input type="hidden" name="return" value="http://kokensupport.varoystrand.se/app.php/donation?mode=success" />
-						<input type="hidden" name="cancel_return" value="http://kokensupport.varoystrand.se/app.php/donation?mode=cancel" />
-						<input type="hidden" name="item_number" value="Bjarne Var�ystrand" />
-						<input type="hidden" name="tax" value="0" />
-						<input type="hidden" name="bn" value="PP-DonationsBF" />
-						<input type="text" name="amount" style="height:17px; font-size:12px; width: 30px;" class="inputbox autowidth" value="10" />
-						<select name="currency_code" id="currency_code">
-							<option value="USD">$ USD</option>
-							<option value="EUR" selected="selected">� EUR</option>
-							<option value="GBP">� GBP</option>
-							<option value="JPY">� JPY</option>
-							<option value="AUD">$ AUD</option>
-							<option value="CAD">$ CAD</option>
-							<option value="HKD">$ HKD</option>
-						</select>
-					</div>
-					<fieldset id="contactpaypal" class="submit-buttons" style="margin-top:8px;">
-						<input type="reset" class="button2" name="reset" value="Reset" />
-						<input type="submit" class="button1" name="submit" value="Submit" onclick="JavaScript:document.getElementById('contactpaypal').style.display='none';document.getElementById('processingpaypal').style.display='block';" />
-					</fieldset>
-					<fieldset id="processingpaypal" class="submit-buttons" style="margin-top:8px; display:none;">
-						<img src="http://kokensupport.varoystrand.se/ext/dmzx/donation/styles/prosilver/theme/images/loader.gif" width="16" height="16" alt="" style="margin-bottom:-5px; padding-right:10px;" /> <input type="submit" class="button1" name="submit" value="Connecting to Paypal - Please Wait�" />
-					</fieldset>
-				</form>
-			<!--<a href="#" class="show_hide">Hide</a>-->
-			</div>
-		</div>
-		</koken:not>
 	</koken:note>
     <koken:load source="{{ settings.slideshow_source }}">
       <div id="slideshow">

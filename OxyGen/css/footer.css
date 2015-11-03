@@ -64,8 +64,8 @@ oxygen-footer-inside {
 	font-size: 0.5em;
 	margin-top: 20px;
 	display: block;
-	padding: 0 10px 0 5px;
-	width: 125px; /* https://github.com/Koken-Community-Support/OxyGen/issues/18 */
+	padding: 0 5px 0 5px;
+	max-width: 140px; /* https://github.com/Koken-Community-Support/OxyGen/issues/18 */
 }
 .oxygen-tag-copy-link {
 	text-decoration: none;
@@ -97,7 +97,7 @@ oxygen-footer-inside {
 /* Circle Avatar Styles */
 
 .oxygen-circle {
-	line-height: 0;		/* remove line-height */ 
+	line-height: 0;		/* remove line-height */
 	display: inline-block;	/* circle wraps image */
 	margin: 15px 5px 5px;
   border: 2px solid #020202;
