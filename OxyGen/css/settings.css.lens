@@ -152,6 +152,12 @@ p a:hover {
 	font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 	border:0;
 }
+.k-video {
+	max-width:[$text_max_width] !important;
+	margin:0 auto;
+	display:block;
+	clear:both;
+}
 
 #slideshow {
 	width:100%;
@@ -165,24 +171,13 @@ p a:hover {
 	position:relative;
 	z-index:1;
 }
-h1#sitename,
-h1#sitename_combi{
+h1#sitename{
 	font-size: 1.4em;
 	font-family: 'Kalam', cursive;
 }
-#sitename_combi {
-	background-image: url('[$site_title_combi_img_url]') !important;
-	background-size: contain !important;
-	background-position: left center !important;
-	background-repeat: no-repeat !important;
-	padding: 0 0.5em 0 3em !important; /* 40px/16=1.4em*/
-	content: " " !important;
-	vertical-align: middle !important;
-	line-height: 60px;
-}
 
-#sitename,
-#sitename_combi {
+
+#sitename {
 	color:#fff;
 	text-transform:uppercase;
 	float:left;
@@ -219,20 +214,7 @@ span.tagline {
 	display: none;
 }
 @media screen and (max-width: 600px) {
-	/*#sitename {
-		background-image: url('../inc/logo-30x30.png') !important;
-		height:33px !important;
-		min-width:33px !important;
-		line-height: 33px !important;
-		letter-spacing:2px !important;
-	}*/
-	#sitename_combi {
-	padding: 0 0.5em 0 3rem !important;
-	height: 45px;
-	line-height: 45px;
-	}
-	h1#sitename,
-	h1#sitename_combi{
+	h1#sitename{
 		font-family: 'Kalam', cursive;
 		font-size: 0.7em !important;
 	}
@@ -241,9 +223,7 @@ span.tagline {
 		width: auto;
 	}
 }
-#sidebar {
-	overflow-x:hidden;
-}
+
 #logo {
 	position:[$logo_state];
 	opacity: 0.49;
@@ -256,13 +236,11 @@ img#logo {
 	width: auto;
 }
 #sitename,
-#sitename_combi,
 #logo,
 .menu {
 	opacity: 0.[$nav_logo_opacity];
 }
 #sitename:hover,
-#sitename_combi:hover,
 #logo:hover,
 .menu:hover {
 	opacity:1;
@@ -322,8 +300,11 @@ img#logo {
 	left:0;
 	margin:0;
 	padding:0;
-	margin-top:90px;
+	margin-top:70px;
 	display:none;
+	overflow: auto;
+	overflow-y: auto;
+	max-height: 85%;
 }
 
 #regular nav.mobile ul li {
@@ -408,53 +389,6 @@ main {
 	z-index:98;
 	position:relative;
 	background:#fff;
-}
-
-#sidebar .menu {
-	left:0;
-	right:auto;
-	margin:0;
-	width:200px;
-	background:#181818;
-	position:fixed;
-	z-index:1;
-	height:100%;
-}
-
-#sidebar #hover {
-	height:100%;
-	position:fixed;
-	z-index:99;
-	width:70px;
-}
-
-#sidebar #menu.offset {
-	z-index:900;
-}
-
-#sidebar nav ul {
-	list-style-type:none;
-}
-
-#sidebar nav ul li:first-of-type {
-	border-top:1px solid #222;
-}
-
-#sidebar nav ul li a {
-	display:block;
-	background:none;
-	color:#fff;
-	padding:20px 0 20px 20px;
-	border-bottom:1px solid #222;
-}
-
-#sidebar .k-nav-current {
-	background:#222;
-	color:#fff;
-}
-
-#sidebar .show {
-	display:none;
 }
 
 .disquis {
@@ -771,7 +705,7 @@ footer {
 	padding-top:0;
 }
 
-.k-content,
+.-k-video, .k-content,
 .k-lens-page .page-content p,
 .k-lens-page .page-content h1 {
 	max-width:[$text_max_width]px;
@@ -1666,15 +1600,6 @@ div.OG_breadcrumps {
 	letter-spacing: 2px;
 	text-transform: capitalize;
 	opacity: 0.8;
-}
-/*
- * map.lens */
-#map_full {
-	top:0;
-	bottom:0;
-	width:100%;
-	height: 90vh;
-	margin-top: -5px;
 }
 /*
  * Styling for album.lens showing name at bottom om image

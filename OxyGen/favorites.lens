@@ -30,12 +30,6 @@
       </koken:note>
     </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
-<koken:if data="settings.footer_setting" equals="tiny_footer">
-	<koken:include file="inc/components/footer_tiny.html" />
-</koken:if>
-<koken:if data="settings.footer_setting" equals="show_footer">
-	<koken:include file="inc/components/footer.html" />
-</koken:if>
 </main>
 </body>
 </html>

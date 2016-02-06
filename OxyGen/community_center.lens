@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="devsite">
+	<head>
+		<meta charset="utf-8">
+		<meta content="{{ site.theme.name }}" itemprop="theme_name" />
+		<meta content="{{ settings.license_key }}" itemprop="license_key" />
+		<meta content="{{ site.theme.version }}" itemprop="theme_version" />
+		<meta content="{{ site.author.name }}" itemprop="author_name" />
+		<meta content="{{ site.author.mail }}" itemprop="author_mail" />
+		<meta content="{{ site.author.link }}" itemprop="author_link" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<koken:meta />
+		<koken:title />
+		<koken:settings />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="googlebot" content="noindex, nofollow" />
+		<title>Community Center Koken Community Support</title>	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<koken:asset file="css/community_center.css" />
+		<base target="community_center_window"><style></style>
+	</head>
+	<body style="overflow:hidden;">
+		<div class="cc-col-top">
+			<a href="{{ location.theme_path }}/community_center.html" data-bind-to-key="H" class="cc-link">
+				<i class="fa fa-home"></i>
+			</a>
+			<!--<a href="http://store.kokensupport.com/" title="Koken Community Store" data-bind-to-key="S" class="cc-link">
+				<i class="fa fa-cart-plus"></i> Store
+			</a>-->
+			<a href="http://feedback.koken.me/" title="Suggest new features, themes and plugins" class="cc-link">
+				<i class="fa fa-lightbulb-o"></i> Feedback
+			</a>
+			<a href="http://docs.kokensupport.com/#page-name" title="Themes & Plugin Documentation" data-bind-to-key="D" class="cc-link">
+				<i class="fa fa-book"></i> Docs
+			</a>
+			<a href="http://help.kokensupport.com" title="Premium Support" data-bind-to-key="T" class="cc-link">
+				<i class="fa fa-ticket"></i> Tickets
+			</a>
+			<a href="http://kokensupport.com" title="Koken Community Support" data-bind-to-key="F" class="cc-link" style="margin-right:7px;">
+				<i class="fa fa-comments-o"></i> Forum
+			</a>
+		</div>
+		<iframe seamless="true" id="community-center" name="community_center_window" src="{{ location.theme_path }}/community_center.html"></iframe>
+	</body>
+</html>
