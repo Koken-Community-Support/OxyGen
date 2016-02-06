@@ -4,54 +4,10 @@
 	    <div id="updater" style="z-index:900;">
 	        <koken:include file="inc/update.php" />
 	    </div>
-		<koken:not true="settings.i_have_donated">
-		<div id="donationware">
-			<div class="closediv">
-				<div class="round-button"><a href="#" class="show_hide" title="Close this box">X</a></div>
-			</div>
-			<h3 style="font-style:bold; text-align:center;">{{ site.theme.name }} v{{ site.theme.version }}</h3>
-			<a href="http://kokensupport.varoystrand.se/app.php/donation">
-				<img src="http://varoystrand.se/make_a_website_donation.gif" alt="Make a Donation">
-			</a>
-			<div style="text-align:center; padding-top:6px;">
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-					<div>
-						<input type="hidden" name="cmd" value="_xclick" />
-						<input type="hidden" name="business" value="black.skorpio+kcs-donations@gmail.com" />
-						<input type="hidden" name="item_name" value="Make a Donation OxyGen" />
-						<input type="hidden" name="no_shipping" value="1" />
-						<input type="hidden" name="return" value="http://kokensupport.varoystrand.se/app.php/donation?mode=success" />
-						<input type="hidden" name="cancel_return" value="http://kokensupport.varoystrand.se/app.php/donation?mode=cancel" />
-						<input type="hidden" name="item_number" value="Bjarne Varöystrand" />
-						<input type="hidden" name="tax" value="0" />
-						<input type="hidden" name="bn" value="PP-DonationsBF" />
-						<input type="text" name="amount" style="height:17px; font-size:12px; width: 30px;" class="inputbox autowidth" value="10" />
-						<select name="currency_code" id="currency_code">
-							<option value="USD">$ USD</option>
-							<option value="EUR" selected="selected">€ EUR</option>
-							<option value="GBP">£ GBP</option>
-							<option value="JPY">¥ JPY</option>
-							<option value="AUD">$ AUD</option>
-							<option value="CAD">$ CAD</option>
-							<option value="HKD">$ HKD</option>
-						</select>
-					</div>
-					<fieldset id="contactpaypal" class="submit-buttons" style="margin-top:8px;">
-						<input type="reset" class="button2" name="reset" value="Reset" />
-						<input type="submit" class="button1" name="submit" value="Submit" onclick="JavaScript:document.getElementById('contactpaypal').style.display='none';document.getElementById('processingpaypal').style.display='block';" />
-					</fieldset>
-					<fieldset id="processingpaypal" class="submit-buttons" style="margin-top:8px; display:none;">
-						<img src="http://kokensupport.varoystrand.se/ext/dmzx/donation/styles/prosilver/theme/images/loader.gif" width="16" height="16" alt="" style="margin-bottom:-5px; padding-right:10px;" /> <input type="submit" class="button1" name="submit" value="Connecting to Paypal - Please Wait…" />
-					</fieldset>
-				</form>
-			<!--<a href="#" class="show_hide">Hide</a>-->
-			</div>
-		</div>
-		</koken:not>
 	</koken:note>
-    <koken:load source="{{ settings.slideshow_source }}">
+    <koken:load source="featured_albums">
       <div id="slideshow">
-        <koken:pulse autostart="true" width="100%" height="100%" crop="fill" jsvar="pulse" loop="true" source="{{ settings.slideshow_source }}" next=".sldshw-arrow-right" previous=".sldshw-arrow-left" link_to="album" fallbacktext="No {{ settings.slideshow_source }} content found. Please assign them in the Library." />
+        <koken:pulse autostart="true" width="100%" height="100%" crop="fill" jsvar="pulse" loop="true" source="featured_albums" next=".sldshw-arrow-right" previous=".sldshw-arrow-left" link_to="album" fallbacktext="No featured_albums content found. Please assign them in the Library." />
 			<koken:if true="settings.slideshow_nav_hide">
 				<ul id="slideshow_nav">
 					<li><a href="#" class="sldshw-arrow-left" data-bind-to-key="left">&#8592;</a></li>
@@ -62,7 +18,7 @@
 	</koken:load>
 	<koken:if true="settings.show_credits">
 		<div id="credit">
-			<a title="Design by {{ site.author.name }} || {{ site.theme.name }} v{{ site.theme.version }} / {{ site.theme.description }}" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/oxygen/">Design by varoystrand.se</a> || <a title="Powered by: Koken CMS" onclick="return !window.open(this.href);" href="http://koken.me/">Powered by: Koken CMS</a>
+			<a style="white-space: pre-line;" title="{{ site.theme.name }} v{{ site.theme.version }}&#013;Development by {{ site.author.name }}&#013;{{ site.theme.description }}" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/oxygen/">Design by varoystrand.se</a> || <a title="Powered by: Koken CMS" onclick="return !window.open(this.href);" href="http://koken.me/">Powered by: Koken CMS</a>
 		</div>
 	</koken:if>
 	<koken:if true="settings.show_legal_links">

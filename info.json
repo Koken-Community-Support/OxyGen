@@ -1,35 +1,45 @@
 {
 	"name": "OxyGen",
-	"version": "2.1.0",
-	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content. OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
+	"version": "2.1.8",
+	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content.\n\nOxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "http://varoystrand.se/",
-	"terms": "Released under MIT & GPL3 license",
-	"documentation": "http://varoystrand.se/sidor/oxygen/",
+	"terms": "Released under GNU GPLv3 license",
+	"documentation": "http://oxygen.kokensupport.com/",
 	 "author": {
-		"name": "Bjarne Varoystrand",
-		"mail": "baldursphotography@gmail.com",
-		"link": "http://varoystrand.se/"
+		"name": "Koken Community Support",
+		"mail": "oxygen@kokensupport.com",
+		"link": "http://kokensupport.com/"
 		},
 
-	"koken_version_required": "0.20.0",
-	
-	"navigation_groups": {
-		"legal": {
-			"label": "Legal links",
-			"description": "Links shown in front page footer"
-		},
-		"footer": {
-			"label": "Footer",
-			"description": "Links in the footer",
-			"defaults": [ "front", "albums", "contents", "essays", "favorites" ]
+	"koken_version_required": "0.21.13",
+
+	"routes": {
+		"/community_center/": {
+			"template": "community_center"
 		}
 	},
 
 	"templates": {
-		"map": {
-			"name": "Image map",
-			"description": "Displays the 100 latest images on a map",
-			"source": "contents"
+		"community_center": {
+			"name": "Community Center",
+			"description": "The KCS Community Center."
+		}
+	},
+
+	"navigation_groups": {
+		"legal": {
+			"label": "Auxiliary links",
+			"description": "Links shown in front page footer",
+			"defaults": [ "favorites", "timeline" ]
+		},
+		"support": {
+			"label": "Community Support",
+			"description": "Support Resources",
+			"defaults": [ "community_center", 
+				{ "label": "Forums", "url": "http://kokensupport.com" },
+				{ "label": "Docs", "url": "http://docs.kokensupport.com" },
+				{ "label": "Tickets", "url": "http://help.kokensupport.com" }
+			]
 		}
 	},
 
@@ -42,8 +52,7 @@
 					"type": "select",
 					"options": [
 						{ "label": "Text", "value": "text" },
-						{ "label": "Image", "value": "image" },
-						{ "label": "Combi", "value": "combi"}
+						{ "label": "Image", "value": "image" }
 					],
 					"value": "text"
 				},
@@ -91,32 +100,6 @@
 						]
 					}
 				},
-				"site_title_combi_img_url": {
-					"label": "Image URL",
-					"type": "string",
-					"value": "",
-					"note": "This image is used inline of the sitetitle. Please NOTE, the URL must begin with http://!",
-					"note_align": "left",
-					"dependencies": {
-						"evaluate": "all",
-						"conditions": [
-							{ "option": "site_title_type", "equals": "combi" }
-						]
-					}
-				},
-				"show_tagline": {
-					"label": "Show tagline",
-					"type": "boolean",
-					"value": false,
-					"note": "This shows your tagline.",
-					"note_align": "left",
-					"dependencies": {
-						"evaluate": "all",
-						"conditions": [
-							{ "option": "site_title_type", "equals": "text" }
-						]
-					}
-				},
 				"logo_state": {
 					"label": "Logo state",
 					"type": "select",
@@ -149,10 +132,27 @@
 					"type": "select",
 					"options": [
 						{ "label": "Regular", "value": "regular" },
-						{ "label": "Regular Expanded", "value": "expanded" },
-						{ "label": "Sidebar", "value": "sidebar" }
+						{ "label": "Regular Expanded", "value": "expanded" }
 					],
 					"value": "regular"
+				},
+				"show_breadcrumps": {
+					"label": "Show breadcrumbs",
+					"type": "boolean",
+					"value": {
+						"category": false,
+						"categories": false,
+						"error": false,
+						"login": false,
+						"map": false,
+						"tags": false,
+						"tag": false,
+						"timeline": false
+					},
+					"note": "Enable breadcrumbs in some lens files.",
+					"note_align": "left",
+					"scope": [ "category", "categories", "error", "login", "map", "tags", "tag", "timeline" ],
+					"scoped_values": true
 				}
 			}
 		},
@@ -162,30 +162,40 @@
 				"use_lightbox": {
 					"label": "Open in lightbox",
 					"type": "boolean",
-					"value": true,
+					"value": {
+						"album": true,
+						"contents": false,
+						"content": true,
+						"favorites": true,
+						"tag": true,
+						"category": true,
+						"timeline": true
+					},
 					"control_first": true,
 					"reload_preview": true,
-					"note": "Disables lightbox for images.",
+					"note": "Disables lightbox.",
 					"note_align": "left",
-					"scope": [ "album", "contents", "content", "index", "favorites", "tags", "tag" ]
+					"scope": [ "album", "contents", "content", "favorites", "tag", "category", "timeline" ],
+					"scoped_values": true
 				},
 				"show_exif": {
 					"label": "Show img info",
 					"type": "boolean",
 					"value": {
-						"albums": false,
-						"album": false,
-						"set": false,
-						"sets": false,
 						"contents": false,
-						"content": true,
-						"favorites": false,
-						"timeline": false
+						"content": true
 					},
-					"note": "Enables showing EXIF, tags and various image info in content and lightbox",
+					"note": "Enables showing EXIF, tags and various image info in content",
 					"note_align": "left",
-					"scope": [ "albums", "album", "set", "sets", "contents", "content", "favorites", "timeline" ],
+					"scope": [ "contents", "content"],
 					"scoped_values": true
+				},
+				"show_exif_modal": {
+					"label": "Show img info",
+					"type": "boolean",
+					"value": false,
+					"note": "Enables showing EXIF, tags and various image info in lightbox",
+					"note_align": "left"
 				},
 				"grid_asp_ratio": {
 					"label": "Aspect ratio",
@@ -204,13 +214,18 @@
 					"note": "This controls the aspect ratio on the image thumbs and albums cover thumbs",
 					"note_align": "left"
 				},
-				"hide_title_overlay": {
+				"show_title": {
 					"label": "Img title",
-					"type": "boolean",
-					"value": true,
+					"type": "select",
+					"options":[
+						{ "label": "Overlay", "value": "name_overlay" },
+						{ "label": "Bottom", "value": "name_bottom" },
+						{ "label": "Hide", "value": "name_hidden" }
+					],
+					"value": "name_overlay",
+					"scope": [ "album", "set", "favorites", "contents" ],
 					"note": "This shows the title overlay in albums, sets, favorites and contents",
-					"note_align": "left",
-					"scope": [ "album", "set", "favorites", "contents", "tags", "tag" ]
+					"note_align": "left"
 				}
 			}
 		},
@@ -416,6 +431,21 @@
 						"scope": [  "album", "contents", "favorites", "set", "sets"  ]
 					}
 				},
+				"show_tags_cats": {
+					"label": "Show tags and categories",
+					"type": "boolean",
+					"value": {
+						"essay": true,
+						"essays": false,
+						"category": true,
+						"tag": true,
+						"timeline": true
+					},
+					"note": "Shows related categories and tags.",
+					"note_align": "left",
+					"scope": [ "essay", "essays", "category", "tag", "timeline" ],
+					"scoped_values": true
+				},
 				"albums_index_limit": {
 					"label": "Items per page",
 					"type": "slider",
@@ -559,279 +589,9 @@
 				}
 			}
 		},
-		"Footer": {
-			"icon": "layout",
-			"settings": {
-				"footer_setting": {
-					"label": "Footer design",
-					"type": "select",
-					"value": "tiny_footer",
-					"options": [
-						{ "label": "No footer", "value": "no_footer" },
-						{ "label": "Small footer", "value": "tiny_footer" },
-						{ "label": "Big footer", "value": "show_footer" }
-					]
-				},
-				"Personal info": {
-					"collapse": true,
-					"address_name_prefix": {
-						"label": "Name prefix",
-						"type": "string",
-						"value": "",
-						"note": "Prefix before your name, i.e: Photographer",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"address_name": {
-						"label": "Your name",
-						"type": "string",
-						"value": "",
-						"note": "Your full name",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"address_avatar_img": {
-						"label": "Image URL",
-						"type": "string",
-						"value": "",
-						"note": "The image to use as avatar (max 400x400px)",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "all",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
-							]
-						}
-					}
-				},
-				"Address Info": {
-					"collapse": true,
-					"address_street_info": {
-						"label": "Street",
-						"type": "string",
-						"value": "",
-						"note": "Your street address",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"address_postal_code": {
-						"label": "Postal code",
-						"type": "string",
-						"value": "",
-						"note": "Your postal code",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"address_city_info": {
-						"label": "City name",
-						"type": "string",
-						"value": "",
-						"note": "City name",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"address_country_info": {
-						"label": "Your country",
-						"type": "string",
-						"value": "",
-						"note": "Your country",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					}
-				},
-				"Footer links": {
-					"collapse": true,
-					"address_contact_page_id": {
-						"label": "Page id",
-						"type": "string",
-						"value": "",
-						"note": "Page id for your contactform",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"address_copyright_page_id": {
-						"label": "Page id",
-						"type": "string",
-						"value": "",
-						"note": "Page id for your copyright info",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					}
-				},
-				"Social Footer links": {
-					"collapse": true,
-					"social_facebook_link": {
-						"label": "Facebook",
-						"type": "boolean",
-						"value": true,
-						"control_first": true,
-						"note": "Edit links in Settings > Admin",
-						"note_align": "left",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"social_googleplus_link": {
-						"label": "Google+",
-						"type": "boolean",
-						"value": true,
-						"control_first": true,
-						"note": "Edit links in Settings > Admin",
-						"note_align": "left",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"social_twitter_link": {
-						"label": "Twitter",
-						"type": "boolean",
-						"value": true,
-						"control_first": true,
-						"note": "Edit links in Settings > Admin",
-						"note_align": "left",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"social_instagram_link": {
-						"label": "Instagram",
-						"type": "string",
-						"value": "",
-						"note": "Your Instagram handle",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "all",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
-							]
-						}
-					},
-					"social_fivepx_link": {
-						"label": "500px",
-						"type": "string",
-						"value": "",
-						"note": "Your 500px handle",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "all",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
-							]
-						}
-					},
-					"social_pinterest_link": {
-						"label": "Pinterest",
-						"type": "string",
-						"value": "",
-						"note": "Your Pinterest handle",
-						"note_align": "right",
-						"dependencies": {
-							"evaluate": "all",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
-							]
-						}
-					},
-					"social_rss_essays_link": {
-						"label": "RSS Essays",
-						"type": "boolean",
-						"value": true,
-						"note": "Show link to your Essays feed",
-						"note_align": "left",
-						"dependencies": {
-							"evaluate": "any",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" },
-								{ "option": "footer_setting", "equals": "tiny_footer" }
-							]
-						}
-					},
-					"social_rss_contents_link": {
-						"label": "RSS Contents",
-						"type": "boolean",
-						"value": true,
-						"note": "Shows link to your Contents feed",
-						"note_align": "left",
-						"dependencies": {
-							"evaluate": "all",
-							"conditions": [
-								{ "option": "footer_setting", "equals": "show_footer" }
-							]
-						}
-					}
-				}
-			}
-		},
 		"Misc": {
 			"icon":"misc",
 			"settings": {
-				"i_have_donated": {
-					"label": "I have donated",
-					"type": "boolean",
-					"value": false,
-					"note": "Check this if you donated and want hide the donate box.",
-					"note_align": "left"
-				},
 				"show_credits": {
 					"label": "Show credits",
 					"type": "boolean",
@@ -842,7 +602,7 @@
 				"show_legal_links": {
 					"label": "Show Legal links",
 					"type": "boolean",
-					"value": false,
+					"value": true,
 					"note": "This shows a extra set of links on the front page lower right side",
 					"note_align": "left"
 				},
@@ -852,76 +612,6 @@
 					"value": false,
 					"note": "This hides the slideshow nav arrows on the splashpage",
 					"note_align": "left"
-				},
-				"slideshow_source": {
-					"label": "Slideshow source",
-					"type": "select",
-					"options": [
-						{"label": "Featured Albums", "value": "featured_albums" },
-						{"label": "Favorites", "value": "favorites" },
-						{"label": "Featured Content", "value": "featured_content" }
-					],
-					"value": "featured_albums",
-					"note": "Choose where to load the slideshow from",
-					"note_align": "left"
-				},
-				"Map settings": {
-					"collapse": true,
-					"mapbox_public_key": {
-						"label": "Access Token",
-						"type": "string",
-						"value": "",
-						"note": "You can find your access token in your settings for mapbox.com",
-						"note_align": "left"
-					},
-					"mapbox_yourmap": {
-						"label": "Map",
-						"type": "string",
-						"value": "",
-						"note": "Set the map name from mapbox.com",
-						"note_align": "left"
-					},
-					"mapbox_min_zoom": {
-						"label": "Min Zoom",
-						"type": "string",
-						"value": "3",
-						"note": "The minimum zoom level allowed",
-						"note_align": "left"
-					},
-					"mapbox_max_zoom": {
-						"label": "Max Zoom",
-						"type": "string",
-						"value": "15",
-						"note": "The maximun zoom level allowed",
-						"note_align": "left"
-					},
-					"mapbox_yourzoomlevel": {
-						"label": "Initial Zoom",
-						"type": "string",
-						"value": "10",
-						"note": "The initial zoom level",
-						"note_align": "left"
-					}
-				},
-				"editorial_img_hide": {
-					"label": "Hide Editorial images",
-					"type": "boolean",
-					"value": false,
-					"note": "Sort out Editorial images from public listing.",
-					"note_align": "left"
-				},
-				"editorial_img_cats": {
-					"label": "Editorial categories",
-					"type": "string",
-					"value": "",
-					"note": "What image categories should be hidden from the contents listing. If multiple categories separate each with a comma",
-					"note_align": "left",
-					"dependencies": {
-						"evaluate": "all",
-						"conditions": [
-							{ "option": "editorial_img_hide", "equals": true }
-						]
-					}
 				}
 			}
 		}

@@ -35,12 +35,12 @@
 				</koken:not>
 			</koken:content_image>
 		</koken:head>
-		<koken:if data="settings.show_exif" equals="true">
+		<koken:if data="settings.show_exif_modal" equals="true">
 			<div id="info-modals">
-				<a class="button-exif" href="#openModal-exif" bind_to_key="b">Bildinfo</a>
+				<a class="button-exif" href="#openModal-exif" bind_to_key="b">Image info</a>
 					<div id="openModal-exif" class="modalbg">
 						<div class="dialog">
-							<a href="#close" title="Återgå" class="close">X</a>
+							<a href="#close" title="Close" class="close">X</a>
 							<koken:include file="inc/components/picinfo.html" />
 						</div>
 					</div>
@@ -121,11 +121,11 @@
 							<koken:link>#{{ context.title }}</koken:link>
 								<koken:else>
 							<koken:link>{{ context.title }}</koken:link>
-						</koken:if> 
-					</koken:if> 
-					&nbsp;&nbsp;/&nbsp;&nbsp;{{ context.position }} of {{ context.total }} 
+						</koken:if>
+					</koken:if>
+					&nbsp;&nbsp;/&nbsp;&nbsp;{{ context.position }} of {{ context.total }}
 					<koken:else>
-					<koken:link to="contents">{{ labels.content.plural }}</koken:link> 
+					<koken:link to="contents">{{ labels.content.plural }}</koken:link>
 				</koken:context>
 			</koken:parent>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -137,21 +137,6 @@
 	<koken:else>
 	<koken:asset file="jquery.pjax.js" common="true" />
 	<koken:asset file="lightbox.js" common="true" />
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//varoystrand.se/status/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//varoystrand.se/status/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
 </body>
 </html>
 </koken:if>

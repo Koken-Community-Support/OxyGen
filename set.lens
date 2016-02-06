@@ -12,11 +12,14 @@
 			<koken:loop>
 				<li><koken:link>
 				<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
-				<koken:if data="settings.hide_title_overlay" equals="true">
+				<koken:if data="settings.show_title" equals="name_overlay">
 					<div>
 						<h3>{{ album.title }}</h3>
 						<p>{{ album.description }}</p>
 					</div>
+				</koken:if>
+				<koken:if data="settings.show_title" equals="name_bottom">
+					<div class="img_name_bottom"><p>{{ content.title | content.filename }}</p></div>
 				</koken:if>
 				</koken:link></li>
 			</koken:loop>
@@ -27,12 +30,6 @@
 	</div>
 	</koken:load>
 <koken:include file="inc/components/loading_msg.html" />
-<koken:if data="settings.footer_setting" equals="tiny_footer">
-	<koken:include file="inc/components/footer_tiny.html" />
-</koken:if>
-<koken:if data="settings.footer_setting" equals="show_footer">
-	<koken:include file="inc/components/footer.html" />
-</koken:if>
 </main>
 </body>
 </html>
