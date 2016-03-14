@@ -1,12 +1,15 @@
 $(document).ready(function() {
-
-	$('div.update-notifier').animate({top: '100px'}, 'slow');
-
 	$(".up").click(function() {
-		$("html, body").animate({
-			scrollTop: 0
+		$("html, body").animate({ 
+			scrollTop: 0 
 		}, "slow");
 		return false;
+	});
+
+	$("#donationware").show();
+	$(".show_hide").show();
+	$('.show_hide').click(function(){
+		$("#donationware").slideToggle();
 	});
 
 	$('.show').click(function() {
@@ -21,7 +24,7 @@ $(document).ready(function() {
 	};
 
 	function responsiveNav() {
-        if ($(window).width() <= 540) {
+        if ($(window).width() <= 540) {  
             $('nav').addClass('mobile');
             $('.show').addClass('mobileOpen');
         }

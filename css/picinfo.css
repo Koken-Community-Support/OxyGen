@@ -159,13 +159,3 @@ li.picinfodetail {
 }
 /*TAGGS Styling EOF
 */
-
-#cats.tagdetail {
-	/*background-image: url("../inc/components/img/exif/cats1-icon.jpg");
-	background-image: url("../inc/components/img/exif/cats2-icon.png");*/
-	background-image: url("../inc/components/img/exif/cats3-icon.gif");
-}
-#cats.tagdetail:hover {
-	color: #000;
-	font-weight: 700;
-}
