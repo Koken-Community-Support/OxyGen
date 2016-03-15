@@ -17,14 +17,14 @@
 				<koken:img respond_to="width" lazy="true" alt="{{ content.title | content.filename }}" />
 			</koken:content_image>
 		</koken:if>
+		<koken:content_video>
+			<koken:video respond_to="width" />
+		</koken:content_video>
 		<koken:include file="inc/components/next-prev.html" />
 		<div class="entry">
 			<koken:not empty="content.caption">{{ content.caption }}</koken:not>
 		</div>
 	</div>
-		<koken:content_video>
-			<koken:video />
-		</koken:content_video>
 
 		<koken:if data="settings.show_exif" equals="true">
 			<koken:include file="inc/components/picinfo.html" />
