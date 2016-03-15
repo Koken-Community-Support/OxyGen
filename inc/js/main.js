@@ -1,7 +1,15 @@
+/*! OxyGen main.js
+ *  Copyright  (c) 2015-2016 Bjarne Varoystrand - bjarne ○ kokensupport • com
+ *  License: GPL
+ *  @author Bjarne Varoystrand (@black_skorpio)
+ *  @version 2.2.0
+ *  @description Internal functions for OxyGen
+ *  http://varoystrand.se | http://kokensupport.com
+**/
 $(document).ready(function() {
 	$(".up").click(function() {
-		$("html, body").animate({ 
-			scrollTop: 0 
+		$("html, body").animate({
+			scrollTop: 0
 		}, "slow");
 		return false;
 	});
@@ -24,7 +32,7 @@ $(document).ready(function() {
 	};
 
 	function responsiveNav() {
-        if ($(window).width() <= 540) {  
+        if ($(window).width() <= 540) {
             $('nav').addClass('mobile');
             $('.show').addClass('mobileOpen');
         }
