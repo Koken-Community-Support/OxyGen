@@ -18,16 +18,11 @@
 		<koken:title />
 		<koken:settings />
 	</head>
-	<koken:if data="settings.menu_type" equals="expanded">
-		<body id="regular" class="expanded">
-	</koken:if>
-
-	<koken:if data="settings.menu_type" equals="sidebar">
-		<body id="sidebar">
-	</koken:if>
-
 	<koken:if data="settings.menu_type" equals="regular">
 		<body id="regular">
+	</koken:if>
+	<koken:if data="settings.menu_type" equals="expanded">
+		<body id="regular" class="expanded">
 	</koken:if>
 		<koken:link to="front" title="{{ labels.home.singular }}">
 			<koken:if data="settings.site_title_type" equals="combi">
