@@ -30,5 +30,4 @@
 	<koken:include file="inc/components/footer.html" />
 </koken:if>
 </main>
-</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />
