@@ -18,5 +18,4 @@
 		</article>
 	</div>
 </main>
-	</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

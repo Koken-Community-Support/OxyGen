@@ -9,8 +9,8 @@
 		</koken:if>
 		<article class="entry">
 			<p class="essay-time"><koken:time /></p>
-			<h1 class="page-name">{{ essay.title }}</h1> 
-			{{ essay.content }} 
+			<h1 class="page-name">{{ essay.title }}</h1>
+			{{ essay.content }}
 			<koken:include file="inc/components/tags-cats-loop.html" />
 		</article>
 		<koken:if data="settings.show_sharing_essay" equals="true">
@@ -23,10 +23,9 @@
 		</koken:if>
 		<koken:else>
 		<koken:note>
-			No published essay found 
+			No published essay found
 		</koken:note>
 	</koken:load>
 </div>
 </main>
-</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

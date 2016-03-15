@@ -22,5 +22,4 @@
 <koken:include file="inc/components/loading_msg.html" />
 </div>
 </main>
-</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

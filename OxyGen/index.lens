@@ -34,5 +34,4 @@
         $('.pulse-album-desc').html(data.summary);
       });
     </script>
-	</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

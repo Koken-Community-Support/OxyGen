@@ -25,7 +25,7 @@
 		<koken:content_video>
 			<koken:video />
 		</koken:content_video>
-		
+
 		<koken:if data="settings.show_exif" equals="true">
 			<koken:include file="inc/components/picinfo.html" />
 		</koken:if>
@@ -37,12 +37,11 @@
 				<koken:discussion>{{ discussion }}</koken:discussion>
 			</div>
 		</koken:if>
-	
+
 <koken:else>
 	<koken:note>
-		No image or video found 
+		No image or video found
 	</koken:note>
 </koken:load>
 </main>
-</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />
