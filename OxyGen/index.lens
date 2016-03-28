@@ -1,6 +1,9 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
 	<koken:note>
+		<script>
+			$(document).ready(function() {$('div.update-notifier').animate({top: '100px'}, 'slow');});
+		</script>
 	    <div id="updater" style="z-index:900;">
 	        <koken:include file="inc/update.php" />
 	    </div>
