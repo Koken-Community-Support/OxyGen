@@ -12,12 +12,12 @@ curl_setopt_array($ch, array(
 ));
 $resp = json_decode(curl_exec($ch));
 curl_close($ch);
-$latest = $resp->tag_name; 
+$latest = $resp->tag_name;
 $client = Koken::$site['theme']['version']; // fetching current version
-$downloadLink = "http://kokensupport.varoystrand.se/viewtopic.php?f=16&t=32"; //Link to the OxyGen forum for manual downloads
+$downloadLink = "https://kokensupport.com/viewtopic.php?f=16&t=32"; //Link to the OxyGen forum for manual downloads
 $updateLink = "#"; // Link to automatic update (placeholder for the future)
 $themePath = Koken::$location['theme_path']; // get path to themes root directory
-if (strcmp($latest, $client)) { 
+if (strcmp($latest, $client)) {
 	print "<div class='update-notifier'>
 		<div class='update-logo'>
 			<img src='$themePath/inc/components/img/update-oxygen-logo.png' width='50' alt='OxyGen $latest'>

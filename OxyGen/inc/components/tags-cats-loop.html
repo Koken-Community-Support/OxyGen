@@ -2,11 +2,11 @@
 						<p><koken:tags>
 							<koken:if data="location.template" equals="essays">
 							<koken:else>
-								<h1 class="picinfo">{{ languages.tags }}</h1>
+								<h1 class="picinfo">{{ language.tags }}</h1>
 							</koken:if>
 							<ul class="taggsdata">
 								<koken:loop separator=" ">
-									<koken:link title="{{ language.view_everything_in_title collate='tag.title' }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
+									<koken:link title="{{ language.view_all_content_in_title collate='tag.title' }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
 								</koken:loop>
 							</ul>
 						</koken:tags>
@@ -17,7 +17,7 @@
 						</koken:if>
 						<ul class="taggsdata">
 							<koken:loop separator=" ">
-								<koken:link to="category" title="{{ language.view_everything_in_title collate='category.title' }}"><li id="cats" class="tagdetail">{{ category.title }}</li></koken:link>
+								<koken:link to="category" title="{{ language.view_all_content_in_title collate='category.title' }}"><li id="cats" class="tagdetail">{{ category.title }}</li></koken:link>
 							</koken:loop>
 						</ul>
 						</koken:categories>

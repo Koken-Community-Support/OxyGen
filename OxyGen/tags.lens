@@ -1,7 +1,7 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
 <article class="top-section">
-	<h1 class="page-name">{{ labels.tag.plural }}</h1>
+	<h1 class="page-name">{{ language.tags }}</h1>
 	<koken:if data="settings.show_breadcrumps" equals="true">
 		<div class="OG_breadcrumps">
 			<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
@@ -11,7 +11,7 @@
 <koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 	<ul class="grid">
     	<koken:loop>
-    		<koken:link to="tag" title="{{ language.view_everything_in }}  {{ tag.title }}">
+    		<koken:link to="tag" title="{{ language.viewing_everything_in_title collate='tag.title' }}">
 		      	<li class="tag-bg">
 		      		<koken:load source="tag" filter:tags="{{ tag.title }}">
 		   				<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true"/>

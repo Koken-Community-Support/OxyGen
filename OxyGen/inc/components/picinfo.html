@@ -1,15 +1,15 @@
 <div class="picinfocontainer">
 	<koken:tags>
-	<div class="taggs"><h1 class="picinfo">Tags</h1>
+	<div class="taggs"><h1 class="picinfo">{{ language.tags }}</h1>
 		<ul class="taggsdata">
 			<koken:loop separator=" ">
-				<koken:link title="View images with: {{ tag.title }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
+				<koken:link title="{{ language.view_everything_in_title collate='tag.title' }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
 			</koken:loop>
 		</ul>
 	</div>
 	</koken:tags>
 	<koken:exif>
-		<div class="exif"><h1 class="picinfo">Camera info</h1>
+		<div class="exif"><h1 class="picinfo">{{ language.kcs_camera_info_ }}</h1>
 			<ul class="exifdata">
 			<koken:not empty="exif.model"><li id="exif-model" class="exifdetail">{{ exif.make }} {{ exif.model }}</li></koken:not>
 			<koken:not empty="exif.lens"><li id="exif-lens" class="exifdetail">{{ exif.lens }}</li></koken:not>
@@ -23,31 +23,31 @@
 	</koken:exif>
 	<koken:not empty="content.caption">
 		<div class="bild-caption">
-			<h1 class="picinfo">Caption</h1>
+			<h1 class="picinfo">{{ language.kcs_caption_ }}</h1>
 			<p class="bild-caption-text">{{ content.caption }}</p>
 		</div>
 	</koken:not>
 	<div class="bildinfo">
-		<h1 class="picinfo">Image info</h1>
+		<h1 class="picinfo">{{ language.kcs_image_info_ }}</h1>
 		<ul class="bildinfodata">
-			<koken:not empty="content.title | content.filename"><li class="picinfodetail"><span class="picinfosub">Name:</span> {{ content.title | content.filename }}</li></koken:not>
-			<koken:not empty="content.uploaded_on"><li class="picinfodetail"><span class="picinfosub">Uploaded:</span> {{ content.uploaded_on }}</li></koken:not>
-			<koken:not empty="content.captured_on"><li class="picinfodetail"><span class="picinfosub">Captured:</span> {{ content.captured_on }}</li></koken:not>
+			<koken:not empty="content.title | content.filename"><li class="picinfodetail"><span class="picinfosub">{{ language.kcs_name_ }}</span> {{ content.title | content.filename }}</li></koken:not>
+			<koken:not empty="content.uploaded_on"><li class="picinfodetail"><span class="picinfosub">{{ language.kcs_uploaded_ }}</span> {{ content.uploaded_on }}</li></koken:not>
+			<koken:not empty="content.captured_on"><li class="picinfodetail"><span class="picinfosub">{{ language.kcs_captured_ }}</span> {{ content.captured_on }}</li></koken:not>
 			<koken:albums>
-				<li class="picinfodetail"><span class="picinfosub">Also in:</span>
+				<li class="picinfodetail"><span class="picinfosub">{{ language.kcs_also_in_ }}</span>
 					<koken:loop separator=" ">
-						<koken:link class="picinfosub" title="See more images from: {{ album.title }}">{{ album.title }}</koken:link>
+						<koken:link class="picinfosub" title="{{ language.view_everything_in_title collate='album.title' }}">{{ album.title }}</koken:link>
 					</koken:loop>
 				</li>
 			</koken:albums>
 			<koken:iptc>
 				<koken:not empty="iptc.byline }}">
-					<li class="picinfodetail"><span class="picinfosub">Photographer:</span> {{ iptc.byline }}</li>
+					<li class="picinfodetail"><span class="picinfosub">{{ language.kcs_photographer_ }}</span> {{ iptc.byline }}</li>
 				</koken:not>
 			</koken:iptc>
-			<koken:not empty="content.license.clean"><li class="picinfodetail"><span class="picinfosub">License:</span> {{ content.license.clean }}</li></koken:not>
+			<koken:not empty="content.license.clean"><li class="picinfodetail"><span class="picinfosub">{{ language.kcs_license_ }}</span> {{ content.license.clean }}</li></koken:not>
 			<koken:max_download>
-				<li class="picinfodetail"><span class="picinfosub">Download:</span> <koken:link class="picinfosub" title="Download: {{ content.title | content.filename }} in {{ max_download.width }}x{{ max_download.height }}">{{ max_download.title }}</koken:link></li>
+				<li class="picinfodetail"><span class="picinfosub">{{ language.download }}:</span> <koken:link class="picinfosub" title="{{ language.download }}: {{ content.title | content.filename }} in {{ max_download.width }}x{{ max_download.height }}">{{ max_download.title }}</koken:link></li>
 			</koken:max_download>
 		</ul>
 	</div>

@@ -4,7 +4,7 @@
 		<ul class="grid">
 			<koken:loop>
 				<li>
-					<koken:link title="{{ language.view }} {{ labels.album.singular }} {{ album.title }}">
+					<koken:link title="{{ language.view }} {{ album.title }}">
 						<koken:img lazy="true" size="{{ settings.grid_asp_ratio }}" />
 						<div><h3>{{ album.title }}</h3></div>
 					</koken:link>

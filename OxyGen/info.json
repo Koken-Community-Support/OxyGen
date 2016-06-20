@@ -43,6 +43,165 @@
 		}
 	},
 
+	"language": {
+		"da": {
+			"kcs_camera_info_": "Kamera info",
+			"kcs_caption_": "Overskrift",
+			"kcs_image_info_": "Billede info",
+			"kcs_name_": "Navn:",
+			"kcs_uploaded_": "Uploadet:",
+			"kcs_captured_": "Fanget:",
+			"kcs_also_in_": "Også i:",
+			"kcs_photographer_": "Fotograf:",
+			"kcs_license_": "Licens:"
+		},
+
+		"de": {
+			"kcs_camera_info_": "Kamera Info",
+			"kcs_caption_": "Beschreibung",
+			"kcs_image_info_": "Bildinfo",
+			"kcs_name_": "Name:",
+			"kcs_uploaded_": "Hochgeladen:",
+			"kcs_captured_": "Erfasst:",
+			"kcs_also_in_": "Auch in:",
+			"kcs_photographer_": "Fotograf:",
+			"kcs_license_": "Lizenz:"
+		},
+
+		"en": {
+			"kcs_camera_info_": "Camera info",
+			"kcs_caption_": "Caption",
+			"kcs_image_info_": "Image info",
+			"kcs_name_": "Name:",
+			"kcs_uploaded_": "Uploaded:",
+			"kcs_captured_": "Captured:",
+			"kcs_also_in_": "Also in:",
+			"kcs_photographer_": "Photographer:",
+			"kcs_license_": "License:"
+		},
+
+		"es": {
+			"kcs_camera_info_": "Información cámara",
+			"kcs_caption_": "Título",
+			"kcs_image_info_": "Información de la imagen",
+			"kcs_name_": "Nombre:",
+			"kcs_uploaded_": "Cargado:",
+			"kcs_captured_": "Capturado:",
+			"kcs_also_in_": "También en:",
+			"kcs_photographer_": "Fotógrafo:",
+			"kcs_license_": "Licencia:"
+		},
+
+		"fr": {
+			"kcs_camera_info_": "Informations sur l'appareil",
+			"kcs_caption_": "Titre",
+			"kcs_image_info_": "Informations sur l'image",
+			"kcs_name_": "Nom:",
+			"kcs_uploaded_": "Téléchargé:",
+			"kcs_captured_": "Enregistré:",
+			"kcs_also_in_": "Aussi en:",
+			"kcs_photographer_": "Photographe:",
+			"kcs_license_": "Licence:"
+		},
+
+		"hu": {
+			"kcs_camera_info_": "Fényképezőgép infó",
+			"kcs_caption_": "Képaláírás",
+			"kcs_image_info_": "Kép infó",
+			"kcs_name_": "Név:",
+			"kcs_uploaded_": "Feltöltés ideje:",
+			"kcs_captured_": "Itt is:",
+			"kcs_also_in_": "Itt is:",
+			"kcs_photographer_": "Fotós:",
+			"kcs_license_": "Licensz:"
+		},
+
+		"is": {
+			"kcs_camera_info_": "Myndavéla upplýsingar",
+			"kcs_caption_": "Texti",
+			"kcs_image_info_": "Upplýsingar um mynd",
+			"kcs_name_": "Name:",
+			"kcs_uploaded_": "Upphalað:",
+			"kcs_captured_": "Mynd tekin:",
+			"kcs_also_in_": "Einnig í:",
+			"kcs_photographer_": "Ljósmyndari:",
+			"kcs_license_": "Leyfi:"
+		},
+
+		"it": {
+			"kcs_camera_info_": "Info fotocamera",
+			"kcs_caption_": "Didascalia",
+			"kcs_image_info_": "Info immagine",
+			"kcs_name_": "Nome:",
+			"kcs_uploaded_": "Caricato:",
+			"kcs_captured_": "Catturati:",
+			"kcs_also_in_": "Anche in:",
+			"kcs_photographer_": "Fotografo:",
+			"kcs_license_": "Licenza:"
+		},
+
+		"nl": {
+			"kcs_camera_info_": "Camera info",
+			"kcs_caption_": "Onderschrift",
+			"kcs_image_info_": "Afbeelding info",
+			"kcs_name_": "Naam:",
+			"kcs_uploaded_": "Geüpload:",
+			"kcs_captured_": "Opname:",
+			"kcs_also_in_": "Ook in:",
+			"kcs_photographer_": "Fotograaf:",
+			"kcs_license_": "Licentie:"
+		},
+
+		"no": {
+			"kcs_camera_info_": "Kameraet info",
+			"kcs_caption_": "Bildetekst",
+			"kcs_image_info_": "Bildeinformasjon",
+			"kcs_name_": "Navn:",
+			"kcs_uploaded_": "Lastet opp:",
+			"kcs_captured_": "Fanget:",
+			"kcs_also_in_": "Også i:",
+			"kcs_photographer_": "Fotograf:",
+			"kcs_license_": "Lisens:"
+		},
+
+		"pl": {
+			"kcs_camera_info_": "Informacja o aparacie",
+			"kcs_caption_": "Podpis",
+			"kcs_image_info_": "Informacje o zdjęciu",
+			"kcs_name_": "Nazwa:",
+			"kcs_uploaded_": "Wysłany:",
+			"kcs_captured_": "Wykonano:",
+			"kcs_also_in_": "Ponadto:",
+			"kcs_photographer_": "Fotograf:",
+			"kcs_license_": "Licencja:"
+		},
+
+		"ru": {
+			"kcs_camera_info_": "Камера",
+			"kcs_caption_": "Подпись",
+			"kcs_image_info_": "Снимок",
+			"kcs_name_": "Название:",
+			"kcs_uploaded_": "Загружено:",
+			"kcs_captured_": "Снято:",
+			"kcs_also_in_": "Также в:",
+			"kcs_photographer_": "Фотограф:",
+			"kcs_license_": "Лицензия:"
+		},
+
+		"sv": {
+			"kcs_camera_info_": "Kamera info",
+			"kcs_caption_": "Bildtext",
+			"kcs_image_info_": "Bildinfo",
+			"kcs_name_": "Namn:",
+			"kcs_uploaded_": "Lades upp:",
+			"kcs_captured_": "Togs:",
+			"kcs_also_in_": "Finns i:",
+			"kcs_photographer_": "Fotograf:",
+			"kcs_license_": "Licens:"
+		}
+
+	},
+
 	"settings": {
 		"Language": {
 			"icon":"info",
@@ -214,13 +373,6 @@
 					"note_align": "left",
 					"scope": [ "contents", "content"],
 					"scoped_values": true
-				},
-				"show_exif_modal": {
-					"label": "Show img info",
-					"type": "boolean",
-					"value": false,
-					"note": "Enables showing EXIF, tags and various image info in lightbox",
-					"note_align": "left"
 				},
 				"grid_asp_ratio": {
 					"label": "Aspect ratio",

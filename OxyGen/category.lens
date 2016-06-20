@@ -3,7 +3,7 @@
 <div class="page-content">
 <koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 	<article class="top-section">
-		<h1 class="page-name">{{ language.view_everything_in }} {{ category.title }}</h1>
+		<h1 class="page-name">{{ language.view_all_content_in_title collate='category.title' }}</h1>
 		<koken:if data="settings.show_breadcrumps" equals="true">
 			<div class="OG_breadcrumps">
 				<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
@@ -17,7 +17,7 @@
 	</ol>
 <koken:else>
 	<koken:note>
-		No album data found
+		Det finns inget att visa
 	</koken:note>
 </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
