@@ -11,7 +11,7 @@
       <ol class="grid">
         <koken:loop>
           <li>
-            <koken:link title="View {{ content.title | content.filename }} in fullscreen" lightbox="{{ settings.use_lightbox }}">
+            <koken:link title="{{ language.view }} {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
               <koken:img size="{{ settings.grid_asp_ratio }}" lazy="true"/>
 			  <koken:if data="settings.show_title" equals="name_overlay">
 				<div><h3>{{ content.title | content.filename }}</h3></div>
@@ -30,12 +30,5 @@
       </koken:note>
     </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
-<koken:if data="settings.footer_setting" equals="tiny_footer">
-	<koken:include file="inc/components/footer_tiny.html" />
-</koken:if>
-<koken:if data="settings.footer_setting" equals="show_footer">
-	<koken:include file="inc/components/footer.html" />
-</koken:if>
 </main>
-</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

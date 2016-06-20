@@ -11,7 +11,7 @@
 <koken:load>
 	<ul class="grid">
     	<koken:loop>
-    		<koken:link title="Browse everything in {{ category.title }}">
+    		<koken:link title="{{ language.view_everything_in }} {{ category.title }}">
 		      	<li class="tag-bg">
 		      		<koken:load source="category" filter:tags="{{ tag.title }}">
 		   				<koken:img crop="adaptive"/>
@@ -25,12 +25,5 @@
 	No tags found.
 </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
-<koken:if data="settings.footer_setting" equals="tiny_footer">
-	<koken:include file="inc/components/footer_tiny.html" />
-</koken:if>
-<koken:if data="settings.footer_setting" equals="show_footer">
-	<koken:include file="inc/components/footer.html" />
-</koken:if>
 </main>
-</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

@@ -9,7 +9,7 @@
 							<koken:not empty="messages.koken_password_error">
 								<p class="password-error">{{ messages.koken_password_error }}</p>
 							</koken:not>
-							<input class="klogin_input" type="password" name="password" autofocus placeholder="Enter password" /><button class="klogin_button" type="submit">Go</button>
+							<input class="klogin_input" type="password" name="password" autofocus placeholder="Enter password" /><button class="klogin_button" type="submit">{{ language.go }}</button>
 
 						</div>
 					</koken:form>
@@ -17,12 +17,5 @@
 			</div>
 		</article>
 	</div>
-<koken:if data="settings.footer_setting" equals="tiny_footer">
-	<koken:include file="inc/components/footer_tiny.html" />
-</koken:if>
-<koken:if data="settings.footer_setting" equals="show_footer">
-	<koken:include file="inc/components/footer.html" />
-</koken:if>
 </main>
-	</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

@@ -2,22 +2,22 @@
 						<p><koken:tags>
 							<koken:if data="location.template" equals="essays">
 							<koken:else>
-								<h1 class="picinfo">{{ labels.tag.plural }}</h1>
+								<h1 class="picinfo">{{ languages.tags }}</h1>
 							</koken:if>
 							<ul class="taggsdata">
 								<koken:loop separator=" ">
-									<koken:link title="View everything tagged with {{ tag.title }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
+									<koken:link title="{{ language.view_everything_in_title collate='tag.title' }}"><li id="tag" class="tagdetail">{{ tag.title }}</li></koken:link>
 								</koken:loop>
 							</ul>
 						</koken:tags>
 						<koken:categories>
 						<koken:if data="location.template" equals="essays">
 						<koken:else>
-							<h1 class="picinfo" style="clear:left;">{{ labels.category.plural }}</h1>
+							<h1 class="picinfo" style="clear:left;">{{ language.categories }}</h1>
 						</koken:if>
 						<ul class="taggsdata">
 							<koken:loop separator=" ">
-								<koken:link to="category" title="View everything in {{ category.title }}"><li id="cats" class="tagdetail">{{ category.title }}</li></koken:link>
+								<koken:link to="category" title="{{ language.view_everything_in_title collate='category.title' }}"><li id="cats" class="tagdetail">{{ category.title }}</li></koken:link>
 							</koken:loop>
 						</ul>
 						</koken:categories>

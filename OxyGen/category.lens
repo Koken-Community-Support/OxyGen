@@ -3,7 +3,7 @@
 <div class="page-content">
 <koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 	<article class="top-section">
-		<h1 class="page-name">Browsing {{ category.title }}</h1>
+		<h1 class="page-name">{{ language.view_everything_in }} {{ category.title }}</h1>
 		<koken:if data="settings.show_breadcrumps" equals="true">
 			<div class="OG_breadcrumps">
 				<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
@@ -22,12 +22,5 @@
 </koken:load>
 <koken:include file="inc/components/loading_msg.html" />
 </div>
-<koken:if data="settings.footer_setting" equals="tiny_footer">
-	<koken:include file="inc/components/footer_tiny.html" />
-</koken:if>
-<koken:if data="settings.footer_setting" equals="show_footer">
-	<koken:include file="inc/components/footer.html" />
-</koken:if>
 </main>
-	</body>
-</html>
+<koken:include file="inc/components/footer_none.html" />

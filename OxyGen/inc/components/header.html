@@ -6,7 +6,7 @@
 			// Design and development
 			// {{ site.author.name }} - baldursphotography@gmail.com
 			// Github: https://github.com/Koken-Community-Support
-			// Website: {{ site.author.link }} 
+			// Website: {{ site.author.link }}
 			// Bjarne Varoystrand - http://varoystrand.se/
 			// Christopher Bayer - https://github.com/Hard-One/
 			//
@@ -16,23 +16,15 @@
 		<koken:meta />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<koken:title />
-		<koken:asset file="inc/js/jquery.scrollTo.min.js" />
-		<koken:asset file="inc/js/jquery.fittext.min.js" />
 		<koken:settings />
-		<koken:asset file="inc/js/main.js" />
 	</head>
-	<koken:if data="settings.menu_type" equals="expanded">
-		<body id="regular" class="expanded">
-	</koken:if>
-
-	<koken:if data="settings.menu_type" equals="sidebar">
-		<body id="sidebar">
-	</koken:if>
-
 	<koken:if data="settings.menu_type" equals="regular">
 		<body id="regular">
 	</koken:if>
-		<koken:link to="front" title="{{ labels.home.singular }}">
+	<koken:if data="settings.menu_type" equals="expanded">
+		<body id="regular" class="expanded">
+	</koken:if>
+		<koken:link to="front" title="{{ language.home }}">
 			<koken:if data="settings.site_title_type" equals="combi">
 				<koken:if data="location.here" equals="/">
 					<img src="{{ settings.site_title_img_url }}" alt="{{ site.title }} - {{ site.tagline }}" id="logo">
@@ -60,6 +52,3 @@
 				<koken:navigation />
 			</nav>
 		</div>
-         <koken:if data="settings.menu_type" equals="sidebar">
-            <div id="hover"></div>
-        </koken:if>

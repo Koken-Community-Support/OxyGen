@@ -13,10 +13,10 @@ OxyGen is a fully responsive theme for your Koken site, ensuring that you give y
 OxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.
 
 #### Documentation
-Full documentation can be found here: http://varoystrand.se/sidor/oxygen/
+Full documentation can be found here: https://oxygen.kokensupport.com
 
 #### Support & Downloads
-Support & downloads for OxyGen can be found here: http://kokensupport.varoystrand.se/viewtopic.php?f=16&t=32
+Support & downloads for OxyGen can be found here: https://kokensupport.com/viewtopic.php?f=16&t=32
 
 #### Credits
 Full credit goes to John (@jhne) Elgenstierna for ideas and intial design of norma that i forked, and the new menu options that v2.0 got.
