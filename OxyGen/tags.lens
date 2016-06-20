@@ -11,7 +11,7 @@
 <koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 	<ul class="grid">
     	<koken:loop>
-    		<koken:link to="tag" title="View everyting in  {{ tag.title }}">
+    		<koken:link to="tag" title="{{ language.view_everything_in }}  {{ tag.title }}">
 		      	<li class="tag-bg">
 		      		<koken:load source="tag" filter:tags="{{ tag.title }}">
 		   				<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true"/>

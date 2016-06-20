@@ -17,7 +17,7 @@
 					<koken:event_album>
 						<koken:if data="album.album_type" equals="standard">
 						<!-- New {{ labels.album.singular }} -->
-							<koken:link title="View the {{ labels.album.singular }} {{ album.title }}">
+							<koken:link title="{{ language.view }} {{ album.title }}">
 								<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
 								<h2 class="timeline-time"><koken:time /></h2>
 								<h3>{{ album.title }}</h3>
@@ -26,7 +26,7 @@
 						</koken:if>
 						<koken:if data="album.album_type" equals="set">
 						<!-- New {{ labels.set.singular }} -->
-							<koken:link title="View the {{ labels.set.singular }} {{ album.title }}">
+							<koken:link title="{{ language.view }} {{ album.title }}">
 								<koken:covers>
 									<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
 								</koken:covers>
@@ -42,21 +42,21 @@
 						<koken:if data="album.album_type" equals="standard">
 						<!-- Updated {{ labels.album.singular }} -->
 							<koken:loop>
-								<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
+								<koken:link title="{{ language.view }} {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
 									<koken:img lazy="true" />
 								</koken:link>
 							</koken:loop>
-							<h3>{{ album.title }} ({{ content.length }} new items)</h3>
+							<h3>{{ album.title }} ({{ content.length }}  {{ language.new }} {{ language.items }})</h3>
 							<p>{{ album.summary }}</p>
 						</koken:if>
 						<koken:if data="album.album_type" equals="set">
 						<!-- Updated {{ labels.set.singular }} -->
 							<koken:loop>
-								<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
+								<koken:link title="{{ language.view }} {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
 									<koken:img lazy="true" />
 								</koken:link>
 							</koken:loop>
-							<h3>{{ labels.set.singular }}: {{ album.title }} ({{ content.length }} new items)</h3>
+							<h3>{{ labels.set.singular }}: {{ album.title }} ({{ content.length }} {{ language.new }} {{ language.items }})</h3>
 							<p>{{ album.summary }}</p>
 						</koken:if>
 						<koken:include file="inc/components/tags-cats-loop.html" />
@@ -64,7 +64,7 @@
 
 					<koken:event_content>
 					<!-- New content -->
-						<koken:link title="View {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
+						<koken:link title="{{ language.view }} {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
 							<koken:content_image>
 								<koken:img class="preview" alt="{{ content.title | content.filename }}" lazy="true" />
 							</koken:content_image>
@@ -79,7 +79,7 @@
 
 					<koken:event_essay>
 					<!-- New {{ labels.essay.singular }} -->
-						<koken:link title="View the {{ labels.essay.singular }} {{ essay.title }}">
+						<koken:link title="{{ language.read_title collate='essay.title' }}">
 							<koken:featured_image>
 								<koken:img lazy="true" />
 							</koken:featured_image>

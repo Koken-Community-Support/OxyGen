@@ -11,7 +11,7 @@
 <koken:load>
 	<ul class="grid">
     	<koken:loop>
-    		<koken:link title="Browse everything in {{ category.title }}">
+    		<koken:link title="{{ language.view_everything_in }} {{ category.title }}">
 		      	<li class="tag-bg">
 		      		<koken:load source="category" filter:tags="{{ tag.title }}">
 		   				<koken:img crop="adaptive"/>

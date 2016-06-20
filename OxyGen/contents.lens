@@ -14,7 +14,7 @@
 					<!-- Hide any images that has the Category Editorials assigned -->
 				<koken:else>
 					<li>
-						<koken:link title="View {{ content.title | content.filename }} in fullscreen" lightbox="{{ settings.use_lightbox }}">
+						<koken:link title="{{ language.view }} {{ content.title | content.filename }}" lightbox="{{ settings.use_lightbox }}">
 							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true"/>
 							<koken:if data="settings.show_title" equals="name_overlay">
 								<div><h3>{{ content.title | content.filename }}</h3></div>

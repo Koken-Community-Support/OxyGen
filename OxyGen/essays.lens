@@ -5,7 +5,7 @@
 		<koken:loop>
 			<article class="entry">
 				<p class="essay-time"><koken:time /></p>
-				<koken:link title="View: {{ essay.title }}"><h2>{{ essay.title }}</h2></koken:link>
+				<koken:link title="{{ language.read_title collate='essay.title' }}"><h2>{{ essay.title }}</h2></koken:link>
 				<div class="essays-tags-cats"><koken:include file="inc/components/tags-cats-loop.html" /></div>
 			</article>
 			<koken:if data="settings.show_feat_img_essays" equals="true">
