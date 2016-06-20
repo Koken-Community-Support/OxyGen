@@ -23,5 +23,11 @@
 			<koken:discussion>{{ discussion }}</koken:discussion>
 		</div>
 	</koken:if>
+<koken:if data="settings.footer_setting" equals="tiny_footer">
+	<koken:include file="inc/components/footer_tiny.html" />
+</koken:if>
+<koken:if data="settings.footer_setting" equals="show_footer">
+	<koken:include file="inc/components/footer.html" />
+</koken:if>
 </main>
 <koken:include file="inc/components/footer_none.html" />

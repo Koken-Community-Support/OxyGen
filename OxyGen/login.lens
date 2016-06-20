@@ -9,7 +9,7 @@
 							<koken:not empty="messages.koken_password_error">
 								<p class="password-error">{{ messages.koken_password_error }}</p>
 							</koken:not>
-							<input class="klogin_input" type="password" name="password" autofocus placeholder="Enter password" /><button class="klogin_button" type="submit">Go</button>
+							<input class="klogin_input" type="password" name="password" autofocus placeholder="Enter password" /><button class="klogin_button" type="submit">{{ language.go }}</button>
 
 						</div>
 					</koken:form>

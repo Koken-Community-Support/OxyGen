@@ -5,7 +5,7 @@
 	</koken:if>
 	<koken:if data="settings.album_cover_cats" equals="true">
 		<koken:categories>
-			<span class="categories"> /  In
+			<span class="categories"> /  {{ language.posted_in }}
 				<koken:loop separator=", ">
 					<koken:link>{{ category.title }}</koken:link>
 				</koken:loop>
@@ -15,7 +15,7 @@
 
 	<koken:if data="settings.album_cover_tags" equals="true">
 		<koken:tags>
-			<span class="tags">{{ labels.tag.plural }} 
+			<span class="tags">{{ language.tags }}
 				<koken:loop separator=", ">
 					<koken:link>{{ tag.title }}</koken:link>
 				</koken:loop>
