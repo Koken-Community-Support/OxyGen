@@ -1,22 +1,23 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
-	<div class="page-content">
-		<article class="entry">
-			<h1 class="page-name" style="border:1px solid #990000; color: #990000;">Error: {{ routed_variables.code }}</h1>
-			<koken:if data="settings.show_breadcrumps" equals="true">
-				<div class="OG_breadcrumps">
-					<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
-				</div>
-			</koken:if>
-			<div class="k-content" style="padding-top:50px;">
-				<p style="border:1px solid #990000; color: #990000; max-width: 750px;">
-				<koken:if data="routed_variables.code" equals="404">
-					<koken:asset file="inc/components/img/error/404.jpg" style="max-width:650px"; />
+		<div class="page-content">
+			<article class="entry">
+				<h1 class="page-name" style="border:1px solid #990000; color: #990000;">Error: {{ routed_variables.code }}</h1>
+				<koken:if data="settings.show_breadcrumps" equals="true">
+					<div class="OG_breadcrumps">
+						<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
+					</div>
 				</koken:if>
-					<strong>Page not found.</strong><br /> Please head back to the <koken:link to="front">front page</koken:link>.
-				</p>
-			</div>
-		</article>
-	</div>
+				<div class="k-content" style="padding-top:50px;">
+					<p style="border:1px solid #990000; color: #990000; max-width: 750px;">
+					<koken:if data="routed_variables.code" equals="404">
+<!-- Page not found: 404 -->
+						<koken:asset file="inc/components/img/error/404.jpg" style="max-width:650px"; />
+					</koken:if>
+						<strong>Page not found.</strong><br /> Please head back to the <koken:link to="front">front page</koken:link>.
+					</p>
+				</div>
+			</article>
+		</div>
 </main>
 <koken:include file="inc/components/footer_none.html" />

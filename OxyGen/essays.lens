@@ -10,7 +10,7 @@
 			</article>
 			<koken:if data="settings.show_feat_img_essays" equals="true">
 				<koken:featured_image>
-					<koken:link title="View: {{ essay.title }}"><koken:img size="3:1" lazy="true"/></koken:link>
+					<koken:link title="{{ language.read_title collate='essay.title' }}"><koken:img size="3:1" lazy="true"/></koken:link>
 				</koken:featured_image>
 			</koken:if>
 		</koken:loop>

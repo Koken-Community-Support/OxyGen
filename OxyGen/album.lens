@@ -31,7 +31,7 @@
 	</koken:if>
 <koken:else>
 	<koken:note>
-		No album data found
+		This album is empty. Add content to it in the Library.
 	</koken:note>
 </koken:load>
 <koken:include file="inc/components/loading_msg.html" />

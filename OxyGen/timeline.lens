@@ -3,7 +3,7 @@
 	<div class="page-content">
 		<koken:load limit="{{ settings.content_index_limit }}" infinite="true">
 		<article class="top-section">
-			<h1 class="page-name">{{ labels.timeline.plural }}</h1>
+			<h1 class="page-name">{{ language.timeline }}</h1>
 			<koken:if data="settings.show_breadcrumps" equals="true">
 				<div class="OG_breadcrumps">
 					<p><koken:breadcrumbs separator="/" show_if_single="false" /></p>
@@ -46,7 +46,7 @@
 									<koken:img lazy="true" />
 								</koken:link>
 							</koken:loop>
-							<h3>{{ album.title }} ({{ content.length }}  {{ language.new }} {{ language.items }})</h3>
+							<h3>{{ album.title }} ({{ content.length }} {{ language.new }} {{ language.items }})</h3>
 							<p>{{ album.summary }}</p>
 						</koken:if>
 						<koken:if data="album.album_type" equals="set">
