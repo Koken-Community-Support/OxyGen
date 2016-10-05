@@ -1,8 +1,8 @@
 {
 	"name": "OxyGen",
-	"version": "2.3.0",
+	"version": "2.3.1",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content.\n\nOxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
-	"demo": "http://varoystrand.se/",
+	"demo": "https://demo.kokensupport.com/",
 	"terms": "Released under GNU GPLv3 license",
 	"documentation": "https://oxygen.kokensupport.com/",
 	 "author": {
@@ -11,7 +11,7 @@
 		"link": "https://kokensupport.com/"
 		},
 
-	"koken_version_required": "0.21.13",
+	"koken_version_required": "0.22.9",
 
 	"routes": {
 		"/community_center/": {
@@ -66,6 +66,18 @@
 			"kcs_also_in_": "Auch in:",
 			"kcs_photographer_": "Fotograf:",
 			"kcs_license_": "Lizenz:"
+		},
+
+		"el": {
+			"kcs_camera_info_": "Πληροφορίες κάμερας",
+			"kcs_caption_": "Λεζάντα",
+			"kcs_image_info_": "Πληροφορίες εικόνας",
+			"kcs_name_": "Όνομα:",
+			"kcs_uploaded_": "Μεταφορτώθηκε:",
+			"kcs_captured_": "Λήφθηκε:",
+			"kcs_also_in_": "Επίσης σε:",
+			"kcs_photographer_": "Φωτογράφος:",
+			"kcs_license_": "Άδεια:",
 		},
 
 		"en": {
@@ -216,6 +228,7 @@
 						{ "label": "French",	"value": "fr" },
 						{ "label": "Hungarian",	"value": "hu" },
 						{ "label": "German",	"value": "de" },
+						{ "label": "Greek", 	"value": "el" },
 						{ "label": "Icelandic",	"value": "is" },
 						{ "label": "Italian",	"value": "it" },
 						{ "label": "Norwegian",	"value": "no" },
