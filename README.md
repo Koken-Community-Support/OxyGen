@@ -24,3 +24,13 @@ Full credit goes to John (@jhne) Elgenstierna for ideas and intial design of nor
 Thanks to Daniel (@DanielMuller) Muller for helping out with the PhotoSwipe integration.
 
 Thanks to Christopher (@Hard-One) Bayer for all the bug hunting and suggestions, and for his work on translate OxyGen to German!
+
+#### TRANSLATIONS
+* Icelandic [Grímur Guðmundsson](http://grimur.net)
+* Dutch: [Ilco Everraert](http://fotografie.graphixmedia.nl) and [Toine Repiuk](http://repiuk.nl)
+* French: [Sylvain Deloux](http://photo.sylvaindeloux.com)
+* German: [Gerd Rösser](http://portfolio.gerdroesser.de)
+* Greek: [Nick](https://kokensupport.com/memberlist.php?mode=viewprofile&u=305)
+* Polish: [Marek Durajczyk](http://www.md.photopolska.pl)
+* Russian: [Anna Ozeritskaya](http://plus.google.com/u/0/114213058288327048316)
+* Hungarian: [Béla Nagy](http://belanagy.hu/)
