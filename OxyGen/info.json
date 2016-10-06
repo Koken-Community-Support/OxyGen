@@ -9,7 +9,7 @@
 		"name": "Koken Community Support",
 		"mail": "oxygen@kokensupport.com",
 		"link": "https://kokensupport.com/"
-		},
+	},
 
 	"koken_version_required": "0.22.9",
 
@@ -77,7 +77,7 @@
 			"kcs_captured_": "Λήφθηκε:",
 			"kcs_also_in_": "Επίσης σε:",
 			"kcs_photographer_": "Φωτογράφος:",
-			"kcs_license_": "Άδεια:",
+			"kcs_license_": "Άδεια:"
 		},
 
 		"en": {
