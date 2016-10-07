@@ -1,17 +1,12 @@
 <div class="social social_cover">
-	<koken:album_download>
-		<koken:link title="{{ language.download }} {{ album_download.title }}"><i class="fa fa-download"></i></koken:link>
-	</koken:album_download>
-	<koken:link share="facebook">
-		<koken:asset file="inc/components/img/facebook.png" alt="{{ language.share_on_ }} Facebook" class="icon"/>
-	</koken:link>
-	<koken:link share="twitter">
-		<koken:asset file="inc/components/img/twitter.png" alt="{{ language.share_on_ }} Twitter" class="icon"/>
-	</koken:link>
-	<koken:link share="tumblr">
-		<koken:asset file="inc/components/img/tumblr.png" alt="{{ language.share_on_ }} Tumblr!" class="icon"/>
-	</koken:link>
-	<koken:link share="google-plus">
-		<koken:asset file="inc/components/img/gplus.png" alt="{{ language.share_on_ }} Google Plus!" class="icon"/>
-	</koken:link>
+	<ul class="social-links">
+		<koken:album_download>
+			<li><koken:link title="{{ language.download }} {{ album_download.title }}"><i class="fa fa-download"></i></koken:link>
+		</koken:album_download>
+		<li><koken:link share="twitter" class="share_twitter"><i class="kicon-twitter"></i></koken:link>
+		<li><koken:link share="facebook" class="share_facebook"><i class="kicon-facebook"></i></koken:link>
+		<li><koken:link share="pinterest" class="share_pinterest"><i class="kicon-pinterest"></i></koken:link>
+		<li><koken:link share="tumblr" class="share_tumblr"><i class="kicon-tumblr"></i></koken:link>
+		<li><koken:link share="google-plus" class="share_gplus"><i class="kicon-gplus"></i></koken:link>
+	</ul>
 </div>
