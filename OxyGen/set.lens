@@ -29,6 +29,5 @@
 		<koken:note>No public albums found</koken:note>
 	</div>
 	</koken:load>
-<koken:include file="inc/components/loading_msg.html" />
 </main>
 <koken:include file="inc/components/footer_none.html" />

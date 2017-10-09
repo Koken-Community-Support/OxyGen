@@ -23,7 +23,6 @@
 					No album data found
 				</koken:note>
 		</koken:load>
-		<koken:include file="inc/components/loading_msg.html" />
 	</div>
 </main>
 <koken:include file="inc/components/footer_none.html" />

@@ -34,6 +34,5 @@
 		This album is empty. Add content to it in the Library.
 	</koken:note>
 </koken:load>
-<koken:include file="inc/components/loading_msg.html" />
 </main>
 <koken:include file="inc/components/footer_none.html" />

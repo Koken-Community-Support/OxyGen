@@ -24,6 +24,5 @@
 <koken:else>
 	No tags found.
 </koken:load>
-<koken:include file="inc/components/loading_msg.html" />
 </main>
 <koken:include file="inc/components/footer_none.html" />
