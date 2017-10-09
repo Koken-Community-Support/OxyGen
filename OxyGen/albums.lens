@@ -1,23 +1,22 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
-  <koken:load limit="{{ settings.albums_index_limit }}" infinite="true">
-    <ul class="grid">
-      <koken:loop>
-        <li>
-          <koken:link  title="{{ language.view }} {{ album.title }}">
-              <koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
-              <div>
-                <h3>{{ album.title }}</h3>
-              </div>
-          </koken:link>
-        </li>
-      </koken:loop>
-    </ul>
-  <koken:else>
-    <koken:note>
-      <strong>No albums found.</strong> Create some in the Library.
-    </koken:note>
-  </koken:load>
-<koken:include file="inc/components/loading_msg.html" />
+	<koken:load limit="{{ settings.albums_index_limit }}" infinite="true">
+		<ul class="grid">
+			<koken:loop>
+				<li>
+					<koken:link	title="{{ language.view }} {{ album.title }}">
+							<koken:img size="{{ settings.grid_asp_ratio }}" lazy="true" />
+							<div>
+								<h3>{{ album.title }}</h3>
+							</div>
+					</koken:link>
+				</li>
+			</koken:loop>
+		</ul>
+	<koken:else>
+		<koken:note>
+			<strong>No albums found.</strong> Create some in the Library.
+		</koken:note>
+	</koken:load>
 </main>
 <koken:include file="inc/components/footer_none.html" />

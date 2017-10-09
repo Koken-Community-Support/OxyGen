@@ -1,6 +1,6 @@
 {
 	"name": "OxyGen",
-	"version": "2.3.2",
+	"version": "2.3.3",
 	"description": "OxyGen is a fully responsive theme for your Koken site, ensuring that you give your visitors the best experience of your content.\n\nOxyGen is built for both artist and writers alike giving you the most flexibility so you can concentrate on the asset that is important: your content.",
 	"demo": "https://demo.kokensupport.com/",
 	"terms": "Released under GNU GPLv3 license",
@@ -511,7 +511,7 @@
 								{ "option": "cover_styles", "equals": "image_cover" }
 							]
 						},
-						"scope": [ "album", "set" ]
+						"scope": [  "album", "contents", "favorites", "set"  ]
 					},
 					"cover_title_max": {
 						"label": "Title max size",
@@ -527,7 +527,7 @@
 								{ "option": "cover_styles", "equals": "image_cover" }
 							]
 						},
-						"scope": [ "album", "set" ]
+						"scope": [  "album", "contents", "favorites", "set"  ]
 					},
 					"cover_title_ls": {
 						"label": "Title spacing",
@@ -543,7 +543,7 @@
 								{ "option": "cover_styles", "equals": "image_cover" }
 							]
 						},
-						"scope": [ "album", "set" ]
+						"scope": [  "album", "contents", "favorites", "set"  ]
 					},
 					"album_cover_description": {
 						"label": "Album description",

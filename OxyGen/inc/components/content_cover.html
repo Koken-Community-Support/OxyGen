@@ -1,13 +1,16 @@
 <koken:background lazy="true" id="cover_bg" style="margin-top: 0;">
 	<div class="cover_inside cover_style_1">
 		<div class="cover_content">
-            <koken:if data="location.template" equals="contents">
-                <p class="album-name">{{ language.content }}</p>
-            </koken:if>
-            <koken:if data="location.template" equals="favorites">
-                <p class="album-name">{{ language.favorites }}</p>
-            </koken:if>
+			<h1>
+			<koken:if data="location.template" equals="contents">
+				{{ language.content }}
+			</koken:if>
+			<koken:if data="location.template" equals="favorites">
+				{{ language.favorites }}
+			</koken:if>
+			</h1>
 		</div>
 		<a id="cover_scroll" href="#content" data-bind-to-key="right" class="cover_scroll_link no_b"><i class="icon-{{ settings.album_cover_downarrow }}-down"></i></a>
 	</div>
 </koken:background>
+<koken:include file="inc/cover.html" />
